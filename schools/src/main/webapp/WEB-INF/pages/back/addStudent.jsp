@@ -32,7 +32,7 @@ $(document).ready(function(){
 });
 </script>
 
-<title>用户新增</title>
+<title>用户新增 </title>
 </head>
 
 
