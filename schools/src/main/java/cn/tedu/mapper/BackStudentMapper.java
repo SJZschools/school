@@ -6,6 +6,6 @@ import cn.tedu.pojo.User;
 
 public interface BackStudentMapper {
 
-	List<User> findAllStudent();
+	public List<User> findAllStudent();
 
 }
