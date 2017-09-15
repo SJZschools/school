@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.DynamicMapper">
+	
+	<!--由于开启了别名包,所以在映射时会自动的拼接包路径  -->
+	<select id="findAll" resultMap="dynamicRM">
+		select * from dynamic_info
+	</select>
+	
+	<resultMap type="cn.tedu.pojo.Dynamic" id="dynamicRM" autoMapping="true">
+		<id column="dynamic_id" property="dynamicId"/>		
+	</resultMap>
+		
+	
+</mapper>
