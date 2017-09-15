@@ -1,11 +1,8 @@
 package cn.tedu.service;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
-import cn.tedu.pojo.User;
-
-public interface BackStudentService {
-
-	List<User> findAllStudent();
+@Service
+public class BackStudentService {
 
 }

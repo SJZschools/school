@@ -1,59 +1,49 @@
 package cn.tedu.controller;
 
-
 import java.util.List;
-import java.util.UUID;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
-import cn.tedu.pojo.User;
-import cn.tedu.service.UserService;
+import cn.tedu.service.BbsService;
 
 /**
  * 连接到论坛
  * */
 @Controller
-public class BBSController {
+public class BbsController {
+	
 	@Autowired
-	private UserService userService;
+	private BbsService bbsService;
 	
 	@RequestMapping("bbs_home")
-	public String toBBSHome(){
+	public String toBbsHome(){
+		
 		return "bbs_home";
 	}
+	
+	/*
+	 * 查询论坛信息
+	 */
+//	@RequestMapping("bbs_home")
+//	public String findAll(Model model){
+//		List<Bbs> bbsList = bbsService.findAll();
+//		
+//		model.addAttribute("bbsList", bbsList);
+//		//跳到论坛页面
+//		return "bbs_home";
+//	}
+	
 	@RequestMapping("bbs_post")
 	public String toBBSPost(){
 		return "bbs_post";
 	}
 	
-	
 	@RequestMapping("bbs_self")
 	public String toBBSSelf(){
 		return "bbs_self";
-	}
-	
-	/**
-	 * 帖子发布
-	 */
-	@RequestMapping("/save")
-	public String saveBBS(Bbs bbs,HttpSession session){
-		User user=new User();
-		user.setId("123");
-		String bbsId=UUID.randomUUID().toString();
-		//从session域中取得用户Id
-		session.setAttribute("SessionUser", user);
-		User uu= (User) session.getAttribute("SessionUser");
-		
-		bbs.setBssId(bbsId);
-		bbs.setCreatId(uu.getId());
-		userService.saveBBS(bbs);
-		return "/bbs_home";
 	}
 }
