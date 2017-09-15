@@ -18,5 +18,10 @@ public class BbsServiceImpl implements BbsService{
 	public List<Bbs> findAll() {
 		return bbsMapper.findAll();
 	}
-	
+	//帖子发布
+	@Override
+	public void saveBBS(Bbs bbs) {
+		bbsMapper.saveBBS(bbs);
+	}
+
 }

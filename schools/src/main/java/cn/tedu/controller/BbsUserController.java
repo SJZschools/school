@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
 import cn.tedu.pojo.User;
-import cn.tedu.service.UserService;
+import cn.tedu.service.BbsService;
 
 @Controller
 public class BbsUserController {
 	@Autowired
-	private UserService userService;
+	private BbsService bbsService;
+	/**
+	 * 帖子发布
+	 * @param bbs
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/save")
 	public String saveBBS(Bbs bbs,HttpSession session){
 		User user=new User();
@@ -26,6 +32,7 @@ public class BbsUserController {
 		bbs.setBssId(bId);
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
+		bbsService.saveBBS(bbs);
 		return "/bbs_home";
 	}
 }
