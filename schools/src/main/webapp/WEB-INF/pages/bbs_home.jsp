@@ -91,72 +91,36 @@
 					<div class="row separator">
 						<section class="span4 articles-list">
 							<h3>热门精贴</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
-									<c:forEach items="${bbsList}" var="b" varStatus="status">
-										<h4>
-											<a href="bbs_single.html">${b.bssId }</a>
-										</h4> 
-										<span class="article-meta">${b.creatTime } <a
-											href="bbs_single.html"
-											title="View all posts in Server &amp; Database">${b.user.nickname }
-											</a></span> <span class="like-count">66</span>
-									</c:forEach>
+									<h4>
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
+										href="bbs_single.html"
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
 							<h3>师生问答</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">Server
-											&amp; Database</a></span> <span class="like-count">66</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">18</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Designing in WordPress">Designing
-											in WordPress</a></span> <span class="like-count">7</span>
-								</li>
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress Plugins">WordPress
-											Plugins</a></span> <span class="like-count">7</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">15</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Theme Development">Theme
-											Development</a></span> <span class="like-count">1</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 					</div>
 
@@ -169,83 +133,35 @@
 					<div class="row separator">
 
 						<section class="span4 articles-list">
-							<h3>
-								<a href="bbs_single.html">WordPress for Beginners</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress for Beginners">WordPress
-											for Beginners</a></span> <span class="like-count">1</span>
-								</li>
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in WordPress for Beginners">WordPress
-											for Beginners</a></span> <span class="like-count">1</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress for Beginners">WordPress
-											for Beginners</a></span> <span class="like-count">0</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress for Beginners">WordPress
-											for Beginners</a></span> <span class="like-count">1</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
-							<h3>
-								<a href="bbs_single.html">Designing in WordPress</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Designing in WordPress">Designing
-											in WordPress</a></span> <span class="like-count">7</span>
-								</li>
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in Designing in WordPress">Designing
-											in WordPress</a></span> <span class="like-count">1</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Designing in WordPress">Designing
-											in WordPress</a></span> <span class="like-count">0</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Designing in WordPress">Designing
-											in WordPress</a></span> <span class="like-count">0</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 					</div>
@@ -253,80 +169,36 @@
 					<div class="row separator">
 
 						<section class="span4 articles-list">
-							<h3>
-								<a href="bbs_single.html">Theme Development</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in Theme Development">Theme
-											Development</a></span> <span class="like-count">1</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Theme Development">Theme
-											Development</a></span> <span class="like-count">0</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Theme Development">Theme
-											Development</a></span> <span class="like-count">0</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Theme Development">Theme
-											Development</a></span> <span class="like-count">0</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
 
-							<h3>
-								<a href="bbs_single.html">Website Dev</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">15</span>
-								</li>
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">8</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">2</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">3</span>
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
+										href="bbs_single.html"
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 					</div>
@@ -334,83 +206,35 @@
 					<div class="row separator">
 
 						<section class="span4 articles-list">
-							<h3>
-								<a href="bbs_single.html">WordPress Plugins</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">Using Video</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress Plugins">WordPress
-											Plugins</a></span> <span class="like-count">7</span>
-								</li>
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">Photoblogs and Galleries</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in WordPress Plugins">WordPress
-											Plugins</a></span> <span class="like-count">2</span>
-								</li>
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">Plugin Resources</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress Plugins">WordPress
-											Plugins</a></span> <span class="like-count">1</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">Managing Plugins</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in WordPress Plugins">WordPress
-											Plugins</a></span> <span class="like-count">0</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
-							<h3>
-								<a href="bbs_single.html">Advanced Techniques</a> <span>(4)</span>
-							</h3>
+							<c:forEach items="${bbsList}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">Using Javascript</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
+										<a href="bbs_single.html">${b.bssTitle }</a>
+									</h4> 
+									<span class="article-meta">${b.creatTime } <a
 										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">18</span>
-								</li>
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">Editing Files</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">1</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">Importing Content</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">0</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">WordPress in Your Language</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">6</span>
+										title="View all posts in Server &amp; Database">${b.user.nickname }
+										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
+							</c:forEach>
 						</section>
 					</div>
 

@@ -4,9 +4,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.BbsMapper">
 	<select id="findAll" resultMap="bbsRM">
-		select b.bss_title,u.nickname
+		select b.bss_title,u.nickname,b.creat_time,b.recount
 		 from bbs b, user_s u 
 		 where b.creat_id = u.id 
+		 order by recount desc 
 	</select>
 	
 	<resultMap type="cn.tedu.pojo.Bbs" id="bbsRM" autoMapping="true">
