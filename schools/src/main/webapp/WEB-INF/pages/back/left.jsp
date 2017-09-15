@@ -44,7 +44,7 @@ $(function(){
     	<ul class="menuson">
         <li><cite></cite><a href="backIndex" target="rightFrame">首页</a><i></i></li>
 		
-        <li class="active"><cite></cite><a href="student.html" target="rightFrame">学生管理</a><i></i></li>
+        <li class="active"><cite></cite><a href="student" target="rightFrame">学生管理</a><i></i></li>
 		
 		<li class="active"><cite></cite><a href="discuss.html" target="rightFrame">论坛管理</a><i></i></li>
 		

@@ -1,10 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctx }/js/jquery.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -47,15 +50,15 @@ $(document).ready(function(){
     <div class="tools">
     
     	<ul class="toolbar">
-        <li class="click"><span><img src="images/t01.png" /></span><a href="addStudent.html" target="rightFrame">添加</a></li>
+        <li class="click"><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="addStudent.html" target="rightFrame">添加</a></li>
         <li class="click"><span><img src="images/t02.png" /></span><a href="updateStudent.html" target="rightFrame">修改</a></li>
-        <li><span><img src="images/t03.png" /></span><a href="deleteStudent.html" target="rightFrame">删除</a></li>
-        <li><span><img src="images/t04.png" /></span><a href="seeStudent.html" target="rightFrame">统计</a></li>
+        <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="deleteStudent.html" target="rightFrame">删除</a></li>
+        <li><span><img src="${ctx }/images/backimg/t04.png" /></span><a href="seeStudent.html" target="rightFrame">统计</a></li>
         </ul>
         
         
         <ul class="toolbar1">
-        <li><span><img src="images/t05.png" /></span>设置</li>
+        <li><span><img src="${ctx }/images/backimg/t05.png" /></span>设置</li>
         </ul>
     
     </div>
@@ -65,27 +68,29 @@ $(document).ready(function(){
     	<thead>
     	<tr>
         <th><input name="selectAll" type="checkbox"  onclick="checkAll('studyId',this)"/></th>
-        <th>学号<i class="sort"><img src="images/px.gif" /></i></th>
-        <th>成绩</th>
+        <th>学号<i class="sort"><img src="${ctx }/images/backimg/px.gif" /></i></th>
+        <th>性别</th>
         <th>姓名</th>
         <th>籍贯</th>
-        <th>发布时间</th>
-        <th>是否毕业</th>
+        <th>班级</th>
+        <th>入学时间</th>
         <th>操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-        <td><input name="studyId" type="checkbox" value="" /></td>
-        <td>20130908</td>
-        <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-        <td>admin</td>
-        <td>江苏南京</td>
-        <td>2013-09-09 15:05</td>
-        <td>已审核</td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
-        </tr> 
         
+        <c:forEach items="${user }" var="user">
+	        <tr>
+	        <td><input name="studyId" type="checkbox" value="" /></td>
+	        <td>${user.id }</td>
+	        <td>${user.sex }</td>
+	        <td>${user.username }</td>
+	        <td>${user.homeplace }</td>
+	        <td>${user.classes }</td>
+	        <td>${user.timeofenrollment }</td>
+	        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+	        </tr> 
+        </c:forEach>
         
         </tbody>
     </table>
@@ -111,7 +116,7 @@ $(document).ready(function(){
     	<div class="tiptop"><span>提示信息</span><a></a></div>
         
       <div class="tipinfo">
-        <span><img src="images/ticon.png" /></span>
+        <span><img src="${ctx }/images/backimg/ticon.png" /></span>
         <div class="tipright">
         <p>是否确认对信息的修改 ？</p>
         <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
