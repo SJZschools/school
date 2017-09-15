@@ -42,7 +42,7 @@ $(function(){
     <span><img src="${ctx}/images/backimg/leftico01.png" /></span>管理信息
     </div>
     	<ul class="menuson">
-        <li><cite></cite><a href="index.html" target="rightFrame">首页</a><i></i></li>
+        <li><cite></cite><a href="backIndex" target="rightFrame">首页</a><i></i></li>
 		
         <li class="active"><cite></cite><a href="student.html" target="rightFrame">学生管理</a><i></i></li>
 		
