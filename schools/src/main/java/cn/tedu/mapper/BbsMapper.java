@@ -11,7 +11,7 @@ public interface BbsMapper {
 	public List<Bbs> findAll();
 	//帖子发布
 	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context) "
-			+ "values(#{bbsId},#{creatId},#{bssTitle},#{bssClass},#{bssContext})")
+			+ "values(#{bssId},#{creatId},#{bssTitle},#{bssClass},#{bssContext})")
 	public void saveBBS(Bbs bbs);
 	
 }
