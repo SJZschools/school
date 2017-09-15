@@ -27,20 +27,19 @@
     
     <div class="welinfo">
     <span><img src="${ctx}/images/backimg/sun.png" alt="天气" /></span>
-    <b>Admin早上好，欢迎使用信息管理系统</b>
-    <a href="#">帐号设置</a>
+    <b>${user.username }早上好，欢迎使用信息管理系统</b>
     </div>
     
     <div class="welinfo">
     <span><img src="${ctx}/images/backimg/time.png" alt="时间" /></span>
-    <i>您上次登录的时间：2013-10-09 15:22</i> （不是您登录的？<a href="#">请点这里</a>）
+           切换账号？<a href="/login">请点这里</a>
     </div>
     
     <div class="xline"></div>
     
     <ul class="iconlist">
     
-    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="right.html">学生管理</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="student">学生管理</a></p></li>
 	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="discuss.html">论坛管理</a></p></li>
     <li><img src="${ctx}/images/backimg/ico02.png" /><p><a href="study.html">学习资料</a></p></li>
     <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="form.html">视频管理</a></p></li>
@@ -49,7 +48,7 @@
             
     </ul>
     
-    <div class="ibox"><a class="ibtn"><img src="${ctx}/images/backimg/iadd.png" />添加新的快捷功能</a></div>
+   <%--  <div class="ibox"><a class="ibtn"><img src="${ctx}/images/backimg/iadd.png" />添加新的快捷功能</a></div> --%>
     
     <div class="xline"></div>
     <div class="box"></div>
@@ -67,14 +66,7 @@
     
     <div class="xline"></div>
     
-    <div class="info"><b>查看网站使用指南，您可以了解到多种风格的B/S后台管理界面,软件界面设计，图标设计，手机界面等相关信息</b>(More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>)</div>
     
-    <ul class="umlist">
-    <li><a href="#">如何发布文章</a></li>
-    <li><a href="#">如何访问网站</a></li>
-    <li><a href="#">如何管理广告</a></li>
-    <li><a href="#">后台用户设置(权限)</a></li>
-    <li><a href="#">系统设置</a></li>
     </ul>
     
     

@@ -12,4 +12,14 @@ public class BBSController {
 	public String toBBSHome(){
 		return "bbs_home";
 	}
+	@RequestMapping("bbs_post")
+	public String toBBSPost(){
+		return "bbs_post";
+	}
+	
+	
+	@RequestMapping("bbs_self")
+	public String toBBSSelf(){
+		return "bbs_self";
+	}
 }

@@ -28,5 +28,5 @@ public class BackDynamicController {
 	@RequestMapping("/DyToself")
 	public String goSelf(){
 		return "redirect:/back/ScDynam";
-	}
+	}  
 }
