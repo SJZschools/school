@@ -37,8 +37,8 @@ $(document).ready(function(){
 	<div class="place">
     <span>位置：</span>
     <ul class="placeul">
-    <li><a href="index.html">首页</a></li>
-    <li><a href="study.html">校内动态</a></li>
+    <li><a href="${ctx}/back/DyToMain">首页</a></li>
+    <li><a href="${ctx}/back/DyToself">校内动态</a></li>
    
     </ul>
     </div>
