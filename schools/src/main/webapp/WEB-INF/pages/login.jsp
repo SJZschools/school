@@ -51,7 +51,7 @@
             <form action="index.html" method="post">
                 <input type="text" name="username" class="username" placeholder="Username">
                 <input type="password" name="password" class="password" placeholder="Password">
-                <button type="submit">登陆</button>
+                <button type="submit">登录</button>
                 <div class="error"><span>+</span></div>
             </form>
         </div>
