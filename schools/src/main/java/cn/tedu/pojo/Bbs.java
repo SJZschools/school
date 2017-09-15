@@ -3,6 +3,8 @@ package cn.tedu.pojo;
  * 帖子的实体类
  * */
 public class Bbs {
+	private User user;//用户表
+	
 	private String bssId;//帖子 id
 	private String bssTitle;//帖子标题
 	private String bssContext;//帖子内容
@@ -74,6 +76,13 @@ public class Bbs {
 	}
 	public void setBssLevel(Integer bssLevel) {
 		this.bssLevel = bssLevel;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }

@@ -93,48 +93,15 @@
 							<h3>热门精贴</h3>
 							<ul class="articles">
 								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">25 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">Server
-											&amp; Database</a></span> <span class="like-count">66</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">24 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">15</span>
-								</li>
-								<li class="article-entry video">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">23 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">8</span>
-								</li>
-								<li class="article-entry image">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html"
-										title="View all posts in Advanced Techniques">Advanced
-											Techniques</a></span> <span class="like-count">6</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">22 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">2</span>
-								</li>
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">题目</a>
-									</h4> <span class="article-meta">21 Feb, 2013 in <a
-										href="bbs_single.html" title="View all posts in Website Dev">Website
-											Dev</a></span> <span class="like-count">3</span>
+									<c:forEach items="${bbsList}" var="b" varStatus="status">
+										<h4>
+											<a href="bbs_single.html">${b.bssId }</a>
+										</h4> 
+										<span class="article-meta">${b.creatTime } <a
+											href="bbs_single.html"
+											title="View all posts in Server &amp; Database">${b.user.nickname }
+											</a></span> <span class="like-count">66</span>
+									</c:forEach>
 								</li>
 							</ul>
 						</section>
