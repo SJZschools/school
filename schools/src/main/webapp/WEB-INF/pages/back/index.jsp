@@ -1,10 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
+<link href="${ctx}/css/backstyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctx}/js/jquery.js"></script>
 
 </head>
 
@@ -22,13 +26,13 @@
     
     
     <div class="welinfo">
-    <span><img src="images/sun.png" alt="天气" /></span>
+    <span><img src="${ctx}/images/backimg/sun.png" alt="天气" /></span>
     <b>Admin早上好，欢迎使用信息管理系统</b>
     <a href="#">帐号设置</a>
     </div>
     
     <div class="welinfo">
-    <span><img src="images/time.png" alt="时间" /></span>
+    <span><img src="${ctx}/images/backimg/time.png" alt="时间" /></span>
     <i>您上次登录的时间：2013-10-09 15:22</i> （不是您登录的？<a href="#">请点这里</a>）
     </div>
     
@@ -36,22 +40,22 @@
     
     <ul class="iconlist">
     
-    <li><img src="images/ico01.png" /><p><a href="right.html">学生管理</a></p></li>
-	<li><img src="images/ico01.png" /><p><a href="discuss.html">论坛管理</a></p></li>
-    <li><img src="images/ico02.png" /><p><a href="study.html">学习资料</a></p></li>
-    <li><img src="images/ico04.png" /><p><a href="form.html">视频管理</a></p></li>
-    <li><img src="images/ico05.png" /><p><a href="question.html">学员反馈</a></p></li>
-    <li><img src="images/ico06.png" /><p><a href="search.html">查询</a></p></li> 
+    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="right.html">学生管理</a></p></li>
+	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="discuss.html">论坛管理</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico02.png" /><p><a href="study.html">学习资料</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="form.html">视频管理</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico05.png" /><p><a href="question.html">学员反馈</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico06.png" /><p><a href="search.html">查询</a></p></li> 
             
     </ul>
     
-    <div class="ibox"><a class="ibtn"><img src="images/iadd.png" />添加新的快捷功能</a></div>
+    <div class="ibox"><a class="ibtn"><img src="${ctx}/images/backimg/iadd.png" />添加新的快捷功能</a></div>
     
     <div class="xline"></div>
     <div class="box"></div>
     
     <div class="welinfo">
-    <span><img src="images/dp.png" alt="提醒" /></span>
+    <span><img src="${ctx}/images/backimg/dp.png" alt="提醒" /></span>
     <b>信息管理系统使用指南</b>
     </div>
     
