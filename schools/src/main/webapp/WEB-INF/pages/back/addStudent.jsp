@@ -1,12 +1,16 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>最无敌的校园网</title>
+<link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="js/jquery.js"></script>
-
+<script type="text/javascript" src="${ctx }/js/jquery.js"></script>
+<script type="text/javascript" src="${ctx }/js/WdatePicker.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
   $(".click").click(function(){
@@ -40,8 +44,8 @@ $(document).ready(function(){
 	
 	<div id="navMenubar" class="tools">
 <ul class="toolbar">
-	<li id="save"><span><img src="images/t01.png" /></span><a href="#" onclick="">保存</a></li>
-	<li id="back"><span><img src="images/close.png" /></span><a href="#" onclick="">返回</a></li>
+	<li id="save"><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="saveBackStudent" onclick="">保存</a></li>
+	<li id="back"><span><img src="${ctx }/images/backimg/close.png" /></span><a href="student" onclick="">返回</a></li>
 	
 </ul>
 
@@ -55,38 +59,28 @@ $(document).ready(function(){
 	<tr class="odd">
 		<td>姓名:</td>
 		<td><input  type="text" name="username" class="dfinput" /></td>
-		<td>密码:</td>
-		<td><input  type="password" name="password" class="dfinput"/></td>
+		
 	</tr>
 
 	<tr class="odd">
-		<td>所选学科:</td>
-		<td>
-			<select name="dept.deptId" style="width:121px">
-				<option value="">---请选择----</option>
-				
-				<c:forEach items="${deptList}" var="d">
-					<option value="${d.deptId}">${d.deptName}</option>
-				</c:forEach>
-			</select>
-		</td>
+		
 		
 	</tr>
 	<tr class="odd">
 		<td>身份证号:</td>
-		<td><input type="text" name="userInfo.cardNo" class="dfinput"/>
+		<td><input type="text" name="userInfo.card" class="dfinput"/>
 		</td>
 		
 	</tr>
 	<tr class="odd">
-		<td>入学日期:</td>
+		<td>出生日期:</td>
 		<td>
-			<input type="text" style="width:121px;" name="userInfo.joinDate"
+			<input type="text" style="width:121px;" name="userInfo.birthday"
 	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
 		</td>
-		<td>毕业日期:</td>
+		<td>入学日期:</td>
 		<td>
-			<input type="text" style="width:121px;" name="userInfo.joinDate"
+			<input type="text" style="width:121px;" name="userInfo.timeofenrollment"
 	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
 		</td>
 	</tr>
@@ -95,34 +89,26 @@ $(document).ready(function(){
 		
 		<td>性别:</td>
 		<td>
-			<input type="radio" name="userInfo.gender" value="男"/>男
-			<input type="radio" name="userInfo.gender" value="女"/>女
-			<input type="radio" name="userInfo.gender" value="其他"/>其他
+			<input type="radio" name="userInfo.sex" value="男"/>男
+			<input type="radio" name="userInfo.sex" value="女"/>女
+			<input type="radio" name="userInfo.sex" value="其他"/>其他
 		</td>
 	</tr>
 	<tr class="odd">
 		
 		<td>电话号码:</td>
-		<td><input  type="text" name="userInfo.telephone" class="dfinput"/></td>
+		<td><input  type="text" name="userInfo.tel" class="dfinput"/></td>
 	</tr>
 	<tr class="odd">
-		<td>学员是否毕业:</td>
-		<td>
-			<select name="userInfo.userLevel" style="width:121px">
-				<option value="1">在校</option>
-				<option value="2">毕业</option>
-				<option value="3">其他</option>
-				
-			</select>
-		</td>
+		
 		<td>学号:</td>
-		<td><input  type="text" name="userInfo.orderNo" class="dfinput"/></td>
+		<td><input  type="text" name="id" class="dfinput"/></td>
 	</tr>
 	
 	<tr class="odd">
 		<td>备注信息:</td>
 		<td colspan="3">
-			<textarea style="height:80px;width:100%" name="userInfo.remark" ></textarea>
+			<textarea style="height:80px;width:100%" name="userInfo.personalRemarks" ></textarea>
 		</td>
 	</tr>	
 </table>

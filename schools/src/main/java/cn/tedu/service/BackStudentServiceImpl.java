@@ -18,5 +18,11 @@ public class BackStudentServiceImpl implements BackStudentService {
 		return backStudentMapper.findAllStudent();
 	}
 	//后台界面的学生管理
+	//增加学生
+	@Override
+	public void addBackStudent(User user) {
+		backStudentMapper.addBackStudent(user);
+		
+	}
 	
 }

@@ -6,4 +6,6 @@ import cn.tedu.pojo.User;
 
 public interface BackStudentService {
 	public List<User> findAllStudent();
+
+	public void addBackStudent(User user);
 }

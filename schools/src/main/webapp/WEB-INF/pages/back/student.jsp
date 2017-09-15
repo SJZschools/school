@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -39,7 +40,7 @@ $(document).ready(function(){
 	<div class="place">
     <span>位置：</span>
     <ul class="placeul">
-    <li><a href="index.html">首页</a></li>
+    <li><a href="backIndex">首页</a></li>
     <li><a href="student.html">学员管理</a></li>
    
     </ul>
@@ -50,10 +51,10 @@ $(document).ready(function(){
     <div class="tools">
     
     	<ul class="toolbar">
-        <li class="click"><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="addStudent.html" target="rightFrame">添加</a></li>
-        <li class="click"><span><img src="images/t02.png" /></span><a href="updateStudent.html" target="rightFrame">修改</a></li>
-        <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="deleteStudent.html" target="rightFrame">删除</a></li>
-        <li><span><img src="${ctx }/images/backimg/t04.png" /></span><a href="seeStudent.html" target="rightFrame">统计</a></li>
+        <li ><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="addBackStudent" target="rightFrame">添加</a></li>
+        <li ><span><img src="${ctx }/images/backimg/t02.png" /></span><a href="updateBackStudent" target="rightFrame">修改</a></li>
+        <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="deleteBackStudent" target="rightFrame">删除</a></li>
+        <li><span><img src="${ctx }/images/backimg/t04.png" /></span><a href="seeBackStudent" target="rightFrame">统计</a></li>
         </ul>
         
         
@@ -83,11 +84,11 @@ $(document).ready(function(){
 	        <tr>
 	        <td><input name="studyId" type="checkbox" value="" /></td>
 	        <td>${user.id }</td>
-	        <td>${user.sex }</td>
+	        <td>${user.userInfo.sex }</td>
 	        <td>${user.username }</td>
-	        <td>${user.homeplace }</td>
-	        <td>${user.classes }</td>
-	        <td>${user.timeofenrollment }</td>
+	        <td>${user.userInfo.homeplace }</td>
+	        <td>${user.userInfo.classes }</td>
+	        <td><fmt:formatDate value="${user.userInfo.timeofenrollment }" pattern="yyyy-MM-dd"/></td>
 	        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
 	        </tr> 
         </c:forEach>
