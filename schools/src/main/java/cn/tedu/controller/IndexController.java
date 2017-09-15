@@ -15,5 +15,5 @@ public class IndexController {
 	@RequestMapping("/index")
 	public String inde(){
 		return "/index";
-	}
+	}	
 }
