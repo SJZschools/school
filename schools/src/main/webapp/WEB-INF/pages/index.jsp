@@ -136,7 +136,7 @@
                           </div>
                           <div class="col-md-5">
                             <div class="right-feature-text">
-                              <h4><a href="#">获取动态标题</a><em>获取时间</em></h4>
+                              <h4><a href="#">${Dynamic.title}</a><em>获取时间</em></h4>
                               <p>获取事件文本内容获取事件文本内容获取事件文本内容获取事件文本获取事件文本内容获取事件文本获取事件文本内容获取事件文本大约60字<a>......详细查看</a></p>
                               <div class="feature-list">
                                 <ul>
@@ -148,7 +148,7 @@
                                 </ul>
                               </div>
                               <div class="primary-button">
-                                <a href="life_home">查看更多链接到娱乐动态页面</a>
+                                <a href="dy_home">查看更多动态</a>
                               </div>
                             </div>
                           </div>
