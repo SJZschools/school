@@ -6,9 +6,9 @@ public class UserInfo {
 	private String id;//和User表id关联
 	private String name;
 	private String sex;
-	private String email;
+	private String eMail;
 	private String address;
-	private Date timeofEnrollment;//入学时间
+	private Date timeofenrollment;//入学时间
 	private Date birthday;
 	private String classes;//年级
 	private String tel;
@@ -38,11 +38,11 @@ public class UserInfo {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public String getEmail() {
-		return email;
+	public String getEMail() {
+		return eMail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEMail(String email) {
+		this.eMail = email;
 	}
 	public String getAddress() {
 		return address;
@@ -50,11 +50,11 @@ public class UserInfo {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getTimeofEnrollment() {
-		return timeofEnrollment;
+	public Date getTimeofenrollment() {
+		return timeofenrollment;
 	}
-	public void setTimeofEnrollment(Date timeofEnrollment) {
-		this.timeofEnrollment = timeofEnrollment;
+	public void setTimeofenrollment(Date timeofEnrollment) {
+		this.timeofenrollment = timeofEnrollment;
 	}
 	public Date getBirthday() {
 		return birthday;
