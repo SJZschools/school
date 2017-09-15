@@ -45,7 +45,7 @@
 </head>
 
 <body>
-	<form name="icform" method="post" action="${ctx}/save">
+	<form name="icform" method="post" action="${ctx}/savebbs">
 		<!-- Start of Header -->
 		<div class="header-wrapper">
 			<header>

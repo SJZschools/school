@@ -22,7 +22,7 @@ public class BbsUserController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping("/save")
+	@RequestMapping("/savebbs")
 	public String saveBBS(Bbs bbs,HttpSession session){
 		User user=new User();
 		user.setId("123");
