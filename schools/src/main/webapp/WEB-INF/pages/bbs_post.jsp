@@ -45,7 +45,7 @@
 </head>
 
 <body>
-	<form name="icform" method="post">
+	<form action="${ctx}/save" name="icform" method="post">
 		<!-- Start of Header -->
 		<div class="header-wrapper">
 			<header>
@@ -141,6 +141,7 @@
 									</li>
 									<br>
 									<br>
+									
 									<input type="submit" value="发表">
 								</ul>
 							</section>
@@ -149,6 +150,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 		<!-- End of Page Container -->
 
 		<!-- Start of Footer -->
@@ -199,7 +201,7 @@
 		<script type='text/javascript' src='${ctx}/js/jquery.form.js'></script>
 		<script type='text/javascript' src='${ctx}/js/jquery.validate.min.js'></script>
 		<script type='text/javascript' src='${ctx}/js/custom.js'></script>
-	</form>
+	
 </body>
 <script type="text/javascript">
 	function uploadBtn() {
