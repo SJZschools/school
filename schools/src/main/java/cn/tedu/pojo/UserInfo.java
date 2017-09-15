@@ -2,7 +2,7 @@ package cn.tedu.pojo;
 
 import java.util.Date;
 
-public class UserInfo {
+public class UserInfo  {
 	private String id;//和User表id关联
 	private String name;
 	private String sex;
