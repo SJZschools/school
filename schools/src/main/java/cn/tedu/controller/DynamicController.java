@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DynamicController {
-	@RequestMapping("/index")
+	@RequestMapping("/lifeHome")
 	public String findAll(){
-		return "/pages/index";
+		
+		return "/life_home";
 	}
 }
