@@ -79,7 +79,7 @@ $(document).ready(function(){
         </thead>
         <tbody>
         
-        <c:forEach items="${user }" var="user">
+        <c:forEach items="${userList }" var="user">
 	        <tr>
 	        <td><input name="studyId" type="checkbox" value="" /></td>
 	        <td>${user.id }</td>
