@@ -22,13 +22,17 @@
                 <link rel='stylesheet' id='responsive-css-css'  href='${ctx}/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
                 <link rel='stylesheet' id='main-css-css'  href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
-                <link rel='stylesheet' id='custom-css-css'  href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />				
-
+                <link rel='stylesheet' id='custom-css-css'  href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
+				<link rel="stylesheet" href="${ctx}/css/fontAwesome.css">
+		        
+				
                 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                 <!--[if lt IE 9]>
                 <script src="${ctx}/js/html5.js"></script>
                 <![endif]-->
-
+		<script type="text/javascript">
+			
+		</script>
         </head>
 
         <body>
@@ -88,9 +92,9 @@
                                                                <c:forEach items="${dynamicList}" var="dy" >
                                                                 <ul class="articles">
                                                                 	<li class="article-entry standard">
-                                                                                <h4><a href="lifeSingle.html">${dy.dynamicTitle}</a></h4>
+                                                                                <h4><a href="lifeSingle?dynamicId=${dy.dynamicId}">${dy.dynamicTitle}</a></h4>
                                                                                 <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                                                                                <span><a href="lifeSingle.html" title="View">${dy.dynamicContent}</a></span>
+                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">${dy.dynamicContent}</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>
@@ -103,9 +107,9 @@
                                                                 <c:forEach items="${dyList}" var="dy" >
                                                                 <ul class="articles">
                                                                 	<li class="article-entry standard">
-                                                                                <h4><a href="life_single.html">${dy.dynamicTitle }</a></h4>
+                                                                                <h4><a href="lifeSingle?dynamicId=${dy.dynamicId}">${dy.dynamicTitle }</a></h4>
                                                                                 <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                                                                                <span><a href="life_single.html" title="View">${dy.dynamicContent}</a></span>
+                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">${dy.dynamicContent}</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>
@@ -122,7 +126,11 @@
                                                 <section class="widget">
                                                         <div class="support-widget">
                                                                 <h3 class="title">排忧解难工作小组</h3>
-                                                                <p class="intro">没有找到您感兴趣的资讯？请<a href="index.html">联系我们</a>以帮助您解决需求。</p>
+                                                                <p class="intro">没有找到您感兴趣的资讯？请联系我们以帮助您解决需求。</p>
+                                                                <ul class="social-icons">
+									                            <i><a href="http://wpa.qq.com/msgrd?v=3&uin=378674193&site=qq&menu=yes"><i class="fa fa-twitter">联系QQ</i></a></i>
+									                            <i><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=g7K2s7W2s7q7sbHD8vKt4Ozu"><i class="fa fa-twitter">发送邮件</i></a></i>
+									                            </ul>
                                                         </div>
                                                 </section>
 

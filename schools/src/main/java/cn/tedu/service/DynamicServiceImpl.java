@@ -28,4 +28,9 @@ public class DynamicServiceImpl implements DynamicService {
 		return dynamicMapper.findDynamicById(dynamicId);
 	}
 
+	@Override
+	public List<Dynamic> findHot() {		
+		return dynamicMapper.findHot();
+	}
+
 }

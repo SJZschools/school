@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="base.jsp"%>
 <!doctype html>
         <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -25,7 +26,8 @@
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
                 <link rel='stylesheet' id='main-css-css'  href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='custom-css-css'  href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
-
+		        <link rel="stylesheet" href="${ctx}/css/fontAwesome.css">
+		        
 
                 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                 <!--[if lt IE 9]>
@@ -80,24 +82,21 @@
 
                                                 <article class=" type-post format-standard hentry clearfix">
 
-                                                        <h1 class="post-title"><a href="#">${dynamicTitle}</a></h1>
+                                                        <h1 class="post-title"><a href="#">${dynamic.dynamicTitle}</a></h1>
 
                                                         <div class="post-meta clearfix">
-                                                                <span class="date">更新于：2017-9-16 08:26:35</span>                                                                                                                            
-                                                                <span class="like-count">${dy.rcount}</span>
+                                                        		<span class="date">更新于：<fmt:formatDate value="${dynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>                                                                
+                                                                <span class="like-count">${dynamic.rcount}</span>
                                                         </div><!-- end of post meta -->
 
                                                         <blockquote><p>
-                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
-                                                        tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, 
-                                                        quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo 
-                                                        consequat.
+                                                        ${dynamic.dynamicContent}
                                                         </p></blockquote>
                                                 </article>
 
                                                 <div class="like-btn">
                                                         <form id="like-it-form" action="#" method="post">
-                                                                <span class="like-it ">66</span>
+                                                                <span class="like-it ">${dynamic.rcount}</span>
                                                                 <input type="hidden" name="post_id" value="99">
                                                                 <input type="hidden" name="action" value="like_it">
                                                         </form>
@@ -127,49 +126,26 @@
                                                 <section class="widget">
                                                         <div class="support-widget">
                                                                 <h3 class="title">排忧解难工作小组</h3>
-                                                                <p class="intro">内容不够详尽？请<a href="index.html">联系我们</a>以帮助您解决需求。</p>
+                                                                <p class="intro">内容不够详尽？请联系我们以帮助您解决需求。</p>
+                                                                <ul class="social-icons">
+									                            <i><a href="http://wpa.qq.com/msgrd?v=3&uin=378674193&site=qq&menu=yes"><i class="fa fa-twitter">联系QQ</i></a></i>
+									                            <i><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=g7K2s7W2s7q7sbHD8vKt4Ozu"><i class="fa fa-twitter">发送邮件</i></a></i>
+									                            </ul>
                                                         </div>
                                                 </section>
 
 
                                                 <section class="widget">
-                                                        <h3>最热动态 HOT</h3>
-                                                                <c:forEach items="${dyList}" var="dy" >
-                                                                <ul class="articles">
-                                                                	<li class="article-entry standard">
-                                                                                <h4><a href="life_single.html">${dy.dynamicTitle }</a></h4>
-                                                                                <span class="article-meta">${dy.dynamicTime}</span>
-                                                                                <span><a href="life_single.html" title="View">${dy.dynamicContent}</a></span>
-                                                                                <span class="like-count">${dy.rcount}</span>
-                                                                    </li>     
-                                                                </ul>
-                                                        </c:forEach>
-                                                </section>
-
-
-
-                                                <section class="widget"><h3 class="title">Categories</h3>
-                                                        <ul>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Advanced Techniques</a> </li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Designing in WordPress</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Server &amp; Database</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet, ">Theme Development</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Website Dev</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">WordPress for Beginners</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet, ">WordPress Plugins</a></li>
-                                                        </ul>
-                                                </section>
-
-                                                <section class="widget">
-                                                        <h3 class="title">Recent Comments</h3>
-                                                        <ul id="recentcomments">
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments">saqib sarwar on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">Mr WordPress</a> on <a href="#">Installing WordPress</a></li>
-                                                        </ul>
-                                                </section>
-
+                                                        <h3>最热动态 HOT</h3>  
+                                                        
+                                                        <marquee direction=up behavior=scroll scrollamount=5 onmouseover=this.stop() onmouseout=this.start()>
+														<font size="2" >
+														<c:forEach items="${hotList}" var="h">
+														${h.dynamicTitle}</br></br>
+														</c:forEach>
+														</marquee>
+                                                        
+                                                </section>                                                
                                         </aside>
                                         <!-- end of sidebar -->
                                 </div>

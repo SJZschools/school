@@ -26,14 +26,17 @@ public class DynamicController {
 		
 		//查询所有动态信息by点赞
 		List<Dynamic> dyList = dynamicService.findAllByRcount();
-		model.addAttribute("dyList",dyList);
+		model.addAttribute("dyList",dyList);		
 		return "/life_home";
 	}
 	
 	//展示详细内容页面
 	@RequestMapping("/lifeSingle")
-	public String toSingle(String dynamicId,Model model){
-		Dynamic dynamic = dynamicService.findDynamicById(dynamicId);
+	public String toSingle(String dynamicId,Model model){	
+		List<Dynamic> hotList = dynamicService.findHot();
+		model.addAttribute("hotList",hotList);
+		
+		Dynamic dynamic = dynamicService.findDynamicById(dynamicId);		
 		model.addAttribute("dynamic",dynamic);		
 		return "/life_single";
 	}	

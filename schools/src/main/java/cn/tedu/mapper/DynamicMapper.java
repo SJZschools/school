@@ -12,6 +12,6 @@ public interface DynamicMapper {
 	List<Dynamic> findAllByRcount();
 	//展示详细内容页面
 	Dynamic findDynamicById(String dynamicId);
-	
+	List<Dynamic> findHot();	
 
 }
