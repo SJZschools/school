@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import cn.tedu.mapper.BackStudentMapper;
 import cn.tedu.pojo.User;
+import cn.tedu.pojo.UserInfo;
 
 @Service
 public class BackStudentServiceImpl implements BackStudentService {
@@ -23,6 +24,10 @@ public class BackStudentServiceImpl implements BackStudentService {
 	public void addBackStudent(User user) {
 		backStudentMapper.addBackStudent(user);
 		
+	}
+	@Override
+	public void addBackStudentInfo(UserInfo userInfo) {
+		backStudentMapper.addBackStudentInfo(userInfo);
 	}
 	
 }

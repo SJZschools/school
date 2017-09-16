@@ -4,9 +4,15 @@ server:
 spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
+<<<<<<< HEAD
     url: jdbc:oracle:thin:@127.0.0.1:1521:XE
     username: traval
     password: traval
+=======
+    url: jdbc:oracle:thin:@172.96.40.94:1521:XE
+    username: ht1706
+    password: ht1706
+>>>>>>> origin/wanganqi
   mvc:
     view:
       prefix: /WEB-INF/pages/
