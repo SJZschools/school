@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.tedu.mapper.BackDynamicMapper;
@@ -12,13 +15,12 @@ import cn.tedu.pojo.User;
 
 @Service
 public class BackDynamicServiceImpl implements BackDynamicService {
-	
+	@Autowired
 	private BackDynamicMapper backDynamicMapper;
 	
-	public void saveDynam(Dynamic dynamic) {
-		System.out.println(dynamic);
+	public void saveDynam(Dynamic dynamic ,User user ) {
+		
 		//测试代码
-		User user = new User();
 		user.setId("13212132asd");
 		user.setNickname("立即阿伦");
 		
@@ -29,7 +31,6 @@ public class BackDynamicServiceImpl implements BackDynamicService {
 		dynamic.setDynamicId(id);
 		dynamic.setDynamicTime(new Date());
 		dynamic.setRcount(0);
-		System.out.println(dynamic);////////////
 		backDynamicMapper.saveDynam(dynamic);
 	}
 
@@ -37,6 +38,21 @@ public class BackDynamicServiceImpl implements BackDynamicService {
 	public List<Dynamic> findAll() {
 		List<Dynamic> dynamicList = backDynamicMapper.findAll();
 		return dynamicList;
+	}
+
+	@Override
+	public void deleteDynamById(String dynamicId) {
+		String[] ids = dynamicId.split(",");
+		System.out.println(ids.length);
+		if(ids.length>=1){
+			for(String id : ids){
+				if(id != null && !"".equals(id)){
+					backDynamicMapper.deleteDynamById(id);
+					System.out.println(id);
+				}
+			}
+		}
+		
 	}
 
 }

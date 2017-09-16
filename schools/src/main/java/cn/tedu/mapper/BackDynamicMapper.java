@@ -9,5 +9,7 @@ public interface BackDynamicMapper {
 	void saveDynam(Dynamic dynamic);
 
 	List<Dynamic> findAll();
+
+	void deleteDynamById(String dynamicId);
 	
 }

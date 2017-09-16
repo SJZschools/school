@@ -17,12 +17,30 @@ $(document).ready(function(){
  	}
   });
   $(".click1").click(function(){
+	  	var ids = "";
+	  	$(".checkone").each(function(){
+	  		if($(this).attr("checked") == true){
+	  			var id = $(this).attr("id")
+	  			ids += id+",";
+	  		}
+	  	})
 	 	var result = confirm("是否删除信息？")
 	 	if(result){
-	 		window.location.href="${ctx}/back/deleteDynam";
+	 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+ids;
 	 	}
 	});
   
+  $(".tablelink").click(function(){
+	  	var id = $(this).attr("id");
+	 	var result = confirm("是否删除信息？");
+	 	if(result){
+	 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+id;
+	 	}
+	});
+  $(".tablelink1").click(function(){
+	  	var id = $(this).attr("id");
+	 	window.location.href="${ctx}/lifeSingle?dynamicId="+id;
+	});
   /* $(".tiptop a").click(function(){
   $(".tip").fadeOut(200);
 });
@@ -74,7 +92,7 @@ $(document).ready(function(){
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="" type="checkbox" value="" checked="checked"/></th>
+        <th><input name="" type="checkbox" value=""/></th>
         <th>编号<i class="sort"><img src="${ctx}/images/backimg/px.gif" /></i></th>
         <th>标题</th>
         <th>发布者</th>
@@ -86,13 +104,13 @@ $(document).ready(function(){
         <tbody>
         <c:forEach items="${dynamicList}" var="dyn">
         <tr>
-        <td><input name="" type="checkbox" value="" /></td>
+        <td><input id="${dyn.dynamicId}" name="dychoose" type="checkbox" class="checkone"/></td>
         <td>${dyn.dynamicId}</td>
         <td>${dyn.dynamicTitle}</td>
         <td>${dyn.rname}</td>
    
         <td>${dyn.dynamicTime}</td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+        <td><a id="${dyn.dynamicId}" href="#" class="tablelink1">查看</a>     <a id="${dyn.dynamicId}" href="#" class="tablelink"> 删除</a></td>
         </tr> 
         </c:forEach>
                
