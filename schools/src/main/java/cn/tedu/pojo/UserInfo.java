@@ -20,6 +20,20 @@ public class UserInfo  {
 	private String blood;//血型
 	private String job;
 	private String homeplace;//出生地
+	private String card;//身份证号
+	
+	public String geteMail() {
+		return eMail;
+	}
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
+	}
+	public String getCard() {
+		return card;
+	}
+	public void setCard(String card) {
+		this.card = card;
+	}
 	public String getId() {
 		return id;
 	}
@@ -38,12 +52,7 @@ public class UserInfo  {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public String getEMail() {
-		return eMail;
-	}
-	public void setEMail(String email) {
-		this.eMail = email;
-	}
+
 	public String getAddress() {
 		return address;
 	}

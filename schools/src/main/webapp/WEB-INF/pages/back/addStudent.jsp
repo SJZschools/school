@@ -8,9 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>最无敌的校园网</title>
 <link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
-
-<script type="text/javascript" src="${ctx }/js/jquery.js"></script>
 <script type="text/javascript" src="${ctx }/js/WdatePicker.js"></script>
+<%-- <script type="text/javascript" src="${ctx }/js/jquery.js"></script> --%>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $(".click").click(function(){

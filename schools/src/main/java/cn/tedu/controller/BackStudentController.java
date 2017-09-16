@@ -38,10 +38,11 @@ public class BackStudentController {
 	public String addBackStudent(User user){
 		//逻辑代码
 		UserInfo userInfo = user.getUserInfo();
-		
+		String card = userInfo.getCard();
+		String password = card.substring(12);
+		user.setPassword(password);
 		backStudentService.addBackStudent(user);
-		
-		
+		backStudentService.addBackStudentInfo(userInfo);
 		return "student";
 	}
 	
