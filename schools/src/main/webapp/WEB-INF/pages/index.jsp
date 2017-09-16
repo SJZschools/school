@@ -148,7 +148,7 @@
                                 </ul>
                               </div>
                               <div class="primary-button">
-                                <a href="dy_home">查看更多动态</a>
+                                <a href="lifeHome">查看更多动态</a>
                               </div>
                             </div>
                           </div>

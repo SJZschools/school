@@ -3,9 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.BackStudentMapper">
-
+	
+	<!--查询所有学生  -->
 	<select id="findAllStudent" resultMap="userRM">
-		select * from user_s u left join (select id userInfoId from user_info) i on i.userInfoId = u.id
+		select * from user_s u left join (select id userInfoId,name,sex,classes,homeplace,timeofenrollment from user_info) i on i.userInfoId = u.id
 	</select>
 	<resultMap type="cn.tedu.pojo.User" id="userRM" autoMapping="true">
 		<!--完成主表映射  -->
@@ -16,11 +17,21 @@
 	<!--为了封装userInfo的结果集  -->
 	<resultMap type="cn.tedu.pojo.UserInfo" id="infoRM" autoMapping="true">
 		<id column="userInfoId" property="id"/>
+		<result column="name" property="name"/>
+		<!-- <result column="sex" property="sex"/>
+		<result column="classes" property="classes"/>
+		<result column="homeplace" property="homeplace"/>
+		<result column="timeofenrollment" property="timeofenrollment"/> -->
 	</resultMap>
 
-
-
-
+	<!--添加新增学生  -->
+	<insert id="addBackStudent">
+		insert into user_s (id,username,password) values (#{id},#{username},#{password})
+	</insert>
+	<!--添加新增学生信息  -->
+	<insert id="addBackStudentInfo">
+		insert into user_info (user_info_id,birthday,card,sex,tel,personalRemarks,timeofenrollment,classes) values (#{id},#{birthday jdbcType=DATE},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment jdbcType=DATE},#{classes})
+	</insert>
 
 
 
