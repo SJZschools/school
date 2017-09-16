@@ -7,11 +7,8 @@
 	<update id="updateself">
 		update user_info
 		<set>
-			
 			name=#{name}
 			sex=#{sex}
-			
-			
 			e_mail=#{eMail}
 			address=#{address}
 			timeofEnrollment=#{timeofenrollment}
