@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.tedu.pojo.User;
 import cn.tedu.pojo.UserInfo;
 import cn.tedu.service.BackStudentService;
+import cn.tedu.tool.MD5HashPassword;
 
 /**
  * 后台学生管理
@@ -34,13 +35,19 @@ public class BackStudentController {
 		return "back/addStudent";
 	}
 	//保存新增学生
-	@RequestMapping("saveBackStudent")
+	@RequestMapping("/saveBackStudent")
 	public String addBackStudent(User user){
+		System.out.println(user);
 		//逻辑代码
+		String username = user.getUsername();
 		UserInfo userInfo = user.getUserInfo();
 		String card = userInfo.getCard();
+		System.out.println(card);
 		String password = card.substring(12);
-		user.setPassword(password);
+		String HSPassword = MD5HashPassword.getPassword(username, password);
+		user.setPassword(HSPassword);
+		String id = user.getId();
+		userInfo.setId(id);
 		backStudentService.addBackStudent(user);
 		backStudentService.addBackStudentInfo(userInfo);
 		return "student";
