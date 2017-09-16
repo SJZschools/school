@@ -20,7 +20,7 @@ public class BackStudentController {
 	@Autowired
 	private BackStudentService backStudentService;
 	//跳转到学生管理界面
-	@RequestMapping("student")
+	@RequestMapping("/student")
 	public String toStudent(Model model){
 		//从数据库里查询所有学生
 		List<User> userList = backStudentService.findAllStudent();
@@ -30,7 +30,7 @@ public class BackStudentController {
 	
 	
 	//跳转到添加学生页面
-	@RequestMapping("addBackStudent")
+	@RequestMapping("/addBackStudent")
 	public String toaddStudent(){
 		return "back/addStudent";
 	}
@@ -54,19 +54,19 @@ public class BackStudentController {
 	}
 	
 	//跳转到修改学生页面
-	@RequestMapping("updateBackStudent")
+	@RequestMapping("/updateBackStudent")
 	public String toupdateStudent(){
 		return "back/updateStudent";
 	}
 		
 	//删除学生根据id
-	@RequestMapping("deleteBackStudent")
+	@RequestMapping("/deleteBackStudent")
 	public void todeleteStudent(){
 		
 	}
 		
 	//跳转到统计学生页面
-	@RequestMapping("seeBackStudent")
+	@RequestMapping("/seeBackStudent")
 	public String toseeStudent(){
 		return "back/seeStudent";
 	}
