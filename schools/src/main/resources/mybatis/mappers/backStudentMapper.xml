@@ -24,12 +24,14 @@
 		<result column="timeofenrollment" property="timeofenrollment"/> -->
 	</resultMap>
 
-
+	<!--添加新增学生  -->
 	<insert id="addBackStudent">
-		
+		insert into user_s (id,username,password) values (#{id},#{username},#{password})
 	</insert>
-
-
+	<!--添加新增学生信息  -->
+	<insert id="addBackStudentInfo">
+		insert into user_info (user_info_id,birthday,card,sex,tel,personalRemarks,timeofenrollment,classes) values (#{id},#{birthday jdbcType=DATE},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment jdbcType=DATE},#{classes})
+	</insert>
 
 
 
