@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
+import cn.tedu.pojo.User;
 import cn.tedu.service.BbsService;
 
 /**
@@ -42,8 +43,5 @@ public class BbsController {
 		return "bbs_post";
 	}
 	
-	@RequestMapping("bbs_self")
-	public String toBBSSelf(){
-		return "bbs_self";
-	}
+	
 }

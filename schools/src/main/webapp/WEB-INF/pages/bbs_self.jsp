@@ -74,16 +74,15 @@
 	</div>
 	<!-- Start of Search Wrapper -->
 	<div class="search-area-wrapper">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<div class="search-area container">
 			<h3 class="search-header">个人信息</h3>
 		</div>
 	</div>
 	<!-- End of Search Wrapper -->
 
-	<form id="self" name="" action="${ctx}/updateself" method="post" onSubmit="">
+	<form id="self" name="" action="${ctx}/updateself" method="post"
+		onSubmit="">
 		<!-- Start of Page Container -->
 		<div class="page-container">
 			<div class="container">
@@ -97,65 +96,66 @@
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard">
-										<h4>姓名：</h4> <input type="text">
+										<h4>姓名：</h4> <input type="text" name="name" />
 									</li>
 									<br>
-									<li class="article-entry standard">
-										<h4>性别：</h4>
-										<br> &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
-										name="gender" checked="checked">男
+									<li class="article-entry standard" name="sex">
+										<h4>性别：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
+										type="radio" name="gender" checked="checked">男
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender">女
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>出生日期：</h4> <input type="text">
+										<h4>出生日期：</h4> <input type="text" style="width: 121px;"
+										name="birthday"
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
 									</li>
 									<br>
-									<li class="article-entry standard">
-										<h4>爱好：</h4>
-										<br> <input type="checkbox">篮球 <input
+									<li class="article-entry standard" name="habit.hName">
+										<h4>爱好：</h4> <br> <input type="checkbox">篮球 <input
 										type="checkbox">羽毛球 <input type="checkbox">读书
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>入学日期：</h4> <input type="text">
+										<h4>入学日期：</h4> <input type="text" style="width: 121px;"
+										name="timeofenrollment"
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>手机：</h4> <input type="text">
+										<h4>手机：</h4> <input type="text" name="tel">
 									</li>
 								</ul>
 							</section>
 
 							<section class="span4 articles-list">
 								<ul class="articles">
-									<li class="article-entry standard">
-										<h4>血型：</h4>
-										<br> &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
-										name="blood" checked="checked">O
+									<li class="article-entry standard" name="blood">
+										<h4>血型：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
+										type="radio" name="blood" checked="checked">O
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">A
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">B
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">AB
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>出生地：</h4> <input type="text">
+										<h4>出生地：</h4> <input type="text" name="homeplace">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>居住地：</h4> <input type="text">
+										<h4>居住地：</h4> <input type="text" name="address">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>职业：</h4> <input type="text">
+										<h4>职业：</h4> <input type="text" name="job">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>邮箱：</h4> <input type="text">
+										<h4>邮箱：</h4> <input type="text" name="eMail">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>QQ：</h4> <input type="text">
+										<h4>QQ：</h4> <input type="text" name="qq">
 									</li>
 								</ul>
 							</section>
@@ -166,10 +166,12 @@
 					<!-- start of sidebar -->
 					<aside class="span4 page-sidebar">
 
-						<section class="widget">
-							<h4>个性签名：</h4>
-							<textarea style="width: 300px; height: 180px;"></textarea>
-						</section>
+						<ul class="articles">
+							
+							<li class="article-entry standard">
+								<h4>昵称：</h4> <input type="text" name="user.nickname">
+							</li>
+						</ul>
 						<br>
 
 						<section class="widget">
