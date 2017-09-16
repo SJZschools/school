@@ -8,4 +8,6 @@ public interface BackStudentMapper {
 
 	public List<User> findAllStudent();
 
+	public void addBackStudent(User user);
+
 }
