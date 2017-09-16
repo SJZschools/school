@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="base.jsp"%>
 
 <!doctype html>
@@ -52,10 +52,10 @@
                                         <nav class="main-nav">
                                                 <div class="menu-top-menu-container">
                                                         <ul id="menu-top-menu" class="clearfix">
-                                                                <li><a href="#">首页</a></li>
-                                                                <li><a href="bbs_home.html">校园动态</a></li>                                                                
+                                                                <li><a href="index.html">首页</a></li>
+                                                                <li><a href="lifeHome.html">校园动态</a></li>                                                                
                                                                 <li><a href="self.html">个人信息</a></li>
-                                                                <li><a href="#">退出</a></li>
+                                                                <li><a href="login.html">退出</a></li>
                                                         </ul>
                                                 </div>
                                         </nav>
@@ -84,13 +84,13 @@
                                                 <!-- Basic Home Page Template -->
                                                 <div class="row separator">
                                                         <section class="span4 articles-list">
-                                                                <h3>最近动态</h3>
+                                                                <h3>最新动态 NEW</h3>
                                                                <c:forEach items="${dynamicList}" var="dy" >
                                                                 <ul class="articles">
                                                                 	<li class="article-entry standard">
-                                                                                <h4><a href="life_single.html">${dy.dynamicTitle }</a></h4>
-                                                                                <span class="article-meta">${dy.dynamicTime}</span>
-                                                                                <span><a href="life_single.html" title="View">${dy.dynamicContent}</a></span>
+                                                                                <h4><a href="lifeSingle.html">${dy.dynamicTitle}</a></h4>
+                                                                                <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
+                                                                                <span><a href="lifeSingle.html" title="View">${dy.dynamicContent}</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>
@@ -99,12 +99,12 @@
 
 
                                                         <section class="span4 articles-list">
-                                                                </br></br></br>
-                                                                <c:forEach items="${dynamicList}" var="dy" >
+                                                                <h3>最热动态 HOT</h3>
+                                                                <c:forEach items="${dyList}" var="dy" >
                                                                 <ul class="articles">
                                                                 	<li class="article-entry standard">
                                                                                 <h4><a href="life_single.html">${dy.dynamicTitle }</a></h4>
-                                                                                <span class="article-meta">${dy.dynamicTime}</span>
+                                                                                <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
                                                                                 <span><a href="life_single.html" title="View">${dy.dynamicContent}</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
@@ -141,6 +141,7 @@
                                                 <section class="widget">
                                                         <h3 class="title">选择您感兴趣的动态分类</h3>
                                                         <div class="tagcloud">
+                                                                <a href="#" class="btn btn-mini">全部</a>
                                                                 <a href="#" class="btn btn-mini">达内官方</a>
                                                                 <a href="#" class="btn btn-mini">学习</a>
                                                                 <a href="#" class="btn btn-mini">工作</a>
@@ -166,14 +167,39 @@
                 <!-- End of Page Container -->
 
                 <!-- Start of Footer -->
-      			<footer>
-   					<div style=" background: #ffbb05; height:78px; line-height:78px" align="center">
-                    <p style="color:#000">
-                    Copyright &copy;  2017  Tedu  石家庄先天下教学中心              
+      			<footer id="footer-wrapper">
+                        
+
+                        <!-- Footer Bottom -->
+                        <div id="footer-bottom-wrapper">
+                                <div id="footer-bottom" class="container">
+                                        <div class="row">
+                                                <div class="span6">
+                                                        <p class="copyright">
+                                                                Copyright &copy;  2017  Tedu  石家庄先天下教学中心              
     				|  - Design By JSD1706<a href="http://www.tedu.cn/" target="_blank" title="达内教育" style="color: #FFF"> @达内教育</a>
-                    </p>
-                    </div>
-				</footer>
+                                                        </p>
+                                                </div>
+                                                <div class="span6">
+                                                        <!-- Social Navigation -->
+                                                        <ul class="social-nav clearfix">
+                                                                <li class="linkedin"><a target="_blank" href="#"></a></li>
+                                                                <li class="stumble"><a target="_blank" href="#"></a></li>
+                                                                <li class="google"><a target="_blank" href="#"></a></li>
+                                                                <li class="deviantart"><a target="_blank" href="#"></a></li>
+                                                                <li class="flickr"><a target="_blank" href="#"></a></li>
+                                                                <li class="skype"><a target="_blank" href="skype:#?call"></a></li>
+                                                                <li class="rss"><a target="_blank" href="#"></a></li>
+                                                                <li class="twitter"><a target="_blank" href="#"></a></li>
+                                                                <li class="facebook"><a target="_blank" href="#"></a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- End of Footer Bottom -->
+
+                </footer>
                 <!-- End of Footer -->
 
                 <a href="#top" id="scroll-top"></a>

@@ -11,9 +11,9 @@ public class Dynamic {
 	private String dynamicTitle;		//动态标题
 	private Date dynamicTime;			//发布时间
 	private String dynamicContent;		//动态内容
-	private String rid;			//发布者id
-	private String rname;		//发布者姓名
-	private Integer rcount;		//点赞次数
+	private String rid;					//发布者id
+	private String rname;				//发布者姓名
+	private Integer rcount;				//点赞次数
 	public String getDynamicId() {
 		return dynamicId;
 	}
