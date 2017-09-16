@@ -25,9 +25,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		bss_id = #{bssId,jdbcType=NUMERIC}
 	</select>
 	
-	<select id="findAllByClass" resultMap="bbsRM">
-		
-	</select>
+	<!-- <select id="findAllByClass" resultMap="bbsRM">
+		select * from bbs where bss_class = 
+	</select> -->
 	
 	<resultMap type="cn.tedu.pojo.Bbs" id="bbsRM" autoMapping="true">
 		<id column="creat_id" property="creatId"/>

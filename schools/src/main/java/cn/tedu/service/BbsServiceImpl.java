@@ -34,11 +34,11 @@ public class BbsServiceImpl implements BbsService{
 	}
 
 	//根据bssClass（标签）查询相应的Bbs
-	@Override
-	public List<Bbs> findAllByClass(String bssClass) {
-		
-		return bbsMapper.findAllByClass(bssClass);
-	}
+//	@Override
+//	public List<Bbs> findAllByClass(String bssClass) {
+//		
+//		return bbsMapper.findAllByClass(bssClass);
+//	}
 	
 	//帖子发布
 	@Override

@@ -38,7 +38,7 @@ public class BbsController {
 		List<Bbs> bbsListT = bbsService.findAllByTime();
 		
 		//根据bssClass（标签）查询相应的Bbs
-		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
+//		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
 		
 		model.addAttribute("bbsList", bbsList);
 		model.addAttribute("bbsListT", bbsListT);

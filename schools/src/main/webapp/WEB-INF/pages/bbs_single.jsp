@@ -116,8 +116,6 @@
 
                                                 <section id="comments">
 
-                                                        <h3 id="comments-title">(3) Comments</h3>
-
                                                         <ol class="commentlist">
 
                                                                 <li class="comment even thread-even depth-1" id="li-comment-2">
@@ -145,8 +143,13 @@
                                                                                 </div><!-- end .comment-meta -->
 
                                                                                 <div class="comment-body">
-                                                                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                                                                        <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+                                                                                        <!-- 回复内容 -->
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
                                                                                 </div><!-- end of comment-body -->
 
                                                                         </article><!-- end of comment -->

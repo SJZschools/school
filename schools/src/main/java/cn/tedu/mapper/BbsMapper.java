@@ -18,7 +18,7 @@ public interface BbsMapper {
 	public Bbs findAllByBbsId(String bssId);
 	
 	//根据bssClass（标签）查询相应的Bbs
-	public List<Bbs> findAllByClass(String bssClass);
+//	public List<Bbs> findAllByClass(String bssClass);
 	
 	//帖子发布
 	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context) "
