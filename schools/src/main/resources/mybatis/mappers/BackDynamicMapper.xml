@@ -3,6 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.BackDynamicMapper">
-	
-
+	<insert id="saveDynam" >
+		insert into dynamic_info(dynamic_id,dynamic_title,dynamic_content,rid,rname,rcount) values (
+		#{dynamicId},
+		#{dynamicTitle},
+		#{dynamicContent},
+		#{rid},
+		#{rname},
+		#{rcount}
+		)
+	</insert>
+	<select id="findAll" resultMap="dyRM">
+		select * from dynamic_info
+	</select>
+	<resultMap type="cn.tedu.pojo.Dynamic" id="dyRM" autoMapping="true">
+		<id column="dynamic_id" property="dynamicId"/>		
+	</resultMap>
 </mapper>

@@ -5,8 +5,8 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@127.0.0.1:1521:XE
-    username: ht1706
-    password: ht1706
+    username: traval
+    password: traval
   mvc:
     view:
       prefix: /WEB-INF/pages/
@@ -14,3 +14,4 @@ spring:
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
   mapper-locations: classpath:/mybatis/mappers/*.xml
+  type-aliases-package: cn.tedu.pojo

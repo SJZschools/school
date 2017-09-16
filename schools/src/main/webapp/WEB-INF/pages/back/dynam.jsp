@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -83,16 +84,17 @@ $(document).ready(function(){
         </tr>
         </thead>
         <tbody>
+        <c:forEach items="${dynamicList}" var="dyn">
         <tr>
         <td><input name="" type="checkbox" value="" /></td>
-        <td>20130908</td>
-        <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-        <td>admin</td>
+        <td>${dyn.dynamicId}</td>
+        <td>${dyn.dynamicTitle}</td>
+        <td>${dyn.rname}</td>
    
-        <td>2013-09-09 15:05</td>
+        <td>${dyn.dynamicTime}</td>
         <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
         </tr> 
-        
+        </c:forEach>
                
         </tbody>
     </table>
