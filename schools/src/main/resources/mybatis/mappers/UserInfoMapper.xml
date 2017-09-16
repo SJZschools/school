@@ -10,12 +10,12 @@
 			
 			name=#{name}
 			sex=#{sex}
-			birthday=#{birthday}
+			
 			
 			e_mail=#{eMail}
 			address=#{address}
 			timeofEnrollment=#{timeofenrollment}
-			
+			birthday=#{birthday}
 			classes=#{classes}
 			tel=#{tel}
 			age=#{age}
@@ -27,6 +27,6 @@
 			job=#{job}
 			homeplace=#{homeplace}
 		</set>
-		where id=#{user.id}
+		where id=#{userInfo.id}
 	</update>
 </mapper>

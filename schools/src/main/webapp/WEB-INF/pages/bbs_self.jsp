@@ -96,10 +96,10 @@
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard">
-										<h4>姓名：</h4> <input type="text" name="name" />
+										<h4>姓名：</h4> <input type="text" name="name" value="${userInfo.username}"/>
 									</li>
 									<br>
-									<li class="article-entry standard" name="sex">
+									<li class="article-entry standard" name="sex" value="${userInfo.sex}">
 										<h4>性别：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
 										type="radio" name="gender" checked="checked">男
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender">女
@@ -107,30 +107,30 @@
 									<br>
 									<li class="article-entry standard">
 										<h4>出生日期：</h4> <input type="text" style="width: 121px;"
-										name="birthday"
+										name="birthday" value="${userInfo.birthday }"
 										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
 									</li>
 									<br>
-									<li class="article-entry standard" name="habit.hName">
+									<li class="article-entry standard" name="habit.hName" value="${habit.hName }">
 										<h4>爱好：</h4> <br> <input type="checkbox">篮球 <input
 										type="checkbox">羽毛球 <input type="checkbox">读书
 									</li>
 									<br>
 									<li class="article-entry standard">
 										<h4>入学日期：</h4> <input type="text" style="width: 121px;"
-										name="timeofenrollment"
+										name="timeofenrollment" value="${userInfo.timeofenrollment }"
 										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>手机：</h4> <input type="text" name="tel">
+										<h4>手机：</h4> <input type="text" name="tel" value="${userInfo.tel }">
 									</li>
 								</ul>
 							</section>
 
 							<section class="span4 articles-list">
 								<ul class="articles">
-									<li class="article-entry standard" name="blood">
+									<li class="article-entry standard" name="blood" value="${userInfo.blood }">
 										<h4>血型：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
 										type="radio" name="blood" checked="checked">O
 										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">A
@@ -139,23 +139,23 @@
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>出生地：</h4> <input type="text" name="homeplace">
+										<h4>出生地：</h4> <input type="text" name="homeplace" value="${userInfo.homeplace }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>居住地：</h4> <input type="text" name="address">
+										<h4>居住地：</h4> <input type="text" name="address" value="${userInfo.address }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>职业：</h4> <input type="text" name="job">
+										<h4>职业：</h4> <input type="text" name="job" value="${userInfo.job }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>邮箱：</h4> <input type="text" name="eMail">
+										<h4>邮箱：</h4> <input type="text" name="eMail" value="${userInfo.eMail }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>QQ：</h4> <input type="text" name="qq">
+										<h4>QQ：</h4> <input type="text" name="qq" value="${userInfo.qq }">
 									</li>
 								</ul>
 							</section>
@@ -169,12 +169,12 @@
 						<ul class="articles">
 							
 							<li class="article-entry standard">
-								<h4>昵称：</h4> <input type="text" name="user.nickname">
+								<h4>昵称：</h4> <input type="text" name="user.nickname" value="${user.nickname }">
 							</li>
 						</ul>
 						<br>
 
-						<section class="widget">
+						<section class="widget" name="personalRemarks" value="${userInfo.personalRemarks }">
 							<h4>个人备注：</h4>
 							<textarea style="width: 300px; height: 180px;"></textarea>
 						</section>

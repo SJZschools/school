@@ -28,7 +28,7 @@ public class UserInfoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("bbs_self")
+	@RequestMapping("/bbs_self")
 	public String toBBSSelf(String userId,Model model){
 		//查询信息
 		User user=userService.findUserById(userId);
@@ -38,18 +38,10 @@ public class UserInfoController {
 		model.addAttribute("user", user);
 		model.addAttribute("userInfo", userInfo);
 		model.addAttribute("habit", habit);
-		return "bbs_self"; 
+		return "/bbs_self"; 
 	}
 	@RequestMapping("/updateself")
-	public String updateself(UserInfo userInfo,HttpSession session){
-		//从session域中获取用户Id
-		User user=new User();
-		user.setId("123");
-		session.setAttribute("userSession", user);
-		User uu=(User) session.getAttribute("userSession");
-		userInfo.setId(uu.getId());
-		
-		
+	public String updateself(UserInfo userInfo){
 		
 		userInfoService.updateself(userInfo);
 		return "redirect:/index";
