@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="base.jsp"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
@@ -12,7 +13,7 @@
 <!-- META TAGS -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script type="text/javascript" src="${ctx }/js/datepicker/WdatePicker.js"></script>
 <title>个人信息</title>
 
 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
