@@ -30,9 +30,26 @@
 	</insert>
 	<!--添加新增学生信息  -->
 	<insert id="addBackStudentInfo">
-		insert into user_info (user_info_id,birthday,card,sex,tel,personalRemarks,timeofenrollment,classes) values (#{id},#{birthday jdbcType=DATE},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment jdbcType=DATE},#{classes})
+		insert into user_info (id,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
+					 values (#{id},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
 	</insert>
 
+
+	<select id="updateUser" resultType="cn.tedu.pojo.User">
+		select * from user_s where id=#{id}
+	</select>
+
+	<select id="updateUserInfo" resultType="cn.tedu.pojo.UserInfo">
+		select * from user_info where id=#{id}
+	</select>
+	
+	<delete id="deleteOneUser">
+		delete from user_s where id = #{id}
+	</delete>
+
+	<delete id="deleteOneUserInfo">
+		delete from user_info where id=#{id}
+	</delete>
 
 
 

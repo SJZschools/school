@@ -10,26 +10,6 @@
 <link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctx }/js/jquery.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $(".click").click(function(){
-  $(".tip").fadeIn(200);
-  });
-  
-  $(".tiptop a").click(function(){
-  $(".tip").fadeOut(200);
-});
-
-  $(".sure").click(function(){
-  $(".tip").fadeOut(100);
-});
-
-  $(".cancel").click(function(){
-  $(".tip").fadeOut(100);
-});
-
-});
-</script>
 
 
 </head>
@@ -41,7 +21,7 @@ $(document).ready(function(){
     <span>位置：</span>
     <ul class="placeul">
     <li><a href="backIndex">首页</a></li>
-    <li><a href="student.html">学员管理</a></li>
+    <li><a href="student">学员管理</a></li>
    
     </ul>
     </div>
@@ -52,9 +32,8 @@ $(document).ready(function(){
     
     	<ul class="toolbar">
         <li ><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="addBackStudent" target="rightFrame">添加</a></li>
-        <li ><span><img src="${ctx }/images/backimg/t02.png" /></span><a href="updateBackStudent" target="rightFrame">修改</a></li>
         <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="deleteBackStudent" target="rightFrame">删除</a></li>
-        <li><span><img src="${ctx }/images/backimg/t04.png" /></span><a href="seeBackStudent" target="rightFrame">统计</a></li>
+        
         </ul>
         
         
@@ -82,14 +61,17 @@ $(document).ready(function(){
         
         <c:forEach items="${userList }" var="user">
 	        <tr>
-	        <td><input name="studyId" type="checkbox" value="" /></td>
+	        <td><input name="studyId" id="id" type="checkbox" value="${user.id }" /></td>
 	        <td>${user.id }</td>
 	        <td>${user.userInfo.sex }</td>
 	        <td>${user.username }</td>
 	        <td>${user.userInfo.homeplace }</td>
 	        <td>${user.userInfo.classes }</td>
 	        <td><fmt:formatDate value="${user.userInfo.timeofenrollment }" pattern="yyyy-MM-dd"/></td>
-	        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+	        <td> 
+	        	 <a href="updateBackStudent/${user.id }"  class="update" >修改</a>
+	        </td>
+	        
 	        </tr> 
         </c:forEach>
         
