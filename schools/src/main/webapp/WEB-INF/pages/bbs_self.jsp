@@ -102,10 +102,11 @@
 										<h4>姓名：</h4> <input type="text" name="name" value="${userInfo.name}"/>
 									</li>
 									<br>
-									<li class="article-entry standard" name="sex" value="${userInfo.sex}">
-										<h4>性别：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
-										type="radio" name="gender" checked="checked">男
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender">女
+									<li class="article-entry standard">
+										<h4>性别：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="sex" value="男" <c:if test="${userInfo.sex =='男'}">checked="checked"</c:if>/>男
+										&nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="sex" value="女" <c:if test="${userInfo.sex =='女'}">checked="checked"</c:if>/>女
 									</li>
 									<br>
 									<li class="article-entry standard">
@@ -116,9 +117,11 @@
 										/>
 									</li>
 									<br>
-									<li class="article-entry standard" name="habit.hName" value="${habit.hName }">
-										<h4>爱好：</h4> <br> <input type="checkbox">篮球 <input
-										type="checkbox">羽毛球 <input type="checkbox">读书
+									<li class="article-entry standard" }">
+										<h4>爱好：</h4> <br> 
+										<input type="checkbox" name="habit.hName" value="1" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>篮球
+										<input type="checkbox" name="habit.hName" value="2" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>羽毛球 
+										<input type="checkbox" name="habit.hName" value="3" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>读书
 									</li>
 									<br>
 									<li class="article-entry standard">
@@ -138,11 +141,11 @@
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard" name="blood" value="${userInfo.blood }">
-										<h4>血型：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; <input
-										type="radio" name="blood" checked="checked">O
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">A
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">B
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">AB
+										<h4>血型：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="blood" value="O" <c:if test="${userInfo.blood =='O'}">checked="checked"</c:if>/>O
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="A" <c:if test="${userInfo.blood =='A'}">checked="checked"</c:if>/>A
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="B" <c:if test="${userInfo.blood =='B'}">checked="checked"</c:if>/>B
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="AB" <c:if test="${userInfo.blood =='AB'}">checked="checked"</c:if>/>AB
 									</li>
 									<br>
 									<li class="article-entry standard">
@@ -176,14 +179,14 @@
 						<ul class="articles">
 							
 							<li class="article-entry standard">
-								<h4>昵称：</h4> <input type="text" name="user.nickname" value="${user.nickname }">
+								<h4>昵称：</h4> <input type="text" name="nickname" value="${user.nickname }">
 							</li>
 						</ul>
 						<br>
 
-						<section class="widget" name="personalRemarks" value="${userInfo.personalRemarks }">
+						<section class="widget" >
 							<h4>个人备注：</h4>
-							<textarea style="width: 300px; height: 180px;"></textarea>
+							<textarea style="width: 300px; height: 180px;" name="personalRemarks">${userInfo.personalRemarks }</textarea>
 						</section>
 
 						<section class="widget">
