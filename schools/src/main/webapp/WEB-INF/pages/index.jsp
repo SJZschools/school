@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="base.jsp"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -23,6 +24,14 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
         <script src="${ctx}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
+        <script language="javascript">
+		  function changeImg(obImg,sNewURL)
+		  {
+		       if(sNewURL!="") obImg.src=sNewURL;
+		  }
+		</script>
+		
     </head>
     <body>
 
@@ -132,19 +141,20 @@
                       <div class="content third-content">
                         <div class="row">
                           <div class="col-md-7 left-image">
-                            <img src="${ctx}/images/left-feature-image.png"><!--动态获取图片资料-->
+                          <img style="cursor:hand;" src="${ctx}/images/lta.png" onmouseover="changeImg(this,'${ctx}/images/ltb.png');" onmouseout="changeImg(this,'${ctx}/images/lta.png');">
+                          <!--动态获取图片资料-->
                           </div>
                           <div class="col-md-5">
                             <div class="right-feature-text">
-                              <h4><a href="lifeSingle?dynamicId=${h.dynamicId}">这里放个标题 </a><em> 2017-9-17</em></h4>                              
-                              <p>${dynamic.dynamicTitle}<a href="lifeSingle?dynamicId=${h.dynamicId}">查看详细</a></p>
+                              <h3><a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">${firstDynamic.dynamicTitle}</a></h3>
+                              <em>更新于：<fmt:formatDate value="${firstDynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></em>
+                              <p>${firstDynamic.dynamicContent}<a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">查看详细</a></p>
                               <div class="feature-list">                                
+                                  <h4><font color="red" face="方正姚体">最近更新：</font></h4>	
                                   <c:set var="count" value="0"></c:set>
-                                  <c:forEach items="${hotList}" var="h">
-									<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)"><p>- ${h.dynamicTitle}</p></a>
-								  </c:forEach>                                  
-								                                 
-                                
+                                  <c:forEach items="${newList}" var="n">
+									<a href="lifeSingle?dynamicId=${n.dynamicId}" onfocus="changeStyle(this.id)"><p>${n.dynamicTitle}</p></a>
+								  </c:forEach>
                               </div>
                               <div class="primary-button">
                                 <a href="lifeHome">查看更多动态</a>

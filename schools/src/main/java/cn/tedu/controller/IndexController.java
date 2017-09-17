@@ -25,8 +25,13 @@ public class IndexController {
 	}
 	@RequestMapping("/index")
 	public String inde(Model model){
-		List<Dynamic> hotList = dynamicService.findAllByRcount();
-		model.addAttribute("hotList", hotList);
+		List<Dynamic> newList = dynamicService.findNew();
+		model.addAttribute("newList", newList);
+		
+		Dynamic firstDynamic = dynamicService.findFirst();
+		model.addAttribute("firstDynamic",firstDynamic);
 		return "/index";
-	}	
+	}
+	
+	
 }

@@ -28,9 +28,22 @@ public class DynamicServiceImpl implements DynamicService {
 		return dynamicMapper.findDynamicById(dynamicId);
 	}
 
-	@Override
+	//查找最热动态
 	public List<Dynamic> findHot() {		
 		return dynamicMapper.findHot();
 	}
+
+	//查找最新动态
+	public List<Dynamic> findNew() {		
+		return dynamicMapper.findNew();
+	}
+
+	//查找最近一次更新动态
+	public Dynamic findFirst() {
+		return dynamicMapper.findFirst();
+	}
+
+	
+	
 
 }
