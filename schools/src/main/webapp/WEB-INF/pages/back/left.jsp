@@ -1,6 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="nowPage" value="1"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,7 +45,7 @@ $(function(){
     	<ul class="menuson">
         <li><cite></cite><a href="backIndex" target="rightFrame">首页</a><i></i></li>
 		
-        <li class="active"><cite></cite><a href="student" target="rightFrame">学生管理</a><i></i></li>
+        <li class="active"><cite></cite><a href="student/${nowPage }" target="rightFrame">学生管理</a><i></i></li>
 		
 		<li class="active"><cite></cite><a href="discuss.html" target="rightFrame">论坛管理</a><i></i></li>
 		
@@ -54,7 +55,7 @@ $(function(){
         
         <li class="active"><cite></cite><a href="${ctx}/back/advice" target="rightFrame">学员反馈</a><i></i></li>
        
-        <li><cite></cite><a href="error.html" target="rightFrame">404页面</a><i></i></li>
+        
         </ul>    
     </dd>
         

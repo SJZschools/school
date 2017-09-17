@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="nowPage" value="1"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -63,7 +64,8 @@ $(document).ready(function(){
 				        data:{"id":id,"name":name,"sex":sex,"timeofenrollment":timeofenrollment,"birthday":birthday,"classes":classes,"tel":tel,"personalRemarks":personalRemarks,"card":card},
 				        dataType:"json",
 				        success: function(result) {  
-		                    window.location.href="/student"  
+				        	var nowPage=1;
+		                    window.location.href="${ctx}/student?nowPage="+nowPage; 
 		                }  
 				        
 				    });  
@@ -90,7 +92,7 @@ $(document).ready(function(){
 
 	<div id="navMenubar" class="tools"/>
 <ul class="toolbar">
-	<li id="back"><span><img src="${ctx }/images/backimg/close.png" /></span><a href="student" onclick="">返回</a></li>
+	<li id="back"><span><img src="${ctx }/images/backimg/close.png" /></span><a href="${ctx }/student/${nowPage }" onclick="">返回</a></li>
 	
 </ul>
 

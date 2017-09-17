@@ -21,4 +21,6 @@ public interface BackStudentMapper {
 
 	public void deleteOneUserInfo(String id);
 
+	public int findCount();
+
 }
