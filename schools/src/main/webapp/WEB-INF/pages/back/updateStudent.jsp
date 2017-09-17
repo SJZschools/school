@@ -7,45 +7,68 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="${ctx }/js/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="${ctx }/js/jquery-1.4.2.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $(".click").click(function(){
-  $(".tip").fadeIn(200);
-  });
-  
-  $(".tiptop a").click(function(){
-  $(".tip").fadeOut(200);
-});
+			
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				
+				var name = $("#name").val();
+				var card = $("#card").val();
+				var birthday = $("#birthday").val();
+				var timeofenrollment = $("#timeofenrollment").val();
+				var sex = $(".sex").val();
+				var tel = $("#tel").val();
+				var classes = $("#classes").val();
+				var id = $("#id").val();
+				var personalRemarks = $("#personalRemarks").val();
+				/* */
+			    if(confirm("您保存么？")){
+					/* $.post("${ctx}/saveBackStudent",{"username":username,"userInfo.card":card,"userInfo.birthday":birthday,"userInfo.timeofenrollment":timeofenrollment,"userInfo.sex":sex,"userInfo.tel":tel,"userInfo.classes":classes,"id":id,"userInfo.personalRemarks":personalRemarks},function(result){
+						if("true"==result){
+							alert("修改成功");
+							/* window.location.href="/student" 
+						}
+					}); */
+			    	$.ajax({
+				        url:"/saveDelBackStudent",
+				        type:"post",
+				        data:{"id":id,"name":name,"sex":sex,"timeofenrollment":timeofenrollment,"birthday":birthday,"classes":classes,"tel":tel,"personalRemarks":personalRemarks,"card":card},
+				        dataType:"json",
+				        success: function(result) {  
+		                    window.location.href="/student"  
+		                }  
+				        
+				    });  
+			    }
+				
+			})
+			
+			
+		});
+	
+		
+	
+	</script>
 
-  $(".sure").click(function(){
-  $(".tip").fadeOut(100);
-});
 
-  $(".cancel").click(function(){
-  $(".tip").fadeOut(100);
-});
-
-});
-</script>
-
-<title>用户新增</title>
+<title>用户修改</title>
 </head>
 
 
 <body>
-
+	
 	
     
-    <div class="rightinfo">
-	
-	<div id="navMenubar" class="tools">
+    <div class="rightinfo"/>
+
+	<div id="navMenubar" class="tools"/>
 <ul class="toolbar">
-	<li id="save"><span><img src="images/t01.png" /></span><a href="#" onclick="">保存</a></li>
-	<li id="back"><span><img src="images/close.png" /></span><a href="#" onclick="">返回</a></li>
+	<li id="back"><span><img src="${ctx }/images/backimg/close.png" /></span><a href="${ctx }/student" onclick="">返回</a></li>
 	
 </ul>
 
@@ -55,87 +78,80 @@ $(document).ready(function(){
 
 
 <div class="eXtremeTable" >
-<table id="ec_table" class="tableRegion" width="98%" >
-	<tr class="odd">
-		<td>姓名:</td>
-		<td><input  type="text" name="username" class="dfinput" /></td>
-		<td>密码:</td>
-		<td><input  type="password" name="password" class="dfinput"/></td>
-	</tr>
 
-	<tr class="odd">
-		<td>所选学科:</td>
-		<td>
-			<select name="dept.deptId" style="width:121px">
-				<option value="">---请选择----</option>
-				
-				<c:forEach items="${deptList}" var="d">
-					<option value="${d.deptId}">${d.deptName}</option>
-				</c:forEach>
-			</select>
-		</td>
-		
-	</tr>
-	<tr class="odd">
-		<td>身份证号:</td>
-		<td><input type="text" name="userInfo.cardNo" class="dfinput"/>
-		</td>
-		
-	</tr>
-	<tr class="odd">
-		<td>入学日期:</td>
-		<td>
-			<input type="text" style="width:121px;" name="userInfo.joinDate"
-	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
-		</td>
-		<td>毕业日期:</td>
-		<td>
-			<input type="text" style="width:121px;" name="userInfo.joinDate"
-	   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
-		</td>
-	</tr>
+	<table id="ec_table" class="tableRegion" width="98%" >
+		<tr class="odd">
+			<td>姓名:</td>
+			<td><input id="name" type="text" name="name" class="dfinput" value="${userInfo.name}"/></td>
+			
+		</tr>
 	
-	<tr class="odd">
+		<tr class="odd">
+			
+			
+		</tr>
+		<tr class="odd">
+			<td>身份证号:</td>
+			<td><input type="text" id="card" name="card" class="dfinput" value="${userInfo.card}"/>
+			</td>
+			
+		</tr>
+		<tr class="odd">
+			<td>出生日期:</td>
+			<td>
+				<input type="text" id="birthday" style="width:121px;" name="birthday" value="<fmt:formatDate value="${userInfo.birthday}" pattern="yyyy-MM-dd"/>"
+		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
+			</td>
+			<td>入学日期:</td>
+			<td>
+				<input type="text" id="timeofenrollment" style="width:121px;" name="timeofenrollment" value="<fmt:formatDate value="${userInfo.timeofenrollment}" pattern="yyyy-MM-dd"/>"
+		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
+			</td>
+		</tr>
 		
-		<td>性别:</td>
-		<td>
-			<input type="radio" name="userInfo.gender" value="男"/>男
-			<input type="radio" name="userInfo.gender" value="女"/>女
-			<input type="radio" name="userInfo.gender" value="其他"/>其他
-		</td>
-	</tr>
-	<tr class="odd">
+		<tr class="odd">
+			
+			<td>性别:</td>
+			<td>
+				<input type="radio" class="sex" name="sex" value="男"/>男
+				<input type="radio"  class="sex" name="sex" value="女"/>女
+				<input type="radio"  class="sex" name="sex" value="其他"/>其他
+			</td>
+		</tr>
+		<tr class="odd">
+			
+			<td>电话号码:</td>
+			<td><input  type="text" id="tel" name="tel" class="dfinput" value="${userInfo.tel }"/></td>
+			<td>班级:</td>
+			<td><input  type="text" id="classes" name="classes" class="dfinput" value="${userInfo.classes}"/></td>
+		</tr>
+		<tr class="odd">
+			
+			<td>学号:</td>
+			<td><input  type="text" name="id" id="id" class="dfinput" value="${userInfo.id}"/></td>
+		</tr>
 		
-		<td>电话号码:</td>
-		<td><input  type="text" name="userInfo.telephone" class="dfinput"/></td>
-	</tr>
-	<tr class="odd">
-		<td>学员是否毕业:</td>
-		<td>
-			<select name="userInfo.userLevel" style="width:121px">
-				<option value="1">在校</option>
-				<option value="2">毕业</option>
-				<option value="3">其他</option>
+		<tr class="odd">
+			<td>备注信息:</td>
+			<td colspan="3">
+				<textarea style="height:80px;width:100%" id="personalRemarks" name="personalRemarks"  value="${userInfo.personalRemarks}"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<li id="save"><span><img src="${ctx }/images/backimg/t01.png" /></span><input id="submit" type="button"  value="保存"></input></li>
 				
-			</select>
-		</td>
-		<td>学号:</td>
-		<td><input  type="text" name="userInfo.orderNo" class="dfinput"/></td>
-	</tr>
-	
-	<tr class="odd">
-		<td>备注信息:</td>
-		<td colspan="3">
-			<textarea style="height:80px;width:100%" name="userInfo.remark" ></textarea>
-		</td>
-	</tr>	
-</table>
+			</td>
+		</tr>	
+	</table>
+
 </div>
- 
+
 </div>
     
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 	$('.tablelist tbody tr:odd').addClass('odd');
-	</script>
+	</script>  -->
+	
 </body>
 </html>

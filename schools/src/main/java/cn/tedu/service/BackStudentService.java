@@ -11,4 +11,8 @@ public interface BackStudentService {
 	public void addBackStudent(User user);
 
 	public void addBackStudentInfo(UserInfo userInfo);
+
+	public User updateBackStudent(String id);
+
+	public void deleteOneBackStudent(String id);
 }
