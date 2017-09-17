@@ -17,9 +17,10 @@ public class BackStudentServiceImpl implements BackStudentService {
 	private BackStudentMapper backStudentMapper;
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public List<User> findAllStudent() {
-		
-		return backStudentMapper.findAllStudent();
+	public List<User> findAllStudent(Integer nowPage, Integer pageCount) {
+		Integer nowPaget  = (nowPage-1)*10+1;
+		Integer pageCountt = nowPaget+pageCount-1;
+		return backStudentMapper.findAllStudent(nowPaget,pageCountt);
 	}
 	//后台界面的学生管理
 	//增加学生
