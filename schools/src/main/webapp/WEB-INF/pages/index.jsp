@@ -139,11 +139,9 @@
                               <h4><a href="lifeSingle?dynamicId=${h.dynamicId}">这里放个标题 </a><em> 2017-9-17</em></h4>                              
                               <p>${dynamic.dynamicTitle}<a href="lifeSingle?dynamicId=${h.dynamicId}">查看详细</a></p>
                               <div class="feature-list">                                
-                                  
+                                  <c:set var="count" value="0"></c:set>
                                   <c:forEach items="${hotList}" var="h">
-                                  <p>											
-										<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)">${h.dynamicTitle}</a></br></br>
-								  </p>
+									<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)"><p>- ${h.dynamicTitle}</p></a>
 								  </c:forEach>                                  
 								                                 
                                 
