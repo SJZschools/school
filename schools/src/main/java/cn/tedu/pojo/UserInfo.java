@@ -131,5 +131,13 @@ public class UserInfo  {
 	public void setHomeplace(String homeplace) {
 		this.homeplace = homeplace;
 	}
+	@Override
+	public String toString() {
+		return "UserInfo [id=" + id + ", name=" + name + ", sex=" + sex + ", eMail=" + eMail + ", address=" + address
+				+ ", timeofenrollment=" + timeofenrollment + ", birthday=" + birthday + ", classes=" + classes
+				+ ", tel=" + tel + ", age=" + age + ", sf=" + sf + ", headAddress=" + headAddress + ", personalRemarks="
+				+ personalRemarks + ", qq=" + qq + ", blood=" + blood + ", job=" + job + ", homeplace=" + homeplace
+				+ ", card=" + card + "]";
+	}
 	
 }

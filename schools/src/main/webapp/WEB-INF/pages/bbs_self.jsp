@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="base.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -97,7 +98,8 @@
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard">
-										<h4>姓名：</h4> <input type="text" name="name" value="${userInfo.username}"/>
+									<input type="hidden" name="id" value="${userSession.id}" />
+										<h4>姓名：</h4> <input type="text" name="name" value="${userInfo.name}"/>
 									</li>
 									<br>
 									<li class="article-entry standard" name="sex" value="${userInfo.sex}">
@@ -108,8 +110,10 @@
 									<br>
 									<li class="article-entry standard">
 										<h4>出生日期：</h4> <input type="text" style="width: 121px;"
-										name="birthday" value="${userInfo.birthday }"
-										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
+										name="birthday"  
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" 
+										value="<fmt:formatDate value="${userInfo.birthday }" pattern="yyyy-MM-dd"/>"
+										/>
 									</li>
 									<br>
 									<li class="article-entry standard" name="habit.hName" value="${habit.hName }">
@@ -119,8 +123,10 @@
 									<br>
 									<li class="article-entry standard">
 										<h4>入学日期：</h4> <input type="text" style="width: 121px;"
-										name="timeofenrollment" value="${userInfo.timeofenrollment }"
-										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" />
+										name="timeofenrollment" 
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" 
+										value="<fmt:formatDate value="${userInfo.timeofenrollment }" pattern="yyyy-MM-dd"/>"
+										/>
 									</li>
 									<br>
 									<li class="article-entry standard">

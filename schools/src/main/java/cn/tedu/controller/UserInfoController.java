@@ -15,7 +15,7 @@ import cn.tedu.service.UserInfoService;
 import cn.tedu.service.UserService;
 
 @Controller
-public class UserInfoController {
+public class UserInfoController extends BaseController{
 	@Autowired
 	private UserInfoService userInfoService;
 	@Autowired
@@ -42,6 +42,7 @@ public class UserInfoController {
 		User user=userService.findUserById(userId);
 		UserInfo userInfo=userInfoService.findUserInfoById(userId);
 		Habit habit=habitService.findHabitById(userId);
+		System.out.println(userInfo.toString());
 		//将信息存入model
 		model.addAttribute("user", user);
 		model.addAttribute("userInfo", userInfo);

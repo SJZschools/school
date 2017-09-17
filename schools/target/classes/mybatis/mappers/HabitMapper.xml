@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.HabitMapper">
-	<select id="findHabitById" resultType="Habit">
+	<select id="findHabitById" resultType="cn.tedu.pojo.Habit">
 		select * from habit where h_id in (select h_id from u_h_p where
 		u_id=#{userId})
 	</select>

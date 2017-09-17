@@ -7,23 +7,23 @@
 	<update id="updateself">
 		update user_info
 		<set>
-			name=#{name}
-			sex=#{sex}
-			e_mail=#{eMail}
-			address=#{address}
-			timeofEnrollment=#{timeofenrollment}
-			birthday=#{birthday}
-			classes=#{classes}
-			tel=#{tel}
-			age=#{age}
-			sf=#{sf}
-			head_address=#{headAddress}
-			personal_remark=#{personalRemarks}
-			qq=#{qq}
-			blood=#{blood}
-			job=#{job}
-			homeplace=#{homeplace}
+			name=#{name,jdbcType=VARCHAR},
+			sex=#{sex,jdbcType=VARCHAR},
+			e_mail=#{eMail,jdbcType=VARCHAR},
+			address=#{address, jdbcType=VARCHAR},
+			timeofEnrollment=#{timeofenrollment,jdbcType=DATE},
+			birthday=#{birthday,jdbcType=DATE},
+			classes=#{classes,jdbcType=VARCHAR},
+			tel=#{tel,jdbcType=VARCHAR},
+			age=#{age,jdbcType=NUMERIC},
+			sf=#{sf,jdbcType=NUMERIC},
+			head_address=#{headAddress,jdbcType=VARCHAR},
+			personal_remarks=#{personalRemarks,jdbcType=VARCHAR},
+			qq=#{qq,jdbcType=VARCHAR},
+			blood=#{blood,jdbcType=VARCHAR},
+			job=#{job,jdbcType=VARCHAR},
+			homeplace=#{homeplace,jdbcType=VARCHAR}
 		</set>
-		where id=#{userInfo.id}
+		where id=#{id}
 	</update>
 </mapper>
