@@ -75,15 +75,16 @@ $(document).ready(function(){
         </tr>
         </thead>
         <tbody>
+        <c:forEach items="${adviceList }" var="al">
         <tr>
-        <td><input name="studyId" type="checkbox" value="" /></td>
+        <td><input name="studyId" type="checkbox" id="${al.id}"/></td>
         <td>20130908</td>
         <td>admin</td>
         <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-        <td>2013-09-09 15:05</td>
+        <td>${al.adviceTime }</td>
         <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
         </tr> 
-        
+        </c:forEach>
         
         </tbody>
     </table>

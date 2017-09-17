@@ -1,11 +1,13 @@
 package cn.tedu.pojo;
 
+import java.util.Date;
+
 public class Advice {
 	private User user;
 	
 	private String id;
 	private String adviceTxt;
-	private String advcieTime;
+	private Date adviceTime;
 	public User getUser() {
 		return user;
 	}
@@ -24,11 +26,11 @@ public class Advice {
 	public void setAdviceTxt(String adviceTxt) {
 		this.adviceTxt = adviceTxt;
 	}
-	public String getAdvcieTime() {
-		return advcieTime;
+	public Date getAdvcieTime() {
+		return adviceTime;
 	}
-	public void setAdvcieTime(String advcieTime) {
-		this.advcieTime = advcieTime;
+	public void setAdvcieTime(Date date) {
+		this.adviceTime = date;
 	}
 	
 }

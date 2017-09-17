@@ -1,5 +1,7 @@
 package cn.tedu.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ public class AdviceServiceImpl implements AdviceService {
 	
 	@Override
 	public void saveAdvice(Advice advice ,User user) {
+		advice.setAdvcieTime(new Date());
 		advice.setUser(user);
 		adviceMapper.saveAdvice(advice);
 	}

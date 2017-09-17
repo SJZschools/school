@@ -24,6 +24,6 @@ public class AdviceController {
 		user.setId("13214adsas");
 		user.setNickname("dashabu");
 		adviceService.saveAdvice(advice , user);
-		return "redirect:/index";
+		return "/index";
 	}
 }

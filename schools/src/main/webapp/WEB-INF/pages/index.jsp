@@ -228,17 +228,7 @@
                           </div>
                           <div class="col-md-8">
                             <div class="row">
-                              <form id="contact" action="${ctx}/back/saveAdvice" method="post">
-                                <div class="col-md-6">
-                                  <fieldset>
-                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                  </fieldset>
-                                </div>
-                                <div class="col-md-6">
-                                  <fieldset>
-                                    <input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
-                                  </fieldset>
-                                </div>
+                              <form id="contact" action="${ctx}/advice" method="post">
                                 <div class="col-md-12">
                                   <fieldset>
                                     <textarea name="advcieTxt" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>

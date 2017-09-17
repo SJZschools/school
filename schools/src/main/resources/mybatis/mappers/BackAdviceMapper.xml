@@ -5,7 +5,7 @@
 <mapper namespace="cn.tedu.mapper.BackAdviceMapper">
 	
 	<select id="findAll" resultMap="adviceRM">
-		select a.* , u.nickname from user_s u , advcie a where u.id = a.user_id
+		select a.* , u.nickname from user_s u , advice a where u.id = a.user_id
 	</select>
 	<resultMap type="cn.tedu.pojo.Advice" id="adviceRM" autoMapping="true">
 		<id column="id" property="id" />
