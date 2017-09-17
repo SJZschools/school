@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="base.jsp"%>
 
+
 <!doctype html>
         <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
         <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
@@ -30,9 +31,12 @@
                 <!--[if lt IE 9]>
                 <script src="${ctx}/js/html5.js"></script>
                 <![endif]-->
+                
+                
 		<script type="text/javascript">
 			
-		</script>
+		</script>		
+		${fn:substring(mynews.title, 0, 20)}
         </head>
 
         <body>
@@ -94,7 +98,18 @@
                                                                 	<li class="article-entry standard">
                                                                                 <h4><a href="lifeSingle?dynamicId=${dy.dynamicId}">${dy.dynamicTitle}</a></h4>
                                                                                 <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">${dy.dynamicContent}</a></span>
+                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">
+                                                                                
+                                                                                <c:choose>
+																				<c:when test="${fn:length(mynews.title) > 18}">
+																				<c:out value="${fn:substring(mynews.title, 0, 20)}..." />
+																				</c:when>
+																				<c:otherwise>
+																				<c:out value="${mynews.title}" />
+																				</c:otherwise>
+																				</c:choose>
+                                                                                
+                                                                                ${dy.dynamicContent}</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>

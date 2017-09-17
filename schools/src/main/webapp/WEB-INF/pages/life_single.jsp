@@ -82,7 +82,7 @@
 
                                                 <article class=" type-post format-standard hentry clearfix">
 
-                                                        <h1 class="post-title"><a href="#">${dynamic.dynamicTitle}</a></h1>
+                                                        <h1 class="post-title">${dynamic.dynamicTitle}</h1>
 
                                                         <div class="post-meta clearfix">
                                                         		<span class="date">更新于：<fmt:formatDate value="${dynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>                                                                
@@ -139,9 +139,10 @@
                                                         <h3>最热动态 HOT</h3>  
                                                         
                                                         <marquee direction=up behavior=scroll scrollamount=5 onmouseover=this.stop() onmouseout=this.start()>
-														<font size="2" >
+														<font face="宋体" size="2" >
 														<c:forEach items="${hotList}" var="h">
-														${h.dynamicTitle}</br></br>
+														<img src="${ctx}/images/dz.png">
+														<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)">${h.dynamicTitle}</a></br></br>
 														</c:forEach>
 														</marquee>
                                                         

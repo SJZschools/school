@@ -34,7 +34,7 @@ public class DynamicController {
 	@RequestMapping("/lifeSingle")
 	public String toSingle(String dynamicId,Model model){	
 		List<Dynamic> hotList = dynamicService.findHot();
-		model.addAttribute("hotList",hotList);
+		model.addAttribute("hotList",hotList);		
 		
 		Dynamic dynamic = dynamicService.findDynamicById(dynamicId);		
 		model.addAttribute("dynamic",dynamic);		

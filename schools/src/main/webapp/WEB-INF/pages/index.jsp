@@ -136,16 +136,17 @@
                           </div>
                           <div class="col-md-5">
                             <div class="right-feature-text">
-                              <h4><a href="#">${Dynamic.title}</a><em>获取时间</em></h4>
-                              <p>获取事件文本内容获取事件文本内容获取事件文本内容获取事件文本获取事件文本内容获取事件文本获取事件文本内容获取事件文本大约60字<a>......详细查看</a></p>
-                              <div class="feature-list">
-                                <ul>
-                                  <a href="#"><p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                  <a href="#"><p>- 动态显示m</p></a>
-                                </ul>
+                              <h4><a href="lifeSingle?dynamicId=${h.dynamicId}">这里放个标题 </a><em> 2017-9-17</em></h4>                              
+                              <p>${dynamic.dynamicTitle}<a href="lifeSingle?dynamicId=${h.dynamicId}">查看详细</a></p>
+                              <div class="feature-list">                                
+                                  
+                                  <c:forEach items="${hotList}" var="h">
+                                  <p>											
+										<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)">${h.dynamicTitle}</a></br></br>
+								  </p>
+								  </c:forEach>                                  
+								                                 
+                                
                               </div>
                               <div class="primary-button">
                                 <a href="lifeHome">查看更多动态</a>
