@@ -13,4 +13,12 @@ public interface BackStudentMapper {
 
 	public void addBackStudentInfo(UserInfo userInfo);
 
+	public User updateUser(String id);
+
+	public UserInfo updateUserInfo(String id);
+
+	public void deleteOneUser(String id);
+
+	public void deleteOneUserInfo(String id);
+
 }

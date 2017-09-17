@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mysql.jdbc.StringUtils;
+
 import cn.tedu.pojo.Dynamic;
 import cn.tedu.pojo.User;
 import cn.tedu.service.BackDynamicService;
@@ -53,7 +55,9 @@ public class BackDynamicController {
 	
 	//跳转到更新页面
 	@RequestMapping("/deleteDynam")
-	public String toUpdateDynam(){
+	public String toUpdateDynam(String dynamicId){
+		
+		backDynamicService.deleteDynamById(dynamicId);
 		return "redirect:/back/ScDynam";
 	}
 	
@@ -61,16 +65,10 @@ public class BackDynamicController {
 	@RequestMapping("/saveDynam")
 	public String toSaveDynam(Dynamic dynamic , HttpSession session){
 		//User user = (User) session.getAttribute("user");
-		/*System.out.println(dynamic);
 		//测试代码
 		User user = new User();
-		user.setId("13212132asd");
-		user.setNickname("立即阿伦");
 		
-		
-		dynamic.setRid(user.getId());
-		dynamic.setRname(user.getNickname());*/
-	    backDynamicService.saveDynam(dynamic);
+	    backDynamicService.saveDynam(dynamic , user);
 		System.out.println(dynamic);
 		return "redirect:/back/ScDynam";
 	}

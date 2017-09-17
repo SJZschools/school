@@ -11,8 +11,9 @@
 <title>最无敌的校园网</title>
 <link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctx }/js/datepicker/WdatePicker.js"></script>
+<script type="text/javascript" src="${ctx }/js/jquery-1.4.2.js"></script>
 <%-- <script language="javascript" src="${ctx }/js/common.js"></script> --%>
-<%-- <script type="text/javascript" src="${ctx }/js/jquery.js"></script> --%>
+<%-- <script type="text/javascript" src="${ctx }/js/jquery.js"></script>  --%>
 
 <!-- <script type="text/javascript">
 $(document).ready(function(){
@@ -34,26 +35,54 @@ $(document).ready(function(){
 
 });
 </script> -->
-
+<script type="text/javascript">
+			
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				
+				var name = $("#name").val();
+				var card = $("#card").val();
+				var birthday = $("#birthday").val();
+				var timeofenrollment = $("#timeofenrollment").val();
+				var sex = $(".sex").val();
+				var tel = $("#tel").val();
+				var classes = $("#classes").val();
+				var id = $("#id").val();
+				var personalRemarks = $("#personalRemarks").val();
+				/* */
+			    if(confirm("您保存么？")){
+					/* $.post("${ctx}/saveBackStudent",{"username":username,"userInfo.card":card,"userInfo.birthday":birthday,"userInfo.timeofenrollment":timeofenrollment,"userInfo.sex":sex,"userInfo.tel":tel,"userInfo.classes":classes,"id":id,"userInfo.personalRemarks":personalRemarks},function(result){
+						if("true"==result){
+							alert("修改成功");
+							/* window.location.href="/student" 
+						}
+					}); */
+			    	$.ajax({
+				        url:"/saveBackStudent",
+				        type:"post",
+				        data:{"id":id,"name":name,"sex":sex,"timeofenrollment":timeofenrollment,"birthday":birthday,"classes":classes,"tel":tel,"personalRemarks":personalRemarks,"card":card},
+				        dataType:"json",
+				        success: function(result) {  
+		                    window.location.href="/student"  
+		                }  
+				        
+				    });  
+			    }
+				
+			})
+			
+			
+		});
+	
+		
+	
+	</script>
+	
 <title>用户新增 </title>
 </head>
 
 
 <body>
-	<script type="text/javascript">
-			
-		$(document).ready(function(){
-			var username = $("");
-		});
-	
-		$.ajax({
-	        url:"${cts}/saveBackStudent",
-	        type:"post",
-	        data:{username:username}
-	        
-	    }); 
-	
-	</script>
 	
 	
     
@@ -75,7 +104,7 @@ $(document).ready(function(){
 	<table id="ec_table" class="tableRegion" width="98%" >
 		<tr class="odd">
 			<td>姓名:</td>
-			<td><input id="username" type="text" name="username" class="dfinput" /></td>
+			<td><input id="name" type="text" name="name" class="dfinput" /></td>
 			
 		</tr>
 	
@@ -85,19 +114,19 @@ $(document).ready(function(){
 		</tr>
 		<tr class="odd">
 			<td>身份证号:</td>
-			<td><input type="text" id="userInfo.card" name="userInfo.card" class="dfinput"/>
+			<td><input type="text" id="card" name="card" class="dfinput"/>
 			</td>
 			
 		</tr>
 		<tr class="odd">
 			<td>出生日期:</td>
 			<td>
-				<input type="text" id="userInfo.birthday" style="width:121px;" name="userInfo.birthday"
+				<input type="text" id="birthday" style="width:121px;" name="birthday"
 		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
 			</td>
 			<td>入学日期:</td>
 			<td>
-				<input type="text" id="userInfo.timeofenrollment" style="width:121px;" name="userInfo.timeofenrollment"
+				<input type="text" id="timeofenrollment" style="width:121px;" name="timeofenrollment"
 		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
 			</td>
 		</tr>
@@ -106,17 +135,17 @@ $(document).ready(function(){
 			
 			<td>性别:</td>
 			<td>
-				<input type="radio" class="userInfo.sex" name="userInfo.sex" value="男"/>男
-				<input type="radio"  class="userInfo.sex" name="userInfo.sex" value="女"/>女
-				<input type="radio"  class="userInfo.sex" name="userInfo.sex" value="其他"/>其他
+				<input type="radio" class="sex" name="sex" value="男"/>男
+				<input type="radio"  class="sex" name="sex" value="女"/>女
+				<input type="radio"  class="sex" name="sex" value="其他"/>其他
 			</td>
 		</tr>
 		<tr class="odd">
 			
 			<td>电话号码:</td>
-			<td><input  type="text" id="userInfo.tel" name="userInfo.tel" class="dfinput"/></td>
+			<td><input  type="text" id="tel" name="tel" class="dfinput"/></td>
 			<td>班级:</td>
-			<td><input  type="text" id="userInfo.classes" name="userInfo.classes" class="dfinput"/></td>
+			<td><input  type="text" id="classes" name="classes" class="dfinput"/></td>
 		</tr>
 		<tr class="odd">
 			
@@ -127,12 +156,13 @@ $(document).ready(function(){
 		<tr class="odd">
 			<td>备注信息:</td>
 			<td colspan="3">
-				<textarea style="height:80px;width:100%" id="userInfo.personalRemarks" name="userInfo.personalRemarks" ></textarea>
+				<textarea style="height:80px;width:100%" id="personalRemarks" name="personalRemarks" ></textarea>
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<input type="submit"  value="提交"></input>
+			<li id="save"><span><img src="${ctx }/images/backimg/t01.png" /></span><input id="submit" type="button"  value="提交"></input></li>
+				
 			</td>
 		</tr>	
 	</table>
