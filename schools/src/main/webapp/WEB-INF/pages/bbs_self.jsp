@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="base.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
@@ -12,7 +14,7 @@
 <!-- META TAGS -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<script type="text/javascript" src="${ctx }/js/datepicker/WdatePicker.js"></script>
 <title>个人信息</title>
 
 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
@@ -74,16 +76,15 @@
 	</div>
 	<!-- Start of Search Wrapper -->
 	<div class="search-area-wrapper">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br>
 		<div class="search-area container">
 			<h3 class="search-header">个人信息</h3>
 		</div>
 	</div>
 	<!-- End of Search Wrapper -->
 
-	<form id="self" name="" action="${ctx}/updateself" method="post" onSubmit="">
+	<form id="self" name="" action="${ctx}/updateself" method="post"
+		onSubmit="">
 		<!-- Start of Page Container -->
 		<div class="page-container">
 			<div class="container">
@@ -97,65 +98,74 @@
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard">
-										<h4>姓名：</h4> <input type="text">
+									<input type="hidden" name="id" value="${userSession.id}" />
+										<h4>姓名：</h4> <input type="text" name="name" value="${userInfo.name}"/>
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>性别：</h4>
-										<br> &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
-										name="gender" checked="checked">男
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender">女
+										<h4>性别：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="sex" value="男" <c:if test="${userInfo.sex =='男'}">checked="checked"</c:if>/>男
+										&nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="sex" value="女" <c:if test="${userInfo.sex =='女'}">checked="checked"</c:if>/>女
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>出生日期：</h4> <input type="text">
+										<h4>出生日期：</h4> <input type="text" style="width: 121px;"
+										name="birthday"  
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" 
+										value="<fmt:formatDate value="${userInfo.birthday }" pattern="yyyy-MM-dd"/>"
+										/>
+									</li>
+									<br>
+									<li class="article-entry standard" }">
+										<h4>爱好：</h4> <br> 
+										<input type="checkbox" name="habit.hName" value="1" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>篮球
+										<input type="checkbox" name="habit.hName" value="2" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>羽毛球 
+										<input type="checkbox" name="habit.hName" value="3" <c:if test="${habit.checked ==true}">checked="checked"</c:if>/>读书
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>爱好：</h4>
-										<br> <input type="checkbox">篮球 <input
-										type="checkbox">羽毛球 <input type="checkbox">读书
+										<h4>入学日期：</h4> <input type="text" style="width: 121px;"
+										name="timeofenrollment" 
+										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" 
+										value="<fmt:formatDate value="${userInfo.timeofenrollment }" pattern="yyyy-MM-dd"/>"
+										/>
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>入学日期：</h4> <input type="text">
-									</li>
-									<br>
-									<li class="article-entry standard">
-										<h4>手机：</h4> <input type="text">
+										<h4>手机：</h4> <input type="text" name="tel" value="${userInfo.tel }">
 									</li>
 								</ul>
 							</section>
 
 							<section class="span4 articles-list">
 								<ul class="articles">
-									<li class="article-entry standard">
-										<h4>血型：</h4>
-										<br> &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
-										name="blood" checked="checked">O
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">A
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">B
-										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood">AB
+									<li class="article-entry standard" name="blood" value="${userInfo.blood }">
+										<h4>血型：</h4> <br> &nbsp;&nbsp;&nbsp;&nbsp; 
+										<input type="radio" name="blood" value="O" <c:if test="${userInfo.blood =='O'}">checked="checked"</c:if>/>O
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="A" <c:if test="${userInfo.blood =='A'}">checked="checked"</c:if>/>A
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="B" <c:if test="${userInfo.blood =='B'}">checked="checked"</c:if>/>B
+										&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="blood" value="AB" <c:if test="${userInfo.blood =='AB'}">checked="checked"</c:if>/>AB
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>出生地：</h4> <input type="text">
+										<h4>出生地：</h4> <input type="text" name="homeplace" value="${userInfo.homeplace }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>居住地：</h4> <input type="text">
+										<h4>居住地：</h4> <input type="text" name="address" value="${userInfo.address }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>职业：</h4> <input type="text">
+										<h4>职业：</h4> <input type="text" name="job" value="${userInfo.job }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>邮箱：</h4> <input type="text">
+										<h4>邮箱：</h4> <input type="text" name="eMail" value="${userInfo.eMail }">
 									</li>
 									<br>
 									<li class="article-entry standard">
-										<h4>QQ：</h4> <input type="text">
+										<h4>QQ：</h4> <input type="text" name="qq" value="${userInfo.qq }">
 									</li>
 								</ul>
 							</section>
@@ -166,15 +176,17 @@
 					<!-- start of sidebar -->
 					<aside class="span4 page-sidebar">
 
-						<section class="widget">
-							<h4>个性签名：</h4>
-							<textarea style="width: 300px; height: 180px;"></textarea>
-						</section>
+						<ul class="articles">
+							
+							<li class="article-entry standard">
+								<h4>昵称：</h4> <input type="text" name="nickname" value="${user.nickname }">
+							</li>
+						</ul>
 						<br>
 
-						<section class="widget">
+						<section class="widget" >
 							<h4>个人备注：</h4>
-							<textarea style="width: 300px; height: 180px;"></textarea>
+							<textarea style="width: 300px; height: 180px;" name="personalRemarks">${userInfo.personalRemarks }</textarea>
 						</section>
 
 						<section class="widget">
