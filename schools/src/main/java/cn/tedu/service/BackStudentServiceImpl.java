@@ -16,6 +16,7 @@ public class BackStudentServiceImpl implements BackStudentService {
 	@Autowired
 	private BackStudentMapper backStudentMapper;
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public List<User> findAllStudent() {
 		
 		return backStudentMapper.findAllStudent();
@@ -23,11 +24,13 @@ public class BackStudentServiceImpl implements BackStudentService {
 	//后台界面的学生管理
 	//增加学生
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void addBackStudent(User user) {
 		backStudentMapper.addBackStudent(user);
 		
 	}
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void addBackStudentInfo(UserInfo userInfo) {
 		backStudentMapper.addBackStudentInfo(userInfo);
 	}
@@ -40,10 +43,32 @@ public class BackStudentServiceImpl implements BackStudentService {
 		return user;
 	}
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void deleteOneBackStudent(String id) {
 		backStudentMapper.deleteOneUser(id);
 		backStudentMapper.deleteOneUserInfo(id);
 		
+	}
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	//删除多个学生信息
+	public void deleteAllStudent(String ids) {
+		String[] idss = ids.split(",");
+		if(idss.length>=1){
+			for(String id : idss){
+				if(id != null && !"".equals(id)){
+					backStudentMapper.deleteOneUser(id);
+					backStudentMapper.deleteOneUserInfo(id);
+				}
+			}
+		}
+
+		
+	}
+	@Override
+	public int findCount() {
+		
+		return backStudentMapper.findCount();
 	}
 	
 }

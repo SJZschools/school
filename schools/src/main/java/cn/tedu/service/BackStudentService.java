@@ -15,4 +15,8 @@ public interface BackStudentService {
 	public User updateBackStudent(String id);
 
 	public void deleteOneBackStudent(String id);
+
+	public void deleteAllStudent(String ids);
+
+	public int findCount();
 }

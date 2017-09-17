@@ -6,7 +6,7 @@
 	
 	<!--查询所有学生  -->
 	<select id="findAllStudent" resultMap="userRM">
-		select * from user_s u left join (select id userInfoId,name,sex,classes,homeplace,timeofenrollment from user_info) i on i.userInfoId = u.id
+		select * from user_s u left join (select id userInfoId,name,sex,classes,card,timeofenrollment from user_info) i on i.userInfoId = u.id
 	</select>
 	<resultMap type="cn.tedu.pojo.User" id="userRM" autoMapping="true">
 		<!--完成主表映射  -->
@@ -30,8 +30,8 @@
 	</insert>
 	<!--添加新增学生信息  -->
 	<insert id="addBackStudentInfo">
-		insert into user_info (id,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
-					 values (#{id},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
+		insert into user_info (id,name,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
+					 values (#{id},#{name},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
 	</insert>
 
 
@@ -51,7 +51,9 @@
 		delete from user_info where id=#{id}
 	</delete>
 
-
+	<select id="findCount" resultType="java.lang.Integer">
+		select count(*) from user_s
+	</select>
 
 
 
