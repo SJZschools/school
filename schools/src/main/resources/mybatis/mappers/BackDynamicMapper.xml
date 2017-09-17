@@ -15,7 +15,7 @@
 		)
 	</insert>
 	<select id="findAll" resultMap="dyRM">
-		select * from dynamic_info
+		select * from dynamic_info order by dynamic_time desc
 	</select>
 	<resultMap type="cn.tedu.pojo.Dynamic" id="dyRM" autoMapping="true">
 		<id column="dynamic_id" property="dynamicId"/>		

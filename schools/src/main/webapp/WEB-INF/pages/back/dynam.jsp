@@ -24,10 +24,16 @@ $(document).ready(function(){
 	  			ids += id+",";
 	  		}
 	  	})
-	 	var result = confirm("是否删除信息？")
-	 	if(result){
-	 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+ids;
-	 	}
+	  	//alert(typeof(ids) == "")
+	  	if(ids != ""){
+		 	var result = confirm("是否删除信息？")
+		 	if(result){
+		 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+ids;
+		 	}
+	  	}
+	  	if(ids == ""){
+	  		alert("请选择删除信息！");
+	  	}
 	});
   
   $(".tablelink").click(function(){

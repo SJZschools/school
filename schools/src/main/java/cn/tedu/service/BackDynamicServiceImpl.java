@@ -43,12 +43,10 @@ public class BackDynamicServiceImpl implements BackDynamicService {
 	@Override
 	public void deleteDynamById(String dynamicId) {
 		String[] ids = dynamicId.split(",");
-		System.out.println(ids.length);
 		if(ids.length>=1){
 			for(String id : ids){
 				if(id != null && !"".equals(id)){
 					backDynamicMapper.deleteDynamById(id);
-					System.out.println(id);
 				}
 			}
 		}
