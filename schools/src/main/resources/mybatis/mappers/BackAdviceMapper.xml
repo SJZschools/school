@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.BackAdviceMapper">
+	
+	<select id="findAll" resultMap="adviceRM">
+		select a.* , u.nickname from user_s u , advcie a where u.id = a.user_id
+	</select>
+	<resultMap type="cn.tedu.pojo.Advice" id="adviceRM" autoMapping="true">
+		<id column="id" property="id" />
+		<association property="user" javaType="cn.tedu.pojo.User">
+			<id column="user_id" property="id"/>
+			<result column="nickname" property="nickname"/>
+		</association>
+	</resultMap>
+</mapper>

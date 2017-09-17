@@ -29,8 +29,8 @@
         <div class="overlay"></div>
         <section class="top-part">
           <video controls autoplay loop>
-            <source src="videos/video.mp4" type="video/mp4">
-            <source src="videos/video.ogg" type="video/ogg">
+            <source src="${ctx}/videos/video.mp4" type="video/mp4">
+            <source src="${ctx}/videos/video.ogg" type="video/ogg">
           Your browser does not support the video tag.
           </video>
         </section>
@@ -228,7 +228,7 @@
                           </div>
                           <div class="col-md-8">
                             <div class="row">
-                              <form id="contact" action="" method="post">
+                              <form id="contact" action="${ctx}/back/saveAdvice" method="post">
                                 <div class="col-md-6">
                                   <fieldset>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -241,7 +241,7 @@
                                 </div>
                                 <div class="col-md-12">
                                   <fieldset>
-                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                                    <textarea name="advcieTxt" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
                                   </fieldset>
                                 </div>
                                 <div class="col-md-12">

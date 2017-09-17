@@ -52,7 +52,7 @@ $(function(){
 		
 		<li class="active"><cite></cite><a href="${ctx}/back/ScDynam" target="rightFrame">校园动态</a><i></i></li>
         
-        <li class="active"><cite></cite><a href="question.html" target="rightFrame">学员反馈</a><i></i></li>
+        <li class="active"><cite></cite><a href="${ctx}/back/advice" target="rightFrame">学员反馈</a><i></i></li>
        
         <li><cite></cite><a href="error.html" target="rightFrame">404页面</a><i></i></li>
         </ul>    
