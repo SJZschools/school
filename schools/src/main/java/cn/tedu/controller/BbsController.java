@@ -65,12 +65,11 @@ public class BbsController {
 		return "bbs_post";
 	}
 	
-<<<<<<< HEAD
-=======
-	@RequestMapping("bbs_self")
+	//明明冲突项
+	/*@RequestMapping("bbs_self")
 	public String toBBSSelf(){
 		return "bbs_self";
-	}
->>>>>>> jc
+	}*/
+
 	
 }
