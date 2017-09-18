@@ -6,7 +6,7 @@ import cn.tedu.pojo.User;
 import cn.tedu.pojo.UserInfo;
 
 public interface BackStudentService {
-	public List<User> findAllStudent();
+	public List<User> findAllStudent(Integer nowPage, Integer pageCount);
 
 	public void addBackStudent(User user);
 
@@ -19,4 +19,6 @@ public interface BackStudentService {
 	public void deleteAllStudent(String ids);
 
 	public int findCount();
+
+	
 }

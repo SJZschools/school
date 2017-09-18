@@ -26,11 +26,10 @@ public class BackStudentController extends BaseController {
 	//跳转到学生管理界面
 	@RequestMapping("/student/{nowPage}")
 	public String toStudent(@PathVariable("nowPage") Integer nowPage,Model model){
-		System.out.println(nowPage);
 		Page page = new Page();
-		
+		page.setNowPage(nowPage);
 		//查询总记录是
-		 int allCount = backStudentService.findCount();
+		int allCount = backStudentService.findCount();
 		
 		page.setAllCount(allCount);
 		//设置总页数
@@ -43,10 +42,16 @@ public class BackStudentController extends BaseController {
 		}
 		page.setAllPage(allPage);
 		//设置List
-		List list = new ArrayList();
-		
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i=0;i<allPage;i++){
+			list.add(i+1);
+		}
+		page.setPageList(list);
+		if(allCount<10){
+			pageCount=allCount;
+		}
 		//从数据库里查询所有学生
-		List<User> userList = backStudentService.findAllStudent();
+		List<User> userList = backStudentService.findAllStudent(nowPage,pageCount );
 		model.addAttribute("page",page);
 		model.addAttribute("userList", userList);
 		return "back/student";
@@ -54,15 +59,14 @@ public class BackStudentController extends BaseController {
 	
 	@RequestMapping("/student")
 	public String toStudent2(Integer nowPage,Model model){
-		System.out.println(nowPage);
 		Page page = new Page();
-		
+		page.setNowPage(nowPage);
 		//查询总记录是
 		 int allCount = backStudentService.findCount();
 		
 		page.setAllCount(allCount);
 		//设置总页数
-		int pageCount = page.getPageCount();
+		Integer pageCount = page.getPageCount();
 		int allPage = 0;
 		if(allCount%pageCount!=0){
 			allPage = allCount/pageCount+1;
@@ -70,10 +74,17 @@ public class BackStudentController extends BaseController {
 			allPage = allCount/pageCount;
 		}
 		page.setAllPage(allPage);
-		//设置
-		
+		//设置List
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i=0;i<allPage;i++){
+			list.add(i+1);
+		}
+		page.setPageList(list);
+		if(allCount<10){
+			pageCount=allCount;
+		}
 		//从数据库里查询所有学生
-		List<User> userList = backStudentService.findAllStudent();
+		List<User> userList = backStudentService.findAllStudent(nowPage,pageCount );
 		model.addAttribute("page",page);
 		model.addAttribute("userList", userList);
 		return "back/student";
@@ -152,7 +163,8 @@ public class BackStudentController extends BaseController {
 	public String todeleteStudent(String ids){
 		System.out.println(ids);
 		backStudentService.deleteAllStudent(ids);
-		return "redirect:student";
+		int i = 1;
+		return "redirect:student"+"/"+i;
 	}
 		
 	

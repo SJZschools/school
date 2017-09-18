@@ -14,3 +14,5 @@ spring:
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
   mapper-locations: classpath:/mybatis/mappers/*.xml
+  type-aliases-package: cn.tedu.pojo
+  
