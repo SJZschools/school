@@ -1,7 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+
 <title>无标题文档</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -9,6 +15,31 @@
 <script type="text/javascript" src="js/format+zh_CN,default,corechart.I.js"></script>		
 <script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
+
+<script class="jquery library" src="/js/sandbox/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+$(document).ready(function(){
+	animate();
+  $(".play").click(animate).mouseover(function(){
+  	$(".play").css({"background-color":"#A55"});
+  }).mouseout(function(){
+  	$(".play").css({"background-color":"#060"});
+  });
+});
+function animate(){
+	  $('div>div>div').each(function(id){
+    $(this).css({
+      position: 'relative',
+      top: '-200px',
+      opacity: 0
+    });
+    var wait = Math.floor((Math.random()*3000)+1);
+    $(this).delay(wait).animate({
+      top: '0px',
+      opacity: 1
+    },1000);
+  });
+}
+
 
 <script type="text/javascript">
 		gvChartInit();
@@ -46,46 +77,99 @@
     
     <div class="leftinfo">
     <div class="listtitle"><a href="#" class="more1">更多</a>数据统计</div>
-        
-    <div class="maintj">  
-    <table id='myTable5'>
-				<caption>.com players count</caption>
-				<thead>
-					<tr>
-						<th></th>
-						<th>Jan</th>
-						<th>Feb</th>
-						<th>Mar</th>
-						<th>Apr</th>
-						<th>May</th>
-						<th>Jun</th>
-						<th>Jul</th>
-						<th>Aug</th>
-						<th>Sep</th>
-						<th>Oct</th>
-						<th>Nov</th>
-						<th>Dec</th>
-					</tr>
-				</thead>
-					<tbody>
-					<tr>
-						<th>2010</th>
-						<td>125</td>
-						<td>185</td>
-						<td>327</td>
-						<td>359</td>
-						<td>376</td>
-						<td>398</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-				</tbody>
-			</table>  
+     
+     
+     <div class='content'>
+    <div style='padding-right:40px'>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <div style='padding-right:20px'>
+      <div></div>
+      <div></div>
+      <div style='margin-right:122px'>
+      </div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:142px'></div>
+    </div>
+    <div>
+      <div></div>
+      <div style='margin-right:82px' class="play"></div>
+      <div  class="play"></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div></div>
+      <div style='margin-right:62px' class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div></div>
+      <div style='margin-right:42px' class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div></div>
+      <div style='margin-right:62px' class="play"></div>
+      <div class="play"></div>
+      <div class="play"></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div></div>
+      <div style='margin-right:82px' class="play"></div>
+      <div class="play"></div>
+      <div style='margin-right:42px'></div>
+    </div>
+    <div>
+      <div style='margin-right:22px'></div>
+      <div style='margin-right:142px'></div>
+    </div>
+    <div>
+      <div style='margin-right:42px'></div>
+      <div></div>
+      <div style='margin-right:102px'></div>
+    </div>
+    <div>
+      <div style='margin-right:62px'></div>
+      <div></div>
+      <div style='margin-right:82px'></div>
+    </div>
+    <div>
+      <div style='margin-right:42px'></div>
+      <div></div>
+      <div style='margin-right:102px'></div>
+    </div>
+    <div>
+      <div style='margin-right:22px'></div>
+      <div></div>
+      <div style='margin-right:122px'></div>
+    </div>    
+    <div>
+      <div></div>
+      <div></div>
+      <div style='margin-right:142px'></div>
+    </div>      
+    <div>
+      <div></div>
+      <div style='margin-right:162px'></div>
+    </div>
+  </div>   
+   
     
     </div>
     <!--leftinfo end-->
