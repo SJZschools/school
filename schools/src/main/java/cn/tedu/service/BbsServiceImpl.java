@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.tedu.mapper.BbsMapper;
 import cn.tedu.pojo.Bbs;
@@ -15,6 +17,8 @@ public class BbsServiceImpl implements BbsService{
 	private BbsMapper bbsMapper;
 	//根据recount（评论数量）查询所有Bbs
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+
 	public List<Bbs> findAll() {
 		return bbsMapper.findAll();
 	}
@@ -42,6 +46,8 @@ public class BbsServiceImpl implements BbsService{
 	
 	//帖子发布
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+
 	public void saveBBS(Bbs bbs) {
 		bbsMapper.saveBBS(bbs);
 	}

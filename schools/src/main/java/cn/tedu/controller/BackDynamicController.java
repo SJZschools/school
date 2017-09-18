@@ -1,10 +1,18 @@
 package cn.tedu.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mysql.jdbc.StringUtils;
+
 import cn.tedu.pojo.Dynamic;
+import cn.tedu.pojo.User;
 import cn.tedu.service.BackDynamicService;
 
 /**
@@ -21,7 +29,9 @@ public class BackDynamicController {
 	
 	//跳转到动态页面的主页
 	@RequestMapping("/ScDynam")
-	public String goDynam(){
+	public String goDynam(Model model){
+		List<Dynamic> dynamicList = backDynamicService.findAll();
+		model.addAttribute("dynamicList", dynamicList);
 		return "/back/dynam";
 	}
 	
@@ -45,14 +55,21 @@ public class BackDynamicController {
 	
 	//跳转到更新页面
 	@RequestMapping("/deleteDynam")
-	public String toUpdateDynam(){
+	public String toUpdateDynam(String dynamicId){
+		
+		backDynamicService.deleteDynamById(dynamicId);
 		return "redirect:/back/ScDynam";
 	}
 	
 	//保存动态信息
 	@RequestMapping("/saveDynam")
-	public String toSaveDynam(Dynamic dynamic){
-		backDynamicService.saveDynam(dynamic);
+	public String toSaveDynam(Dynamic dynamic , HttpSession session){
+		//User user = (User) session.getAttribute("user");
+		//测试代码
+		User user = new User();
+		
+	    backDynamicService.saveDynam(dynamic , user);
+		System.out.println(dynamic);
 		return "redirect:/back/ScDynam";
 	}
 }

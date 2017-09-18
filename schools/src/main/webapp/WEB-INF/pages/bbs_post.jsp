@@ -121,14 +121,14 @@
 
 
 									<!-- 上传图片 -->
-									<div style="height: 500px;">
+									<div style="height: 400px;">
 										<div class="img-box">
 											<img src="" id="yushow" />
 											<button class="btn-uploading" onclick="uploadBtn();">
 												<i class="icon-uploading"></i>上传图片
 											</button>
 											<a class="shan" onclick="deleteImg();"><img
-												src="/images/upload/shanI.gif"></a>
+												src="/images/close.gif"></a>
 										</div>
 										<input type="file" name="file" style="display: none;"
 											onchange="previewImg(this);" id="upload" accept="image/*" />

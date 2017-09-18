@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,12 +17,36 @@ $(document).ready(function(){
  	}
   });
   $(".click1").click(function(){
-	 	var result = confirm("是否删除信息？")
-	 	if(result){
-	 		window.location.href="${ctx}/back/deleteDynam";
-	 	}
+	  	var ids = "";
+	  	$(".checkone").each(function(){
+	  		if($(this).attr("checked") == true){
+	  			var id = $(this).attr("id")
+	  			ids += id+",";
+	  		}
+	  	})
+	  	//alert(typeof(ids) == "")
+	  	if(ids != ""){
+		 	var result = confirm("是否删除信息？")
+		 	if(result){
+		 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+ids;
+		 	}
+	  	}
+	  	if(ids == ""){
+	  		alert("请选择删除信息！");
+	  	}
 	});
   
+  $(".tablelink").click(function(){
+	  	var id = $(this).attr("id");
+	 	var result = confirm("是否删除信息？");
+	 	if(result){
+	 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+id;
+	 	}
+	});
+  $(".tablelink1").click(function(){
+	  	var id = $(this).attr("id");
+	 	window.location.href="${ctx}/lifeSingle?dynamicId="+id;
+	});
   /* $(".tiptop a").click(function(){
   $(".tip").fadeOut(200);
 });
@@ -73,7 +98,7 @@ $(document).ready(function(){
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="" type="checkbox" value="" checked="checked"/></th>
+        <th><input name="" type="checkbox" value=""/></th>
         <th>编号<i class="sort"><img src="${ctx}/images/backimg/px.gif" /></i></th>
         <th>标题</th>
         <th>发布者</th>
@@ -83,16 +108,17 @@ $(document).ready(function(){
         </tr>
         </thead>
         <tbody>
+        <c:forEach items="${dynamicList}" var="dyn">
         <tr>
-        <td><input name="" type="checkbox" value="" /></td>
-        <td>20130908</td>
-        <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-        <td>admin</td>
+        <td><input id="${dyn.dynamicId}" name="dychoose" type="checkbox" class="checkone"/></td>
+        <td>${dyn.dynamicId}</td>
+        <td>${dyn.dynamicTitle}</td>
+        <td>${dyn.rname}</td>
    
-        <td>2013-09-09 15:05</td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+        <td>${dyn.dynamicTime}</td>
+        <td><a id="${dyn.dynamicId}" href="#" class="tablelink1">查看</a>     <a id="${dyn.dynamicId}" href="#" class="tablelink"> 删除</a></td>
         </tr> 
-        
+        </c:forEach>
                
         </tbody>
     </table>

@@ -5,5 +5,7 @@ import cn.tedu.pojo.UserInfo;
 public interface UserInfoService {
 
 	public void updateself(UserInfo userInfo);
+
+	public UserInfo findUserInfoById(String userId);
 	
 }
