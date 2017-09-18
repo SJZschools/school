@@ -183,26 +183,26 @@
                     <div class="col-md-12">
                       <div class="content fourth-content">
                         <div class="row">
-                          <div class="col-md-3 project-item">                          
-                            <a href="${ctx}/images/item-01.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-01.jpg"></a>                           
+                          <div class="col-md-3 project-item">
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-01.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-09.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-01.jpg');">                     
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-02.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-02.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-02.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-10.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-02.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-03.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-03.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-03.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-11.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-03.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-04.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-04.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-04.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-12.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-04.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-05.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-05.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-05.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-13.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-05.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-06.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-06.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-06.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-14.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-06.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-07.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-07.jpg"></a>
+                            <img style="cursor:hand;" src="${ctx}/images/project-item-07.jpg" onmouseover="changeImg(this,'${ctx}/images/project-item-15.jpg');" onmouseout="changeImg(this,'${ctx}/images/project-item-07.jpg');">
                           </div>
                           <div class="col-md-3 project-item">
                             <a href="http://www.tmooc.cn/" ><img src="${ctx}/images/project-item-08.jpg"></a>

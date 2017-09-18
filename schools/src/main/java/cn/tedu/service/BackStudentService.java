@@ -1,12 +1,11 @@
 package cn.tedu.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
+import cn.tedu.pojo.User;
+import cn.tedu.pojo.UserInfo;
+
 public interface BackStudentService {
-<<<<<<< HEAD
-
-=======
 	public List<User> findAllStudent(Integer nowPage, Integer pageCount);
 
 	public void addBackStudent(User user);
@@ -22,5 +21,4 @@ public interface BackStudentService {
 	public int findCount();
 
 	
->>>>>>> master
 }
