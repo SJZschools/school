@@ -77,6 +77,7 @@
                         <div class="primary-button">
                           <a href="login">开始探索</a>
                         </div>
+                        <div class="primary-button"><a href="map">学校周边</a></div>
                       </div>
                     </div>
                   </div>                  
