@@ -14,31 +14,6 @@
 <script type="text/javascript" src="js/jsapi.js"></script>
 <script type="text/javascript" src="js/format+zh_CN,default,corechart.I.js"></script>		
 <script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
-
-<script class="jquery library" src="/js/sandbox/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
-$(document).ready(function(){
-	animate();
-  $(".play").click(animate).mouseover(function(){
-  	$(".play").css({"background-color":"#A55"});
-  }).mouseout(function(){
-  	$(".play").css({"background-color":"#060"});
-  });
-});
-function animate(){
-	  $('div>div>div').each(function(id){
-    $(this).css({
-      position: 'relative',
-      top: '-200px',
-      opacity: 0
-    });
-    var wait = Math.floor((Math.random()*3000)+1);
-    $(this).delay(wait).animate({
-      top: '0px',
-      opacity: 1
-    },1000);
-  });
-}
 
 
 <script type="text/javascript">
@@ -79,96 +54,15 @@ function animate(){
     <div class="listtitle"><a href="#" class="more1">更多</a>数据统计</div>
      
      
-     <div class='content'>
-    <div style='padding-right:40px'>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div style='padding-right:20px'>
-      <div></div>
-      <div></div>
-      <div style='margin-right:122px'>
-      </div>
-    </div>
-    <div>
-      <div></div>
-      <div></div>
-      <div style='margin-right:142px'></div>
-    </div>
-    <div>
-      <div></div>
-      <div style='margin-right:82px' class="play"></div>
-      <div  class="play"></div>
-      <div style='margin-right:42px'></div>
-    </div>
-    <div>
-      <div></div>
-      <div style='margin-right:62px' class="play"></div>
-      <div class="play"></div>
-      <div class="play"></div>
-      <div style='margin-right:42px'></div>
-    </div>
-    <div>
-      <div></div>
-      <div style='margin-right:42px' class="play"></div>
-      <div class="play"></div>
-      <div class="play"></div>
-      <div class="play"></div>
-      <div style='margin-right:42px'></div>
-    </div>
-    <div>
-      <div></div>
-      <div style='margin-right:62px' class="play"></div>
-      <div class="play"></div>
-      <div class="play"></div>
-      <div style='margin-right:42px'></div>
-    </div>
-    <div>
-      <div></div>
-      <div style='margin-right:82px' class="play"></div>
-      <div class="play"></div>
-      <div style='margin-right:42px'></div>
-    </div>
-    <div>
-      <div style='margin-right:22px'></div>
-      <div style='margin-right:142px'></div>
-    </div>
-    <div>
-      <div style='margin-right:42px'></div>
-      <div></div>
-      <div style='margin-right:102px'></div>
-    </div>
-    <div>
-      <div style='margin-right:62px'></div>
-      <div></div>
-      <div style='margin-right:82px'></div>
-    </div>
-    <div>
-      <div style='margin-right:42px'></div>
-      <div></div>
-      <div style='margin-right:102px'></div>
-    </div>
-    <div>
-      <div style='margin-right:22px'></div>
-      <div></div>
-      <div style='margin-right:122px'></div>
-    </div>    
-    <div>
-      <div></div>
-      <div></div>
-      <div style='margin-right:142px'></div>
-    </div>      
-    <div>
-      <div></div>
-      <div style='margin-right:162px'></div>
-    </div>
-  </div>   
+     
+     
+     
+     
+     
+     
+     
+     
+    
    
     
     </div>
