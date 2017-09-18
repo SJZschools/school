@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
+import cn.tedu.pojo.Reply;
 import cn.tedu.service.BbsService;
+import cn.tedu.service.BbsSingleService;
 
 /**
  * 连接到论坛
@@ -18,6 +20,9 @@ public class BbsController {
 	
 	@Autowired
 	private BbsService bbsService;
+	
+	@Autowired
+	private BbsSingleService bbsSingleService;
 	
 //	@RequestMapping("bbs_home")
 //	public String toBbsHome(){
@@ -52,9 +57,14 @@ public class BbsController {
 	@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		
+		//根据帖子id查询详细信息
 		Bbs bbs = bbsService.findAllByBbsId(bssId);
+
+		//根据评论Id查询详细信息
+		List<Reply> replyList = bbsSingleService.findAllReply();
 		
 		model.addAttribute("bbs", bbs);
+		model.addAttribute("replyList", replyList);
 		
 		return "bbs_single";
 	}
@@ -62,11 +72,6 @@ public class BbsController {
 	@RequestMapping("bbs_post")
 	public String toBBSPost(){
 		return "bbs_post";
-	}
-	
-	@RequestMapping("bbs_self")
-	public String toBBSSelf(){
-		return "bbs_self";
 	}
 	
 }
