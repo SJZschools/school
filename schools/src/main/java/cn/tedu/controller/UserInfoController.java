@@ -60,7 +60,7 @@ public class UserInfoController extends BaseController{
 	}
 	@RequestMapping("/updateself")
 	public String updateself(UserInfo userInfo,User user){
-		userService.updateUserNickname(user.getNickname());
+		userService.updateUserNickname(user);
 		userInfoService.updateself(userInfo);
 		return "redirect:/index";
 	}

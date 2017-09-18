@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import cn.tedu.pojo.Bbs;
 import cn.tedu.pojo.User;
@@ -23,7 +24,7 @@ public class BbsUserController {
 	 * @return
 	 */
 	@RequestMapping("/savebbs")
-	public String saveBBS(Bbs bbs,HttpSession session){
+	public String saveBBS(Bbs bbs,MultipartFile mFile,HttpSession session){
 		User user=new User();
 		user.setId("123");
 		session.setAttribute("userSession", user);
@@ -33,6 +34,7 @@ public class BbsUserController {
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);
+		bbsService.uploadObject(mFile);
 		return "/bbs_home";
 	}
 }

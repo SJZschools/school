@@ -121,33 +121,42 @@
 
 
 									<!-- 上传图片 -->
-									<div style="height: 400px;">
-										<div class="img-box">
-											<img src="" id="yushow" />
-											<button class="btn-uploading" onclick="uploadBtn();">
-												<i class="icon-uploading"></i>上传图片
-											</button>
-											<a class="shan" onclick="deleteImg();"><img
-												src="/images/close.gif"></a>
+									<!-- 页面导航 -->
+									<div class="page-header">
+										<div class="page-title" style="padding-bottom: 5px">
+											<ol class="breadcrumb">
+												<li class="active">图片上传</li>
+											</ol>
 										</div>
-										<input type="file" name="file" style="display: none;"
-											onchange="previewImg(this);" id="upload" accept="image/*" />
+										<div class="page-stats"></div>
 									</div>
-									<br>
-									<br>
-									<li class="article-entry standard">
-										<h4>新帖内容：</h4> <textarea style="width: 600px; height: 200px"
-											name="bssContext"></textarea>
-									</li>
-									<br>
-									<br>
-									<input type="submit" value="发表">
-								</ul>
-							</section>
+								
+										<!-- 查询表单 -->
+										<div class="row page-search">
+											<div class="col-md-12">
+												<ul class="list-unstyled list-inline">
+													<li><input type="text" name="title"
+														class="form-control" placeholder="图片标题"></li>
+													<li><input type="file" name="mFile"
+														class="form-control" multiple="true"></li>
+													
+												</ul>
+											</div>
+										</div>
+										
 						</div>
+
+						<br> <br>
+						<li class="article-entry standard">
+							<h4>新帖内容：</h4> <textarea style="width: 600px; height: 200px"
+								name="bssContext"></textarea>
+						</li> <br> <br> <input type="submit" value="发表">
+						</ul>
+						</section>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<!-- End of Page Container -->
 

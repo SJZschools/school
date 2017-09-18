@@ -12,8 +12,7 @@ public interface UserMapper {
 	@Select("select * from user_s where id=#{userId}")
 	public User findUserById(String userId);
 	
-	@Update("update user_s set nickname=#{nickname} where id=#{user.id}")
-	public void updateUserNickname(String nickname);
+	public void updateUserNickname(User user);
 	
 	@Select("select h_id from u_h_p where u_id=#{userId}")
 	public List<String> findHabitIdList(String userId);

@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void updateUserNickname(String nickname) {
-		userMapper.updateUserNickname(nickname);
+	public void updateUserNickname(User user) {
+		userMapper.updateUserNickname(user);
 	}
 
 	@Override

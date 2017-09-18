@@ -12,6 +12,6 @@ public interface UserService {
 	public List<String> findHabitIdList(String userId);
 
 
-	public void updateUserNickname(String nickname);
+	public void updateUserNickname(User user);
 	
 }

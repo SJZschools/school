@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@172.96.40.94:1521:XE
+    url: jdbc:oracle:thin:@172.96.40.63:1521:XE
     username: ht1706
     password: ht1706
   mvc:
