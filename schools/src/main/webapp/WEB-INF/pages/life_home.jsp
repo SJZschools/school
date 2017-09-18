@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@	taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file="base.jsp"%>
 
 
@@ -98,7 +99,9 @@
                                                                 	<li class="article-entry standard">
                                                                                 <h4><a href="lifeSingle?dynamicId=${dy.dynamicId}">${dy.dynamicTitle}</a></h4>
                                                                                 <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">${dy.dynamicContent}</a></span>
+                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">
+                                                                                	${ fn:length(dy.dynamicContent) >20 ? fn:substring(dy.dynamicContent ,0,20) : dy.dynamicContent } ${ fn:length(dy.dynamicContent ) >20 ? '...':''}
+                                                                                </a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>
@@ -113,7 +116,9 @@
                                                                 	<li class="article-entry standard">
                                                                                 <h4><a href="lifeSingle?dynamicId=${dy.dynamicId}">${dy.dynamicTitle }</a></h4>
                                                                                 <span class="article-meta"><fmt:formatDate value="${dy.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>
-                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">${dy.dynamicContent}</a></span>
+                                                                                <span><a href="lifeSingle?dynamicId=${dy.dynamicId}" title="View">
+																					${ fn:length(dy.dynamicContent) >20 ? fn:substring(dy.dynamicContent ,0,20) : dy.dynamicContent } ${ fn:length(dy.dynamicContent ) >20 ? '...':''}
+																				</a></span>
                                                                                 <span class="like-count">${dy.rcount}</span>
                                                                     </li>     
                                                                 </ul>
@@ -145,7 +150,7 @@
                                                                         <li><a href="index.html">首页</a></li>
                                                                         <li><a href="life_home.html">动态首页</a></li>
                                                                         <li><a href="bbs_home.html">论坛首页</a></li>
-                                                                        <li><a href="index.html">联系我们</a></li>
+                                                                        <li><a href="http://www.tmooc.cn/">学习资料</a></li>
                                                                 </ul>
                                                         </div>
                                                 </section>

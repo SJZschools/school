@@ -1,14 +1,20 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+
 <title>无标题文档</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jsapi.js"></script>
 <script type="text/javascript" src="js/format+zh_CN,default,corechart.I.js"></script>		
 <script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
+
 
 <script type="text/javascript">
 		gvChartInit();
@@ -46,46 +52,18 @@
     
     <div class="leftinfo">
     <div class="listtitle"><a href="#" class="more1">更多</a>数据统计</div>
-        
-    <div class="maintj">  
-    <table id='myTable5'>
-				<caption>.com players count</caption>
-				<thead>
-					<tr>
-						<th></th>
-						<th>Jan</th>
-						<th>Feb</th>
-						<th>Mar</th>
-						<th>Apr</th>
-						<th>May</th>
-						<th>Jun</th>
-						<th>Jul</th>
-						<th>Aug</th>
-						<th>Sep</th>
-						<th>Oct</th>
-						<th>Nov</th>
-						<th>Dec</th>
-					</tr>
-				</thead>
-					<tbody>
-					<tr>
-						<th>2010</th>
-						<td>125</td>
-						<td>185</td>
-						<td>327</td>
-						<td>359</td>
-						<td>376</td>
-						<td>398</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-					</tr>
-				</tbody>
-			</table>  
-    </div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+   
     
     </div>
     <!--leftinfo end-->

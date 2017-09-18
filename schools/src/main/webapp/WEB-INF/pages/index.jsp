@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="base.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@	taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -148,7 +149,9 @@
                             <div class="right-feature-text">
                               <h3><a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">${firstDynamic.dynamicTitle}</a></h3>
                               <em>更新于：<fmt:formatDate value="${firstDynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></em>
-                              <p>${firstDynamic.dynamicContent}<a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">查看详细</a></p>
+                              <p>
+                              ${ fn:length(firstDynamic.dynamicContent) >45 ? fn:substring(firstDynamic.dynamicContent ,0,45) : firstDynamic.dynamicContent } ${ fn:length(firstDynamic.dynamicContent ) >45 ? '...':''}
+                              <a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}"> 查看详细</a></p>
                               <div class="feature-list">                                
                                   <h4><font color="red" face="方正姚体">最近更新：</font></h4>	
                                   <c:set var="count" value="0"></c:set>
@@ -180,8 +183,8 @@
                     <div class="col-md-12">
                       <div class="content fourth-content">
                         <div class="row">
-                          <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-01.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-01.jpg"></a>
+                          <div class="col-md-3 project-item">                          
+                            <a href="${ctx}/images/item-01.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-01.jpg"></a>                           
                           </div>
                           <div class="col-md-3 project-item">
                             <a href="${ctx}/images/item-02.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-02.jpg"></a>
@@ -202,7 +205,7 @@
                             <a href="${ctx}/images/item-07.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-07.jpg"></a>
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="life_index.html" ><img src="${ctx}/images/project-item-08.jpg"></a>
+                            <a href="http://www.tmooc.cn/" ><img src="${ctx}/images/project-item-08.jpg"></a>
                           </div>
                         </div>
                       </div>
