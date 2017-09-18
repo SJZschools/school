@@ -140,12 +140,11 @@
 					<section class="widget">
 						<h3 class="title">标签</h3>
 						<div class="tagcloud">
-							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
-							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
-							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
+							<a href="#" class="btn btn-mini">java</a>
+							<a href="#" class="btn btn-mini">css</a>
+							<a href="#" class="btn btn-mini">net</a>
 						</div>
 					</section>
-
 
 				</aside>
 				<!-- end of sidebar -->

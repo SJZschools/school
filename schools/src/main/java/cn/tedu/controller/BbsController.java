@@ -8,8 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
+<<<<<<< HEAD
 import cn.tedu.pojo.User;
+=======
+import cn.tedu.pojo.Board;
+import cn.tedu.pojo.Reply;
+>>>>>>> jc
 import cn.tedu.service.BbsService;
+import cn.tedu.service.BbsSingleService;
 
 /**
  * 连接到论坛
@@ -19,6 +25,9 @@ public class BbsController {
 	
 	@Autowired
 	private BbsService bbsService;
+	
+	@Autowired
+	private BbsSingleService bbsSingleService;
 	
 //	@RequestMapping("bbs_home")
 //	public String toBbsHome(){
@@ -43,6 +52,7 @@ public class BbsController {
 		
 		model.addAttribute("bbsList", bbsList);
 		model.addAttribute("bbsListT", bbsListT);
+//		model.addAttribute("bbsListC", bbsListC);
 		//跳到论坛页面
 		return "bbs_home";
 	}
@@ -50,13 +60,31 @@ public class BbsController {
 	/*
 	 * 根据id查询帖子的详细信息
 	 */
-	@RequestMapping("bbs_single")
+	/*@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		
+		//根据帖子id查询详细信息
 		Bbs bbs = bbsService.findAllByBbsId(bssId);
+
+		//根据评论Id查询详细信息
+		List<Reply> replyList = bbsSingleService.findAllReply();
+		
+		//根据评论Id查询回复信息
+		List<Board> boardList = bbsSingleService.findAllBoard();
 		
 		model.addAttribute("bbs", bbs);
+		model.addAttribute("replyList", replyList);
+		model.addAttribute("boardList", boardList);
 		
+		return "bbs_single";
+	}*/
+	
+	/*
+	 * 更新评论数量
+	 */
+	@RequestMapping("updateBbsRecount")
+	public String updateBbsRecount(Bbs bbs){
+		bbsSingleService.updateBbsRecount(bbs);
 		return "bbs_single";
 	}
 	
@@ -65,6 +93,7 @@ public class BbsController {
 		return "bbs_post";
 	}
 	
+<<<<<<< HEAD
 	//明明冲突项
 	/*@RequestMapping("bbs_self")
 	public String toBBSSelf(){
@@ -72,4 +101,17 @@ public class BbsController {
 	}*/
 
 	
+=======
+	@RequestMapping("bbs_single")
+	public String toBBSSingle(String bssId,Model model){
+		//根据帖子id查询详细信息
+		Bbs bbs = bbsService.findAllByBbsId(bssId);
+		model.addAttribute("bbs", bbs);
+		
+		List allList = bbsSingleService.findAllReplyAll(bssId);
+		model.addAttribute("allList", allList);
+		
+		return "bbs_single";
+	}
+>>>>>>> jc
 }
