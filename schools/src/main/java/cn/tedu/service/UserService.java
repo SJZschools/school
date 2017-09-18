@@ -8,8 +8,10 @@ public interface UserService {
 
 	public User findUserById(String userId);
 
-	public void updateUserNickname(String nickname);
 
 	public List<String> findHabitIdList(String userId);
+
+
+	public void updateUserNickname(String nickname);
 	
 }
