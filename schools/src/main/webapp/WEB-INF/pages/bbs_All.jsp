@@ -92,35 +92,17 @@
 					<div class="row separator">
 						<section class="span4 articles-list">
 							<h3>热门精贴</h3>
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
+							<c:forEach items="${bbsListC}" var="bc" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
+										<a href="bbs_single?bssId=${bc.bssId }">${bc.bssTitle }</a>
 									</h4> 
 									<span class="article-meta">
-										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a>${b.bssClass }</span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-						<section class="span4 articles-list">
-							<h3>最新校帖</h3>
-							<c:forEach items="${bbsListT}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">
-										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
+										<fmt:formatDate value="${bc.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
+										href="bbs_single?bssId=${bc.bssId }"
+										title="View all posts in Server &amp; Database">${bc.user.nickname }
+										</a>${bc.bssClass }</span> <span class="like-count">${bc.recount }</span>
 								</li>
 							</ul>
 							</c:forEach>
@@ -133,22 +115,6 @@
 				</div>
 				<!-- end of page content -->
 
-
-				<!-- start of sidebar -->
-				<aside class="span4 page-sidebar">
-				
-					<section class="widget">
-						<h3 class="title">标签</h3>
-						<div class="tagcloud">
-							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
-							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
-							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
-						</div>
-					</section>
-
-
-				</aside>
-				<!-- end of sidebar -->
 			</div>
 		</div>
 	</div>

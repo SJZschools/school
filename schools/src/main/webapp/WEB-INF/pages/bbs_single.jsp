@@ -15,6 +15,7 @@
 
                 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
 
+
                 <!-- Style Sheet-->
                 <link rel="stylesheet" href="style.css"/>
                 <link rel='stylesheet' id='bootstrap-css-css'  href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
@@ -92,10 +93,9 @@
                                                 </article>
 
                                                 <div class="like-btn">
-
                                                         <form id="like-it-form" action="#" method="post">
-                                                                <span class="like-it ">
-                                                                	<a href="#" onclick="formSubmit('update','_self');this.blur();">${bbs.recount }</a>
+                                                                <span class="like-it" id="${bbs.bssId }">
+                                                               		${bbs.recount }
                                                                 </span>
                                                         </form>
 
@@ -106,34 +106,61 @@
                                                 </div>
 
                                                 <section id="comments">
-
-                                                        <ol class="commentlist">
+														<ol class="commentlist">
 
                                                                 <li class="comment even thread-even depth-1" id="li-comment-2">
                                                                         <article id="comment-2">
 
-                                                                                <c:forEach items="${replyList}" var="rl" varStatus="status">
+                                                                                <c:forEach items="${allList}" var="rl" varStatus="status">
                                                                                      <div class="comment-meta">
-
+																							
                                                                                              <h5 class="author">
-                                                                                                     <cite class="fn">${rl.user.nickname }</cite>
+                                                                                                     <cite class="fn">${rl.reply.user.nickname }</cite>
                                                                                                      - <a class="comment-reply-link" href="#pinglun">Reply</a>
                                                                                              </h5>
 
                                                                                              <p class="date">
                                                                                                      <a href="#">
-                                                                                                             <fmt:formatDate value="${rl.replyTime }" pattern="yyyy-MM-dd HH:mm:ss"/>
+                                                                                                             <fmt:formatDate value="${rl.reply.replyTime }" pattern="yyyy-MM-dd HH:mm:ss"/>
                                                                                                      </a>
                                                                                              </p>
 
                                                                                      </div><!-- end .comment-meta -->
 
                                                                                      <div class="comment-body">
-                                                                                             <p>${rl.replyTxt }</p>
+                                                                                             <p>${rl.reply.replyTxt }</p>
                                                                                      </div><!-- end of comment-body -->
+                                                                                    	<ul class="children">
+
+			                                                                                <li class="comment byuser comment-author-saqib-sarwar bypostauthor odd alt depth-2" id="li-comment-3">
+		                                                                                        <article id="comment-3">
+																									<c:forEach items="${rl.boardList}" var="bd" varStatus="status">
+				                                                                                     <div class="comment-meta">
+				
+				                                                                                             <h5 class="author">
+				                                                                                                     <cite class="fn">${bd.user.nickname }</cite>
+				                                                                                             </h5>
+				
+				                                                                                             <p class="date">
+				                                                                                                     <a href="#">
+				                                                                                                             <fmt:formatDate value="${bd.responseTime }" pattern="yyyy-MM-dd HH:mm:ss"/>
+				                                                                                                     </a>
+				                                                                                             </p>
+				
+				                                                                                     </div><!-- end .comment-meta -->
+				
+				                                                                                     <div class="comment-body">
+				                                                                                             <p>${bd.responseTxt }</p>
+				                                                                                     </div><!-- end of comment-body -->
+																									 </c:forEach>
+		                                                                                        </article><!-- end of comment -->
+			                                                                                </li>
+			                                                                       		 </ul>
                                                                                  </c:forEach>
 
                                                                         </article><!-- end of comment -->
+
+                                                                        
                                                                 </li>
                                                         </ol>
 
@@ -172,60 +199,8 @@
 
                                                 <section class="widget">
                                                         <div class="support-widget">
-                                                                <h3 class="title">Support</h3>
-                                                                <p class="intro">Need more support? If you did not found an answer, contact us for further help.</p>
+                                                                <h3 class="title">${bbs.user.nickname }</h3>
                                                         </div>
-                                                </section>
-
-
-                                                <section class="widget">
-                                                        <h3 class="title">Featured Articles</h3>
-                                                        <ul class="articles">
-                                                                <li class="article-entry standard">
-                                                                        <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
-                                                                        <span class="article-meta">25 Feb, 2013 in <a href="#" title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
-                                                                        <span class="like-count">66</span>
-                                                                </li>
-                                                                <li class="article-entry standard">
-                                                                        <h4><a href="single.html">WordPress Site Maintenance</a></h4>
-                                                                        <span class="article-meta">24 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                        <span class="like-count">15</span>
-                                                                </li>
-                                                                <li class="article-entry video">
-                                                                        <h4><a href="single.html">Meta Tags in WordPress</a></h4>
-                                                                        <span class="article-meta">23 Feb, 2013 in <a href="#" title="View all posts in Website Dev">Website Dev</a></span>
-                                                                        <span class="like-count">8</span>
-                                                                </li>
-                                                                <li class="article-entry image">
-                                                                        <h4><a href="single.html">WordPress in Your Language</a></h4>
-                                                                        <span class="article-meta">22 Feb, 2013 in <a href="#" title="View all posts in Advanced Techniques">Advanced Techniques</a></span>
-                                                                        <span class="like-count">6</span>
-                                                                </li>
-                                                        </ul>
-                                                </section>
-
-
-
-                                                <section class="widget"><h3 class="title">Categories</h3>
-                                                        <ul>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Advanced Techniques</a> </li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Designing in WordPress</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Server &amp; Database</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet, ">Theme Development</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">Website Dev</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet,">WordPress for Beginners</a></li>
-                                                                <li><a href="#" title="Lorem ipsum dolor sit amet, ">WordPress Plugins</a></li>
-                                                        </ul>
-                                                </section>
-
-                                                <section class="widget">
-                                                        <h3 class="title">Recent Comments</h3>
-                                                        <ul id="recentcomments">
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments">saqib sarwar on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">John Doe</a> on <a href="#">Integrating WordPress with Your Website</a></li>
-                                                                <li class="recentcomments"><a href="#" rel="external nofollow" class="url">Mr WordPress</a> on <a href="#">Installing WordPress</a></li>
-                                                        </ul>
                                                 </section>
 
                                         </aside>

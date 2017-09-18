@@ -20,7 +20,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</association>
 	</resultMap>
 	
+	<!-- 根据评论Id查询回复信息 -->
+	<select id="findAllBoard" resultMap="boardRM">
+		select bu.nickname,bu.response_txt,bu.response_time,info.reply_id 
+		from (select * from reply r,board b where r.reply_id = b.response_id) info ,
+		(select * from board b,user_s u where b.user_id = u.id) bu 
+		where info.reply_id = bu.response_id
+	</select>
+	
+	<resultMap type="cn.tedu.pojo.Board" id="boardRM" autoMapping="true">
+		<id column="response_id" property="responseId"/>
+		
+		<association property="reply" javaType="cn.tedu.pojo.Reply">
+			<id column="reply_id" property="replyId"/>
+		</association>
+		
+		<association property="user" javaType="cn.tedu.pojo.User">
+			<id column="user_id" property="id"/>
+			<result column="nickname" property="nickname"/>
+		</association>
+	</resultMap>
+	
 	<update id="updateBbsRecount">
 		update bbs set recount=recount+1 where bss_id = #{bssId}
 	</update>
+	<select id="findAllBoardById" resultMap="boardRM">
+		
+		select bu.nickname,bu.response_txt,bu.response_time,info.reply_id 
+		from (select * from reply r,board b where r.reply_id = b.response_id) info ,
+		(select * from board b,user_s u where b.user_id = u.id) bu 
+		where info.reply_id = bu.response_id and bu.response_id = #{id}
+	</select>
 </mapper>

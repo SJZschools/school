@@ -13,13 +13,12 @@ public interface BbsService {
 
 	//根据bssId（帖子id）查询这条数据的详细信息
 	public Bbs findAllByBbsId(String bssId);
-
+	
 	//根据bssClass（标签）查询相应的Bbs
 //	public List<Bbs> findAllByClass(String bssClass);
 	
 	//帖子发布
 	public void saveBBS(Bbs bbs);
-
 
 	
 }
