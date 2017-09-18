@@ -45,7 +45,7 @@
 </head>
 
 <body>
-	<form name="icform" method="post" action="${ctx}/savebbs">
+	<form name="icform" method="post" action="${ctx}/savebbs" enctype="multipart/form-data" >
 		<!-- Start of Header -->
 		<div class="header-wrapper">
 			<header>
@@ -125,24 +125,15 @@
 									<div class="page-header">
 										<div class="page-title" style="padding-bottom: 5px">
 											<ol class="breadcrumb">
+											<li><input type="file" name="mFile" class="form-control" multiple="true" ></li>
+										
 												<li class="active">图片上传</li>
 											</ol>
 										</div>
 										<div class="page-stats"></div>
 									</div>
 								
-										<!-- 查询表单 -->
-										<div class="row page-search">
-											<div class="col-md-12">
-												<ul class="list-unstyled list-inline">
-													<li><input type="text" name="title"
-														class="form-control" placeholder="图片标题"></li>
-													<li><input type="file" name="mFile"
-														class="form-control" multiple="true"></li>
-													
-												</ul>
-											</div>
-										</div>
+									
 										
 						</div>
 
