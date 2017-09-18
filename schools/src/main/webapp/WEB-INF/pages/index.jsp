@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="base.jsp"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@	taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -23,14 +25,22 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
         <script src="${ctx}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
+        <script language="javascript">
+		  function changeImg(obImg,sNewURL)
+		  {
+		       if(sNewURL!="") obImg.src=sNewURL;
+		  }
+		</script>
+		
     </head>
     <body>
 
         <div class="overlay"></div>
         <section class="top-part">
           <video controls autoplay loop>
-            <source src="videos/video.mp4" type="video/mp4">
-            <source src="videos/video.ogg" type="video/ogg">
+            <source src="${ctx}/videos/video.mp4" type="video/mp4">
+            <source src="${ctx}/videos/video.ogg" type="video/ogg">
           Your browser does not support the video tag.
           </video>
         </section>
@@ -133,23 +143,25 @@
                       <div class="content third-content">
                         <div class="row">
                           <div class="col-md-7 left-image">
-                            <img src="${ctx}/images/left-feature-image.png"><!--动态获取图片资料-->
+                          <img style="cursor:hand;" src="${ctx}/images/lta.png" onmouseover="changeImg(this,'${ctx}/images/ltb.png');" onmouseout="changeImg(this,'${ctx}/images/lta.png');">
+                          <!--动态获取图片资料-->
                           </div>
                           <div class="col-md-5">
                             <div class="right-feature-text">
-                              <h4><a href="#">${Dynamic.title}</a><em>获取时间</em></h4>
-                              <p>获取事件文本内容获取事件文本内容获取事件文本内容获取事件文本获取事件文本内容获取事件文本获取事件文本内容获取事件文本大约60字<a>......详细查看</a></p>
-                              <div class="feature-list">
-                                <ul>
-                                  <a href="#"><p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                 <a href="#"> <p>- 动态显示m</p></a>
-                                  <a href="#"><p>- 动态显示m</p></a>
-                                </ul>
+                              <h3><a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">${firstDynamic.dynamicTitle}</a></h3>
+                              <em>更新于：<fmt:formatDate value="${firstDynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></em>
+                              <p>
+                              ${ fn:length(firstDynamic.dynamicContent) >45 ? fn:substring(firstDynamic.dynamicContent ,0,45) : firstDynamic.dynamicContent } ${ fn:length(firstDynamic.dynamicContent ) >45 ? '...':''}
+                              <a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}"> 查看详细</a></p>
+                              <div class="feature-list">                                
+                                  <h4><font color="red" face="方正姚体">最近更新：</font></h4>	
+                                  <c:set var="count" value="0"></c:set>
+                                  <c:forEach items="${newList}" var="n">
+									<a href="lifeSingle?dynamicId=${n.dynamicId}" onfocus="changeStyle(this.id)"><p>${n.dynamicTitle}</p></a>
+								  </c:forEach>
                               </div>
                               <div class="primary-button">
-                                <a href="dy_home">查看更多动态</a>
+                                <a href="lifeHome">查看更多动态</a>
                               </div>
                             </div>
                           </div>
@@ -172,8 +184,8 @@
                     <div class="col-md-12">
                       <div class="content fourth-content">
                         <div class="row">
-                          <div class="col-md-3 project-item">
-                            <a href="${ctx}/images/item-01.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-01.jpg"></a>
+                          <div class="col-md-3 project-item">                          
+                            <a href="${ctx}/images/item-01.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-01.jpg"></a>                           
                           </div>
                           <div class="col-md-3 project-item">
                             <a href="${ctx}/images/item-02.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-02.jpg"></a>
@@ -194,7 +206,7 @@
                             <a href="${ctx}/images/item-07.jpg" data-lightbox="image-1"><img src="${ctx}/images/project-item-07.jpg"></a>
                           </div>
                           <div class="col-md-3 project-item">
-                            <a href="life_index.html" ><img src="${ctx}/images/project-item-08.jpg"></a>
+                            <a href="http://www.tmooc.cn/" ><img src="${ctx}/images/project-item-08.jpg"></a>
                           </div>
                         </div>
                       </div>
@@ -229,20 +241,10 @@
                           </div>
                           <div class="col-md-8">
                             <div class="row">
-                              <form id="contact" action="" method="post">
-                                <div class="col-md-6">
-                                  <fieldset>
-                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                  </fieldset>
-                                </div>
-                                <div class="col-md-6">
-                                  <fieldset>
-                                    <input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
-                                  </fieldset>
-                                </div>
+                              <form id="contact" action="${ctx}/advice" method="post">
                                 <div class="col-md-12">
                                   <fieldset>
-                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                                    <textarea name="adviceTxt" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
                                   </fieldset>
                                 </div>
                                 <div class="col-md-12">

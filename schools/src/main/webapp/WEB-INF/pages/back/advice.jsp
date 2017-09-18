@@ -1,10 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
+<title>校园动态</title>
+<link href="${ctx}/css/backstyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctx}/js/jquery.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -14,16 +18,23 @@ $(document).ready(function(){
   
   $(".tiptop a").click(function(){
   $(".tip").fadeOut(200);
-});
+	});
 
   $(".sure").click(function(){
   $(".tip").fadeOut(100);
-});
+	});
 
   $(".cancel").click(function(){
   $(".tip").fadeOut(100);
-});
-
+	});
+	
+  $(".tablelink1").click(function(){
+	  var id = $(this).attr("id")
+	  if(confirm("是否删除信息？")){
+		  window.location.href="/back/deleteAdvice?id="+id
+	  }
+				  
+	});
 });
 </script>
 
@@ -36,8 +47,8 @@ $(document).ready(function(){
 	<div class="place">
     <span>位置：</span>
     <ul class="placeul">
-    <li><a href="index.html">首页</a></li>
-    <li><a href="quession.html">学员问题</a></li>
+    <li><a href="/back/home">首页</a></li>
+    <li><a href="/back/advice">学员问题</a></li>
     
     </ul>
     </div>
@@ -48,45 +59,30 @@ $(document).ready(function(){
     
     	<ul class="toolbar">
        
-        <li class="click"><span><img src="images/t02.png" /></span><a href="updateQuestion.html" target="rightFrame">解答</a></li>
-        <li><span><img src="images/t03.png" /></span><a href="deleteQuestion.html" target="rightFrame">删除</a></li>
-        <li><span><img src="images/t04.png" /></span><a href="seeQuestion.html" target="rightFrame">统计</a></li>
+        <li><span><img src="${ctx}/images/backimg/t04.png" /></span><a href="seeQuestion.html" target="rightFrame">统计</a></li>
         </ul>
         
-        
-        <ul class="toolbar1">
-        <li><span><img src="images/t05.png" /></span>设置</li>
-        </ul>
-    
     </div>
     
     
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="selectAll" type="checkbox"  onclick="checkAll('studyId',this)"/></th>
-        <th>学号<i class="sort"><img src="images/px.gif" /></i></th>
-        
+        <th>学号<i class="sort"><img src="${ctx}/images/backimg/px.gif" /></i></th>
         <th>姓名</th>
-        <th>籍贯</th>
         <th>发布时间</th>
-        <th>是否毕业</th>
-		<th>是否解答</th>
         <th>操作</th>
         </tr>
         </thead>
         <tbody>
+        <c:forEach items="${adviceList }" var="al">
         <tr>
-        <td><input name="studyId" type="checkbox" value="" /></td>
-        <td>20130908</td>
-        <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
-        <td>admin</td>
-        <td>江苏南京</td>
-        <td>2013-09-09 15:05</td>
-        <td>已审核</td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+        <td>${al.user.id }</td>
+        <td>${al.user.nickname }</td>
+        <td>${al.adviceTime }</td>
+        <td><a href="/back/seeAdvice?id=${al.id}" class="tablelink">查看</a>     <a id = "${al.id}" href="#" class="tablelink1"> 删除</a></td>
         </tr> 
-        
+        </c:forEach>
         
         </tbody>
     </table>

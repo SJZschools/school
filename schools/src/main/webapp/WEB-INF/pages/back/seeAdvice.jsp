@@ -1,14 +1,17 @@
+<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/select.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
-<script type="text/javascript" src="js/select-ui.min.js"></script>
-<script type="text/javascript" src="editor/kindeditor.js"></script>
+<link href="${ctx}/css/backstyle.css" rel="stylesheet" type="text/css" />
+<link href="${ctx}/css/backselect.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${ctx}/js/jquery.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/select-ui.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/kindeditor.js"></script>
 
 <script type="text/javascript">
     KE.show({
@@ -28,6 +31,9 @@ $(document).ready(function(e) {
 	$(".select3").uedSelect({
 		width : 100
 	});
+	$(".btn").click(function(){
+		window.location.href="${ctx}/back/advice";			  
+	});
 });
 </script>
 </head>
@@ -38,7 +44,7 @@ $(document).ready(function(e) {
     <span>位置：</span>
     <ul class="placeul">
     <li><a href="#">首页</a></li>
-    <li><a href="#">系统设置</a></li>
+    <li><a href="#">学员反馈</a></li>
     </ul>
     </div>
     
@@ -49,37 +55,29 @@ $(document).ready(function(e) {
     
     <div class="itab">
   	<ul> 
-    <li><a href="#tab1" class="selected">发布通知</a></li> 
-    <li><a href="#tab2">自定义</a></li> 
+    <li><a href="#tab1" class="selected">反馈内容</a></li> 
   	</ul>
     </div> 
     
   	<div id="tab1" class="tabson">
     
-    <div class="formtext">Hi，<b>admin</b>，欢迎您试用信息发布功能！</div>
+   
     
     <ul class="forminfo">
-    <li><label>题目<b>*</b></label><input name="" type="text" class="dfinput" placeholder="请填写发帖名称"  style="width:518px;"/></li>
+    <li><label>建议人<b>*</b></label><p name="" type="text" class="dfinput"  style="width:518px;">${advice.user.nickname }</p></li>
  
     
     
     
     
-    <li><label>帖子内容<b>*</b></label>
+    <li><label>建议内容<b>*</b></label>
     
 
-    <textarea  id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+    <textarea  id="content7" name="content" style="width:700px;height:250px;visibility:hidden;">${advice.adviceTxt }</textarea>
     
     </li>
    
-	
-	<li><label>回帖内容<b>*</b></label>
-    
-
-    <input  type="text" name="username" class="dfinput" />
-    
-    </li>
-    <li><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布"/></li>
+    <li><label>&nbsp;</label><input type="button" class="btn" value="返回"/></li>
 	
     </ul>
     

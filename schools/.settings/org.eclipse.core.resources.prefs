@@ -2,6 +2,10 @@ eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/java/cn/tedu/Page.java=UTF-8
 encoding//src/main/resources=UTF-8
+<<<<<<< HEAD
+encoding//src/main/webapp/css/backselect.css=UTF-8
+=======
 encoding//src/main/webapp/WEB-INF/pages/back/bbsBackCheck.jsp=UTF-8
+>>>>>>> origin/wanganqi
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

@@ -7,36 +7,36 @@ import java.util.Date;
  */
 public class Dynamic {
 	
-	private String id;			//动态id
-	private String title;		//动态标题
-	private Date rtime;			//发布时间
-	private String content;		//动态内容
-	private String rid;			//发布者id
-	private String rname;		//发布者姓名
-	private Integer rcount;		//评论次数
-	public String getId() {
-		return id;
+	private String dynamicId;			//动态id
+	private String dynamicTitle;		//动态标题
+	private Date dynamicTime;			//发布时间
+	private String dynamicContent;		//动态内容
+	private String rid;					//发布者id
+	private String rname;				//发布者姓名
+	private Integer rcount;				//点赞次数
+	public String getDynamicId() {
+		return dynamicId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setDynamicId(String dynamicId) {
+		this.dynamicId = dynamicId;
 	}
-	public String getTitle() {
-		return title;
+	public String getDynamicTitle() {
+		return dynamicTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setDynamicTitle(String dynamicTitle) {
+		this.dynamicTitle = dynamicTitle;
 	}
-	public Date getRtime() {
-		return rtime;
+	public Date getDynamicTime() {
+		return dynamicTime;
 	}
-	public void setRtime(Date rtime) {
-		this.rtime = rtime;
+	public void setDynamicTime(Date dynamicTime) {
+		this.dynamicTime = dynamicTime;
 	}
-	public String getContent() {
-		return content;
+	public String getDynamicContent() {
+		return dynamicContent;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setDynamicContent(String dynamicContent) {
+		this.dynamicContent = dynamicContent;
 	}
 	public String getRid() {
 		return rid;
@@ -55,6 +55,12 @@ public class Dynamic {
 	}
 	public void setRcount(Integer rcount) {
 		this.rcount = rcount;
+	}
+	@Override
+	public String toString() {
+		return "Dynamic [dynamicId=" + dynamicId + ", dynamicTitle=" + dynamicTitle + ", dynamicTime=" + dynamicTime
+				+ ", dynamicContent=" + dynamicContent + ", rid=" + rid + ", rname=" + rname + ", rcount=" + rcount
+				+ "]";
 	}
 	
 	
