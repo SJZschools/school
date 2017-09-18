@@ -1,12 +1,17 @@
 package cn.tedu.pojo;
+
+import java.util.Date;
+
 /**
  * 帖子的实体类
  * */
 public class Bbs {
+	private User user;//用户表
+	
 	private String bssId;//帖子 id
 	private String bssTitle;//帖子标题
 	private String bssContext;//帖子内容
-	private String creatTime;//创建时间
+	private Date creatTime;//创建时间
 	private String creatId;//创建人id
 	private Integer bcount;//浏览次数
 	private Integer recount;//评论次数
@@ -39,10 +44,10 @@ public class Bbs {
 	public void setBssContext(String bssContext) {
 		this.bssContext = bssContext;
 	}
-	public String getCreatTime() {
+	public Date getCreatTime() {
 		return creatTime;
 	}
-	public void setCreatTime(String creatTime) {
+	public void setCreatTime(Date creatTime) {
 		this.creatTime = creatTime;
 	}
 	public String getCreatId() {
@@ -74,6 +79,13 @@ public class Bbs {
 	}
 	public void setBssLevel(Integer bssLevel) {
 		this.bssLevel = bssLevel;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }

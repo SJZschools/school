@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.BackStudentMapper">
+	
+	<!--查询所有学生  -->
+	<select id="findAllStudent" resultMap="userRM">
+		select * from user_s u left join (select id userInfoId,name,sex,classes,card,timeofenrollment from user_info) i on i.userInfoId = u.id
+	</select>
+	<resultMap type="cn.tedu.pojo.User" id="userRM" autoMapping="true">
+		<!--完成主表映射  -->
+		<id column="id" property="id"/>
+		<!--封装userInfo对象  -->
+		<association property="userInfo" javaType="cn.tedu.pojo.UserInfo" resultMap="infoRM"/>
+	</resultMap>
+	<!--为了封装userInfo的结果集  -->
+	<resultMap type="cn.tedu.pojo.UserInfo" id="infoRM" autoMapping="true">
+		<id column="userInfoId" property="id"/>
+		<result column="name" property="name"/>
+		<!-- <result column="sex" property="sex"/>
+		<result column="classes" property="classes"/>
+		<result column="homeplace" property="homeplace"/>
+		<result column="timeofenrollment" property="timeofenrollment"/> -->
+	</resultMap>
+
+	<!--添加新增学生  -->
+	<insert id="addBackStudent">
+		insert into user_s (id,username,password) values (#{id},#{username},#{password})
+	</insert>
+	<!--添加新增学生信息  -->
+	<insert id="addBackStudentInfo">
+		insert into user_info (id,name,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
+					 values (#{id},#{name},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
+	</insert>
+
+
+	<select id="updateUser" resultType="cn.tedu.pojo.User">
+		select * from user_s where id=#{id}
+	</select>
+
+	<select id="updateUserInfo" resultType="cn.tedu.pojo.UserInfo">
+		select * from user_info where id=#{id}
+	</select>
+	
+	<delete id="deleteOneUser">
+		delete from user_s where id = #{id}
+	</delete>
+
+	<delete id="deleteOneUserInfo">
+		delete from user_info where id=#{id}
+	</delete>
+
+	<select id="findCount" resultType="java.lang.Integer">
+		select count(*) from user_s
+	</select>
+
+
+
+
+</mapper>

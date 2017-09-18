@@ -56,6 +56,12 @@ public class Dynamic {
 	public void setRcount(Integer rcount) {
 		this.rcount = rcount;
 	}
+	@Override
+	public String toString() {
+		return "Dynamic [dynamicId=" + dynamicId + ", dynamicTitle=" + dynamicTitle + ", dynamicTime=" + dynamicTime
+				+ ", dynamicContent=" + dynamicContent + ", rid=" + rid + ", rname=" + rname + ", rcount=" + rcount
+				+ "]";
+	}
 	
 	
 }

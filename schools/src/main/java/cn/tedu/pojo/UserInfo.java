@@ -2,7 +2,7 @@ package cn.tedu.pojo;
 
 import java.util.Date;
 
-public class UserInfo {
+public class UserInfo  {
 	private String id;//和User表id关联
 	private String name;
 	private String sex;
@@ -20,6 +20,20 @@ public class UserInfo {
 	private String blood;//血型
 	private String job;
 	private String homeplace;//出生地
+	private String card;//身份证号
+	
+	public String geteMail() {
+		return eMail;
+	}
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
+	}
+	public String getCard() {
+		return card;
+	}
+	public void setCard(String card) {
+		this.card = card;
+	}
 	public String getId() {
 		return id;
 	}
@@ -38,12 +52,7 @@ public class UserInfo {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public String getEMail() {
-		return eMail;
-	}
-	public void setEMail(String email) {
-		this.eMail = email;
-	}
+
 	public String getAddress() {
 		return address;
 	}
@@ -121,6 +130,14 @@ public class UserInfo {
 	}
 	public void setHomeplace(String homeplace) {
 		this.homeplace = homeplace;
+	}
+	@Override
+	public String toString() {
+		return "UserInfo [id=" + id + ", name=" + name + ", sex=" + sex + ", eMail=" + eMail + ", address=" + address
+				+ ", timeofenrollment=" + timeofenrollment + ", birthday=" + birthday + ", classes=" + classes
+				+ ", tel=" + tel + ", age=" + age + ", sf=" + sf + ", headAddress=" + headAddress + ", personalRemarks="
+				+ personalRemarks + ", qq=" + qq + ", blood=" + blood + ", job=" + job + ", homeplace=" + homeplace
+				+ ", card=" + card + "]";
 	}
 	
 }
