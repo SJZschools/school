@@ -26,11 +26,12 @@ public class Advice {
 	public void setAdviceTxt(String adviceTxt) {
 		this.adviceTxt = adviceTxt;
 	}
-	public Date getAdvcieTime() {
+	public Date getAdviceTime() {
 		return adviceTime;
 	}
-	public void setAdvcieTime(Date date) {
-		this.adviceTime = date;
+	public void setAdviceTime(Date adviceTime) {
+		this.adviceTime = adviceTime;
 	}
+	
 	
 }

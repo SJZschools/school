@@ -17,6 +17,16 @@ public class BackAdviceServiceImpl implements BackAdviceService {
 	@Override
 	public List<Advice> findAll() {
 		return backAdviceMapper.findAll();
+	}
+
+	@Override
+	public Advice findAllById(String id) {
+		return backAdviceMapper.findAllById(id);
+	}
+
+	@Override
+	public void deleteAdviceById(String id) {
+		backAdviceMapper.deleteAdviceById(id);
 	}	
 
 }

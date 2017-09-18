@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
+<title>校园动态</title>
 <link href="${ctx}/css/backstyle.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctx}/js/jquery.js"></script>
 
@@ -18,16 +18,23 @@ $(document).ready(function(){
   
   $(".tiptop a").click(function(){
   $(".tip").fadeOut(200);
-});
+	});
 
   $(".sure").click(function(){
   $(".tip").fadeOut(100);
-});
+	});
 
   $(".cancel").click(function(){
   $(".tip").fadeOut(100);
-});
-
+	});
+	
+  $(".tablelink1").click(function(){
+	  var id = $(this).attr("id")
+	  if(confirm("是否删除信息？")){
+		  window.location.href="/back/deleteAdvice?id="+id
+	  }
+				  
+	});
 });
 </script>
 
@@ -55,21 +62,14 @@ $(document).ready(function(){
         <li><span><img src="${ctx}/images/backimg/t04.png" /></span><a href="seeQuestion.html" target="rightFrame">统计</a></li>
         </ul>
         
-        
-        <ul class="toolbar1">
-        <li><span><img src="${ctx}/images/backimg/t05.png" /></span>设置</li>
-        </ul>
-    
     </div>
     
     
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="selectAll" type="checkbox"  onclick="checkAll('studyId',this)"/></th>
         <th>学号<i class="sort"><img src="${ctx}/images/backimg/px.gif" /></i></th>
         <th>姓名</th>
-        <th>标题</th>
         <th>发布时间</th>
         <th>操作</th>
         </tr>
@@ -77,12 +77,10 @@ $(document).ready(function(){
         <tbody>
         <c:forEach items="${adviceList }" var="al">
         <tr>
-        <td><input name="studyId" type="checkbox" id="${al.id}"/></td>
-        <td>20130908</td>
-        <td>admin</td>
-        <td>王金平幕僚：马英九声明字字见血 人活着没意思</td>
+        <td>${al.user.id }</td>
+        <td>${al.user.nickname }</td>
         <td>${al.adviceTime }</td>
-        <td><a href="#" class="tablelink">查看</a>     <a href="#" class="tablelink"> 删除</a></td>
+        <td><a href="/back/seeAdvice?id=${al.id}" class="tablelink">查看</a>     <a id = "${al.id}" href="#" class="tablelink1"> 删除</a></td>
         </tr> 
         </c:forEach>
         

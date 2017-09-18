@@ -1,6 +1,7 @@
 package cn.tedu.service;
 
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,10 @@ public class AdviceServiceImpl implements AdviceService {
 	
 	@Override
 	public void saveAdvice(Advice advice ,User user) {
-		advice.setAdvcieTime(new Date());
+		String id = UUID.randomUUID().toString();
+		advice.setAdviceTime(new Date());
 		advice.setUser(user);
+		advice.setId(id);
 		adviceMapper.saveAdvice(advice);
 	}
 

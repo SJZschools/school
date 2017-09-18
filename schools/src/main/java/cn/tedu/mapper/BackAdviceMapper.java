@@ -10,4 +10,8 @@ public interface BackAdviceMapper {
 
 	public abstract List<Advice> findAll();
 
+	public abstract Advice findAllById(String id);
+
+	public abstract void deleteAdviceById(String id);
+
 }

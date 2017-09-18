@@ -240,7 +240,7 @@
                               <form id="contact" action="${ctx}/advice" method="post">
                                 <div class="col-md-12">
                                   <fieldset>
-                                    <textarea name="advcieTxt" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                                    <textarea name="adviceTxt" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
                                   </fieldset>
                                 </div>
                                 <div class="col-md-12">

@@ -2,7 +2,6 @@ package cn.tedu.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Advice;
-import cn.tedu.pojo.User;
 import cn.tedu.service.BackAdviceService;
 
 /**
@@ -33,4 +31,16 @@ public class BackAdviceController {
 		return "/back/advice";
 	}
 	
+	@RequestMapping("/seeAdvice")
+	public String seeAdvice(String id,Model model){
+		Advice advice = backAdviceService.findAllById(id);
+		model.addAttribute("advice", advice);
+		return "/back/seeAdvice";
+	}
+	
+	@RequestMapping("/deleteAdvice")
+	public String deleteAdviceById(String id){
+		backAdviceService.deleteAdviceById(id);
+		return "redirect:/back/advice";
+	}
 }
