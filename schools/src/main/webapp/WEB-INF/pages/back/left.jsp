@@ -47,7 +47,7 @@ $(function(){
 		
         <li class="active"><cite></cite><a href="student/${nowPage }" target="rightFrame">学生管理</a><i></i></li>
 		
-		<li class="active"><cite></cite><a href="discuss.html" target="rightFrame">论坛管理</a><i></i></li>
+		<li class="active"><cite></cite><a href="discuss/${nowPage }" target="rightFrame">论坛管理</a><i></i></li>
 		
 		<li class="active"><cite></cite><a href="study.html" target="rightFrame">学习资料</a><i></i></li>
 		

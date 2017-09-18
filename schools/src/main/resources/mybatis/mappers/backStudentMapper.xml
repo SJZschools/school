@@ -25,10 +25,6 @@ WHERE rn BETWEEN 6 AND 10
 	<resultMap type="cn.tedu.pojo.UserInfo" id="infoRM" autoMapping="true">
 		<id column="userInfoId" property="id"/>
 		<result column="name" property="name"/>
-		<!-- <result column="sex" property="sex"/>
-		<result column="classes" property="classes"/>
-		<result column="homeplace" property="homeplace"/>
-		<result column="timeofenrollment" property="timeofenrollment"/> -->
 	</resultMap>
 
 	<!--添加新增学生  -->

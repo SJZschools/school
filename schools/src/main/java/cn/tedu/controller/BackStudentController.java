@@ -26,7 +26,6 @@ public class BackStudentController extends BaseController {
 	//跳转到学生管理界面
 	@RequestMapping("/student/{nowPage}")
 	public String toStudent(@PathVariable("nowPage") Integer nowPage,Model model){
-		System.out.println(nowPage);
 		Page page = new Page();
 		page.setNowPage(nowPage);
 		//查询总记录是
@@ -60,7 +59,6 @@ public class BackStudentController extends BaseController {
 	
 	@RequestMapping("/student")
 	public String toStudent2(Integer nowPage,Model model){
-		System.out.println(nowPage);
 		Page page = new Page();
 		page.setNowPage(nowPage);
 		//查询总记录是
@@ -165,7 +163,8 @@ public class BackStudentController extends BaseController {
 	public String todeleteStudent(String ids){
 		System.out.println(ids);
 		backStudentService.deleteAllStudent(ids);
-		return "redirect:student";
+		int i = 1;
+		return "redirect:student"+"/"+i;
 	}
 		
 	
