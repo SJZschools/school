@@ -2,6 +2,7 @@ package cn.tedu.service;
 
 import java.util.List;
 
+import cn.tedu.pojo.Habit;
 import cn.tedu.pojo.User;
 
 public interface UserService {
@@ -13,5 +14,14 @@ public interface UserService {
 
 
 	public void updateUserNickname(User user);
+
+
+
+
+	public void addHU(String id, String s);
+
+
+
+
 	
 }

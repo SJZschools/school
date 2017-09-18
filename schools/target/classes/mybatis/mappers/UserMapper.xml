@@ -6,8 +6,10 @@
 	<update id="updateUserNickname">
 		update user_s
 		<set>
-			nickname=#{nickname}
+			nickname=#{nickname,jdbcType=VARCHAR}
 		</set>
 		where id=#{id}
 	</update>
+	
+	
 </mapper>

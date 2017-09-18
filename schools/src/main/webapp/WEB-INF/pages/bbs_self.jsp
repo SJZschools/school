@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ include file="base.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
@@ -121,11 +122,11 @@
 									<br>
 									<li class="article-entry standard">
 										<h4>爱好：</h4> <br> 
-										<input type="checkbox" name="habit.hName" value="1" />篮球 
+										<input type="checkbox" name="hId" value="1" <c:if test="${h}.equals('1')">checked="checked"</c:if>/>篮球 
 										
-										<input type="checkbox" name="habit.hName" value="2" />羽毛球 
+										<input type="checkbox" name="hId" value="2" <c:if test="${h}.equals('2')">checked="checked"</c:if>/>羽毛球 
 										
-										<input type="checkbox" name="habit.hName" value="3" />读书
+										<input type="checkbox" name="hId" value="3" <c:if test="${h}.equals('3')">checked="checked"</c:if>/>读书
 										
 									</li>
 									<br>
