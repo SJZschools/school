@@ -28,7 +28,10 @@ public interface BbsMapper {
 	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context) "
 			+ "values(#{bssId},#{creatId},#{bssTitle},#{bssClass},#{bssContext})")
 	public void saveBBS(Bbs bbs);
+<<<<<<< HEAD
 
+=======
+>>>>>>> dml
 
 	//查询帖子数量
 	public int findCount();
@@ -43,6 +46,7 @@ public interface BbsMapper {
 	 */
 	public void updateGreat(@Param(value="bbsId")String bbsId,@Param(value="count")int count);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	/**
@@ -62,4 +66,6 @@ public interface BbsMapper {
 >>>>>>> jc
 
 	
+=======
+>>>>>>> dml
 }

@@ -37,6 +37,10 @@ public class BbsController {
 	/*
 	 * 查询论坛信息
 	 */
+<<<<<<< HEAD
+=======
+
+>>>>>>> dml
 //	@RequestMapping("bbs_home")
 //	public String findAll(Model model,String bssClass){
 //		
@@ -55,6 +59,10 @@ public class BbsController {
 //		//跳到论坛页面
 //		return "bbs_home";
 //	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> dml
 //	@RequestMapping("bbs_home")
 //	public String findAll(Model model,String bssClass){
 //		
@@ -62,7 +70,11 @@ public class BbsController {
 //		List<Bbs> bbsList = bbsService.findAll();
 //		
 //		//查询所有Bbs并根据（创建时间）排序
+<<<<<<< HEAD
 //		List<Bbs> bbsListT = bbsService.findAllByTime();
+=======
+//		//List<Bbs> bbsListT = bbsService.findAllByTime();
+>>>>>>> dml
 //		
 //		//查询最多评论数量的Bbs
 ////		List<Bbs> bbsListTop = bbsService.findBbsTop();
@@ -76,6 +88,10 @@ public class BbsController {
 //		//跳到论坛页面
 //		return "bbs_home";
 //	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> dml
 	
 	/*
 	 * 根据id查询帖子的详细信息
@@ -139,6 +155,10 @@ public class BbsController {
 		
 		return "bbs_single";
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> dml
 	
 	@RequestMapping("/bbs_home/{nowPage}")
 	public String toBBSPage(@PathVariable("nowPage") Integer nowPage,Model model){
@@ -178,4 +198,10 @@ public class BbsController {
 		
 		return "bbs_home";
 	}
+<<<<<<< HEAD
+=======
+
+	
+
+>>>>>>> dml
 }
