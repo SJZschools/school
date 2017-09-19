@@ -34,9 +34,9 @@ public class LoginController {
 		}
 		String md5Password = MD5HashPassword.getPassword(username, password);
 		User user = null;
-		if(( user = loginService.findUser(username,md5Password))!=null){
+		if(( user = loginService.findUser(username))!=null){
 			session.setAttribute("userSession", user);
-			return "index";
+			return "index1";
 		}
 		String errorInfo = "用户名或密码错误";
 		model.addAttribute("username",username);

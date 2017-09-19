@@ -61,7 +61,7 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="index.html">首页</a></li>
+							<li><a href="index">首页</a></li>
 							<li><a href="bbs_home.html">校园论坛</a></li>
 							<li><a href="bbs_post.html">发帖</a></li>
 							<li><a href="bbs_self.html">个人信息</a></li>
