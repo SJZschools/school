@@ -31,29 +31,5 @@ public class IndexController {
 		model.addAttribute("firstDynamic",firstDynamic);
 		return "/index";
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/wanganqi
-=======
 
->>>>>>> wanganqi
-	@RequestMapping("map")
-	public String toMap(){
-		return "map";
-	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
-	
->>>>>>> master
->>>>>>> origin/wanganqi
-=======
-
-	
->>>>>>> wanganqi
 }

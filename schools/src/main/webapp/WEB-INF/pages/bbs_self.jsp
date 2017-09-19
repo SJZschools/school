@@ -22,7 +22,7 @@
 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
 
 <!-- Style Sheet-->
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
 	href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-css-css'
@@ -53,7 +53,7 @@
 
 				<div class="logo-container">
 					<!-- Website Logo -->
-					<a href="index.html" title="Knowledge Base Theme"> <img
+					<a href="${ctx}/index.html" title="Knowledge Base Theme"> <img
 						src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
 					</a>
 				</div>
@@ -63,11 +63,11 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="index.html">首页</a></li>
-							<li><a href="bbs_home.html">校园论坛</a></li>
-							<li><a href="bbs_post.html">发帖</a></li>
-							<li><a href="bbs_self.html">个人信息</a></li>
-							<li><a href="#">退出</a></li>
+							<li><a href="${ctx}/index.html">首页</a></li>
+							<li><a href="${ctx}/bbs_home.html">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post.html">发帖</a></li>
+							<li><a href="${ctx}/bbs_self.html">个人信息</a></li>
+							<li><a href="${ctx}/login.html">退出</a></li>
 						</ul>
 					</div>
 				</nav>

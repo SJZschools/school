@@ -17,7 +17,7 @@
 
 
                 <!-- Style Sheet-->
-                <link rel="stylesheet" href="style.css"/>
+                <link rel="stylesheet" href="${ctx}/style.css"/>
                 <link rel='stylesheet' id='bootstrap-css-css'  href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='responsive-css-css'  href='${ctx}/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
@@ -42,7 +42,7 @@
 
                                         <div class="logo-container">
                                                 <!-- Website Logo -->
-                                                <a href="index.html"  title="Knowledge Base Theme">
+                                                <a href="${ctx}/index.html"  title="Knowledge Base Theme">
                                                         <img src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
                                                 </a>
                                         </div>
@@ -52,11 +52,11 @@
                                         <nav class="main-nav">
                                                 <div class="menu-top-menu-container">
                                                         <ul id="menu-top-menu" class="clearfix">
-                                                                <li><a href="index">首页</a></li>
-                                                                <li><a href="bbs_home">校园论坛</a></li>
-                                                                <li><a href="bbs_post">发帖</a></li>
-                                                                <li><a href="bbs_self">个人信息</a></li>
-                                                                <li><a href="#">退出</a></li>
+                                                                <li><a href="${ctx}/index">首页</a></li>
+                                                                <li><a href="${ctx}/bbs_home">校园论坛</a></li>
+                                                                <li><a href="${ctx}/bbs_post">发帖</a></li>
+                                                                <li><a href="${ctx}/bbs_self">个人信息</a></li>
+                                                                <li><a href="${ctx}/login.html">退出</a></li>
                                                         </ul>
                                                 </div>
                                         </nav>
@@ -220,7 +220,7 @@
                                         <div class="row">
                                                 <div class="span6">
                                                         <p class="copyright">
-                                                                Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect from <a href="http://www.cssmoban.com/" title="达内校园" target="_blank">达内校园</a>
+                                                                Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect from <a href="#" title="达内校园" target="_blank">达内校园</a>
                                                         </p>
                                                 </div>
                                                 <div class="span6">

@@ -21,7 +21,7 @@
 
 
 <!-- Style Sheet-->
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
 	href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-css-css'
@@ -53,7 +53,7 @@
 
 				<div class="logo-container">
 					<!-- Website Logo -->
-					<a href="index.html" title="Knowledge Base Theme"> <img
+					<a href="${ctx}/index.html" title="Knowledge Base Theme"> <img
 						src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
 					</a>
 				</div>
@@ -63,11 +63,11 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="index">首页</a></li>
-							<li><a href="bbs_home">校园论坛</a></li>
-							<li><a href="bbs_post">发帖</a></li>
-							<li><a href="bbs_self">个人信息</a></li>
-							<li><a href="#">退出</a></li>
+							<li><a href="${ctx}/index">首页</a></li>
+							<li><a href="${ctx}/bbs_home">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<li><a href="${ctx}/bbs_self">个人信息</a></li>
+							<li><a href="${ctx}/login.html">退出</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -96,11 +96,11 @@
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
+										<a href="${ctx}/bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
 									<span class="article-meta">
 										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
+										href="${ctx}/bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
 										</a>${b.bssClass }</span> <span class="like-count">${b.recount }</span>
 								</li>
@@ -114,11 +114,11 @@
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
+										<a href="${ctx}/bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
 									<span class="article-meta">
 										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
+										href="${ctx}/bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
 										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
@@ -140,9 +140,9 @@
 					<section class="widget">
 						<h3 class="title">标签</h3>
 						<div class="tagcloud">
-							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
-							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
-							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
+							<a href="${ctx}/bbs_home?bssClass=java" class="btn btn-mini">java</a>
+							<a href="${ctx}/bbs_home?bssClass=css" class="btn btn-mini">css</a>
+							<a href="${ctx}/bbs_home?bssClass=net" class="btn btn-mini">net</a>
 						</div>
 					</section>
 
@@ -166,7 +166,7 @@
 					<div class="span6">
 						<p class="copyright">
 							Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect
-							from <a href="http://www.cssmoban.com/" title="网页模板"
+							from <a href="#" title="null"
 								target="_blank">网页模板</a>
 						</p>
 					</div>
