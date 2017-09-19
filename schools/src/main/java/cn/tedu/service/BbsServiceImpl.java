@@ -139,5 +139,12 @@ public class BbsServiceImpl implements BbsService{
 		bbsMapper.updateGreat(bbsId , count);
 	}
 
+	//查询帖子数量
+	@Override
+	public Bbs findBbsFirst() {
+		
+		return bbsMapper.findBbsFirst();
+	}
+
 
 }

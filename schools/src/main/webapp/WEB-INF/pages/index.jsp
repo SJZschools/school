@@ -103,8 +103,8 @@
                           </div>
                           <div class="col-md-5">
                             <div class="right-about-text">
-                              <h4></h4>
-                              <p></p>
+                              <h4><a href="${ctx}/bbs_single?bssId=${bbsRecount.bssId }">${bbsRecount.bssTitle }</a></h4>
+                              <p>${bbsRecount.bssContext }</p>
                               <div class="primary-button">
                                 <a href="bbs_home/${nowPage1 }">连接到论坛</a>
                               </div>

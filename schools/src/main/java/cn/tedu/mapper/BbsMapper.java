@@ -43,7 +43,12 @@ public interface BbsMapper {
 	 */
 	public void updateGreat(@Param(value="bbsId")String bbsId,@Param(value="count")int count);
 
-
+	
+	/**
+	 * 查询帖子数量
+	 * @return
+	 */
+	public Bbs findBbsFirst();
 
 	
 }

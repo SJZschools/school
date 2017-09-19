@@ -41,5 +41,9 @@ public interface BbsService {
 	//查询所有
 	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount);
 
+	//查询评论数最多的帖子
+	public Bbs findBbsFirst();
+
+
 	
 }

@@ -35,6 +35,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 order by recount desc ) where rn between #{nowPage} and #{pageCount} 
 	</select>
 	
+	<select id="findBbsFirst" resultMap="bbsRM">
+		select bss_title,bss_context ,bss_id
+		from bbs 
+		where recount = (select max(recount) from bbs)
+	</select>
 	
 	<!-- <select id="findAllByClass" resultMap="bbsRM">
 		select * from bbs where bss_class = #{bssClass}
