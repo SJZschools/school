@@ -18,10 +18,11 @@ public interface UserMapper {
 	@Select("select h_id from u_h_p where u_id=#{userId}")
 	public List<String> findHabitIdList(String userId);
 
-	
-	@Insert("insert into u_h_p (u_id,h_id) values (#{id},#{s})")
-	public void addHU(@Param("id")String id, @Param("s")String s);
+	//添加爱好用户中间表
+//	@Insert("insert into u_h_p (u_id,h_id) values (#{id},#{s})")
+//	public void addHU(@Param("id")String id, @Param("s")String s);
 
+	public void updateUserPassword(User user);
 
 
 }

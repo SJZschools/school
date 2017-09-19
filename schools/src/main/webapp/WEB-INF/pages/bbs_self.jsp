@@ -1,18 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ include file="base.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!doctype html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html lang="en-US">
-<!--<![endif]-->
 <head>
-<!-- META TAGS -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript"
@@ -35,12 +29,6 @@
 	href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='custom-css-css'
 	href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
-
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-                <script src="${ctx}/js/html5.js"></script>
-                <![endif]-->
 
 </head>
 
@@ -119,16 +107,17 @@
 										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"
 										value="<fmt:formatDate value="${userInfo.birthday }" pattern="yyyy-MM-dd"/>" />
 									</li>
-									<br>
+									<!-- <br>
 									<li class="article-entry standard">
-										<h4>爱好：</h4> <br> 
-										<input type="checkbox" name="hId" value="1" <c:if test="${h}.equals('1')">checked="checked"</c:if>/>篮球 
-										
-										<input type="checkbox" name="hId" value="2" <c:if test="${h}.equals('2')">checked="checked"</c:if>/>羽毛球 
-										
-										<input type="checkbox" name="hId" value="3" <c:if test="${h}.equals('3')">checked="checked"</c:if>/>读书
-										
-									</li>
+										<h4>爱好：</h4> <br> <input type="checkbox" name="hId"
+										value="1"
+										<c:if test="${h}.equals('1')">checked="checked"</c:if> />篮球 <input
+										type="checkbox" name="hId" value="2"
+										<c:if test="${h}.equals('2')">checked="checked"</c:if> />羽毛球 <input
+										type="checkbox" name="hId" value="3"
+										<c:if test="${h}.equals('3')">checked="checked"</c:if> />读书
+
+									</li> -->
 									<br>
 									<li class="article-entry standard">
 										<h4>入学日期：</h4> <input type="text" style="width: 121px;"
@@ -213,7 +202,10 @@
 						<section class="widget">
 							<input type="submit" value="修改" />
 						</section>
-
+						<br><br>
+						<section class="widget">
+							<a href="/updatePassword" value="修改密码" >修改密码</a>
+						</section>
 					</aside>
 					<!-- end of sidebar -->
 				</div>

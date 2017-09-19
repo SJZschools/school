@@ -35,10 +35,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 
+//	@Override
+//	public void addHU(String id, String s) {
+//		userMapper.addHU(id,s);
+//		
+//	}
+
 	@Override
-	public void addHU(String id, String s) {
-		userMapper.addHU(id,s);
-		
+	public void updateUserPassword(User user) {
+		userMapper.updateUserPassword(user);
 	}
 
 

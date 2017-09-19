@@ -16,12 +16,10 @@ public interface UserService {
 	public void updateUserNickname(User user);
 
 
+//public void addHU(String id, String s);添加中间表
 
 
-	public void addHU(String id, String s);
+	public void updateUserPassword(User user);
 
 
-
-
-	
 }

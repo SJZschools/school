@@ -33,11 +33,12 @@ public class UserInfoController extends BaseController{
 	 */
 	@RequestMapping("/bbs_self")
 	public String toBBSSelf(Model model,HttpSession session){
-		//实验性质添加session
-		User user0=new User();
-		user0.setId("123");
-		session.setAttribute("userSession", user0);
-		
+//		//实验性质添加session
+//		User user0=new User();
+//		user0.setId("123");
+//		user0.setPassword("123");
+//		session.setAttribute("userSession", user0);
+//		
 		//从session域中获得userId
 		String userId=((User)session.getAttribute("userSession")).getId();
 		
@@ -63,15 +64,14 @@ public class UserInfoController extends BaseController{
 		return "/bbs_self"; 
 	}
 	@RequestMapping("/updateself")
-	public String updateself(@RequestParam("hId")String[] hId,UserInfo userInfo,User user){
+	public String updateself(UserInfo userInfo,User user){
 		
 		userService.updateUserNickname(user);
 		userInfoService.updateself(userInfo);
-		System.out.println(user.getId());
 		//添加爱好  中间表
-		for(String s:hId){
-			userService.addHU(user.getId(),s);
-		}
+//		for(String s:hId){
+//			userService.addHU(user.getId(),s);
+//		}
 		return "redirect:/index";
 	}
 }

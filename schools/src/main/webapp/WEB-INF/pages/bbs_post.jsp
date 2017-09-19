@@ -2,10 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="base.jsp"%>
 <!doctype html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html lang="en-US">
 <!--<![endif]-->
 <head>
@@ -36,10 +32,6 @@
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <style type="text/css"></style>
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-                <script src="${ctx}/js/html5.js"></script>
-                <![endif]-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
@@ -101,21 +93,19 @@
 									<br>
 									<li class="article-entry standard">
 										<h4>标签：</h4> <select name="bssClass">
-											<option value="basic">basic</option>
-											<option value="beginner">beginner</option>
-											<option value="blogging">blogging</option>
-											<option value="colour">colour</option>
-											<option value="date">date</option>
-											<option value="design">design</option>
-											<option value="format">format</option>
-											<option value="header">header</option>
-											<option value="plugins">plugins</option>
-											<option value="setting">setting</option>
-											<option value="templates">templates</option>
-											<option value="theme">theme</option>
-											<option value="videos">videos</option>
-											<option value="website">website</option>
-											<option value="wordpress">wordpress</option>
+											<option value="basic">Java</option>
+											<option value="beginner">Java大数据</option>
+											<option value="blogging">UI</option>
+											<option value="colour">PHP</option>
+											<option value="date">C++</option>
+											<option value="design">Linux</option>
+											<option value="format">Android</option>
+											<option value="header">ios</option>
+											<option value="plugins">.NET</option>
+											<option value="setting">网络营销</option>
+											<option value="templates">网络工程</option>
+											<option value="theme">软件测试</option>
+											<option value="videos">嵌入式</option>
 									</select>
 									</li>
 
