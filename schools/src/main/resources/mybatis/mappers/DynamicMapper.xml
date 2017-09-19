@@ -5,22 +5,22 @@
 <mapper namespace="cn.tedu.mapper.DynamicMapper">
 	
 	<!--由于开启了别名包,所以在映射时会自动的拼接包路径  -->
-	<select id="findAllByTime" resultMap="dynamicRM">
-		select * from dynamic_info order by dynamic_time desc
+	<select id="findAllByTime" resultMap="dynaRM">
+		select * from (select ROWNUM rn,dynamic_title,dynamic_time,rcount from dynamic_info order by dynamic_time desc) where rn between #{nowPage} and #{pageCount}
 	</select>
-	<resultMap type="cn.tedu.pojo.Dynamic" id="dynamicRM" autoMapping="true">
+	<resultMap type="cn.tedu.pojo.Dynamic" id="dynaRM" autoMapping="true">
 		<id column="dynamic_id" property="dynamicId"/>		
 	</resultMap>
 	
 	<select id="findAllByRcount" resultMap="dyRM">
-		select * from dynamic_info order by rcount desc
+		select * from (select ROWNUM rn,dynamic_title,dynamic_time,rcount from dynamic_info order by rcount desc) where rn between #{nowPage} and #{pageCount}
 	</select>	
 	<resultMap type="cn.tedu.pojo.Dynamic" id="dyRM" autoMapping="true">
 		<id column="dynamic_id" property="dynamicId"/>		
 	</resultMap>
 	
 	<select id="findDynamicById" resultMap="dyRM">
-		select * from dynamic_info where dynamic_id = #{dynamicId,jdbcType=VARCHAR}
+		select * from dynamic_info where dynamic_id = #{dynamicId}
 	</select>	
 	
 	<select id="findHot" resultMap="dyRM">		
@@ -35,6 +35,14 @@
 	
 	<select id="findFirst" resultMap="dyRM">		
 		select * from (select * from dynamic_info order by dynamic_time desc) where rownum &lt; 2
+	</select>
+	
+	<select id="findAllCount" resultType="java.lang.Integer">		
+		select count(*) from dynamic_info
+	</select>
+	
+	<select id="findAllDynamic" resultMap="dyRM">		
+		select * from (select ROWNUM rn,dynamic_title,dynamic_time from dynamic_info order by dynamic_time desc) where rn between #{nowPage} and #{pageCount}
 	</select>
 	
 </mapper>

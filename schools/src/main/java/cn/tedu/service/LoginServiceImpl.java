@@ -12,9 +12,9 @@ public class LoginServiceImpl implements LoginService{
 	private LoginMapper loginMapper;
 
 	@Override
-	public User findUser(String username, String password) {
+	public User findUser(String username) {
 		
-		return loginMapper.findUser(username,password);
+		return loginMapper.findUser(username);
 	}
 	
 }

@@ -11,10 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="findAllByTime" resultMap="bbsRM">
-		select * from (select ROWNUM rn,b.bss_id,b.bss_title,u.nickname,b.creat_time,b.recount,b.bss_class
+		select * from 
+		( select ROWNUM rn,b.bss_id,b.bss_title,u.nickname,b.creat_time,b.recount,b.bss_class
 		 from bbs b, user_s u 
 		 where b.creat_id = u.id 
-		 order by creat_time desc) where rn between #{nowPage} and #{pageCount}
+		 order by creat_time desc ) 
+		
+		 where rn between #{nowPage} and #{pageCount}  
 	</select>
 	
 	<select id="findAllByBbsId" resultMap="bbsRM">
@@ -22,16 +25,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from bbs b,user_s u 
 		where 
 		b.creat_id = u.id and
-		bss_id = #{bssId,jdbcType=NUMERIC}
+		bss_id = #{bssId,jdbcType=VARCHAR}
 	</select>
 	
 	<select id="findAllBbs" resultMap="bbsRM">
 		select * from (select ROWNUM rn,b.bss_id,b.bss_title,b.creat_time,b.recount,u.nickname
 		 from bbs b, user_s u 
 		 where b.creat_id = u.id 
-		 order by recount desc ) where rn between #{nowPage} and #{pageCount}
+		 order by recount desc ) where rn between #{nowPage} and #{pageCount} 
 	</select>
 	
+	<select id="findBbsFirst" resultMap="bbsRM">
+		select bss_title,bss_context ,bss_id
+		from bbs 
+		where recount = (select max(recount) from bbs)
+	</select>
+	
+	<select id="findBbsByFirstTime" resultMap="bbsRM">
+		select bss_title,bss_context,bss_id
+		from bbs 
+		where creat_time = (select max(creat_time) from bbs)
+	</select>
 	
 	<!-- <select id="findAllByClass" resultMap="bbsRM">
 		select * from bbs where bss_class = #{bssClass}
@@ -45,8 +59,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<result column="nickname" property="nickname"/>
 		</association>
 	</resultMap>
+
 	
 	<select id="findCount" resultType="Integer">
 		select count(*) from bbs
 	</select>
+
+	<update id="updateGreat">
+		update bbs set recount = recount + #{count} where bss_id = #{bbsId}
+	</update>
+<<<<<<< HEAD
+
+=======
+	
+	<select id="findBbsIdByReplyId" resultType="String">
+		select bss_id from reply where reply_id = #{replyId}
+	</select>
+>>>>>>> jc
 </mapper>

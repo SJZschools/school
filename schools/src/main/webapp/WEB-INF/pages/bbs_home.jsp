@@ -23,7 +23,7 @@
 
 
 <!-- Style Sheet-->
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
 	href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-css-css'
@@ -55,7 +55,7 @@
 
 				<div class="logo-container">
 					<!-- Website Logo -->
-					<a href="index.html" title="Knowledge Base Theme"> <img
+					<a href="${ctx}/index.html" title="Knowledge Base Theme"> <img
 						src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
 					</a>
 				</div>
@@ -65,6 +65,7 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
+<<<<<<< HEAD
 						
 							<li><a href="index">首页</a></li>
 							<li><a href="bbs_home">校园论坛</a></li>
@@ -80,6 +81,20 @@
 							<li><a href="../login">登录</a>
 							</c:if>
 							
+=======
+							<li><a href="${ctx}/index">首页</a></li>
+<<<<<<< HEAD
+							<li><a href="${ctx}/bbs_home/${nowPage1}">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<li><a href="${ctx}/bbs_self">个人信息</a></li>
+							<li><a href="#">退出</a></li>
+=======
+							<li><a href="${ctx}/bbs_home">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<li><a href="${ctx}/bbs_self">个人信息</a></li>
+							<li><a href="${ctx}/login.html">退出</a></li>
+>>>>>>> lijialun
+>>>>>>> master
 						</ul>
 					</div>
 				</nav>
@@ -155,7 +170,7 @@
 							&nbsp   
 							<a class="page"  href="${ctx}/bbs_home/${page.nextPage}" style="font-size:16px;color:red">下一页</a>&nbsp
 							<a class="page"  href="${ctx}/bbs_home/${page.allPage}" style="font-size:16px;color:red">尾页</a>&nbsp
-					    	</div>
+				    	</div>
 					</div>
 				</div>
 				<!-- end of page content -->
@@ -163,16 +178,35 @@
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
+<<<<<<< HEAD
+					<section class="widget"><h3 class="title">相关网站</h3>
+                            <ul>
+                                    <li><a href="https://www.oracle.com/index.html" >Oracle</a><li>
+									<li><a href="http://projects.spring.io/spring-boot/" >SpringBoot</a><li>
+									<li><a href="http://maven.apache.org/" >Maven</a><li>
+									<li><a href="https://www.eclipse.org/downloads/" >Eclipse</a><li>
+									<li><a href="http://tomcat.apache.org/" >Tomcat</a></li>
+                            </ul>
+                    </section>
+					<section class="widget"><h3 class="title">联系我们</h3>
+                            <ul>
+                                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=378674193&site=qq&menu=yes">联系QQ</a></li>
+                				<li><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=g7K2s7W2s7q7sbHD8vKt4Ozu">发送邮件</a></li>
+                            </ul>
+                    </section>
+					
+=======
 				
 					<section class="widget">
 						<h3 class="title">标签</h3>
 						<div class="tagcloud">
-							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
-							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
-							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
+							<a href="${ctx}/bbs_home?bssClass=java" class="btn btn-mini">java</a>
+							<a href="${ctx}/bbs_home?bssClass=css" class="btn btn-mini">css</a>
+							<a href="${ctx}/bbs_home?bssClass=net" class="btn btn-mini">net</a>
 						</div>
 					</section>
 
+>>>>>>> lijialun
 
 				</aside>
 				<!-- end of sidebar -->
@@ -193,7 +227,7 @@
 					<div class="span6">
 						<p class="copyright">
 							Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect
-							from <a href="http://www.cssmoban.com/" title="网页模板"
+							from <a href="#" title="null"
 								target="_blank">网页模板</a>
 						</p>
 					</div>

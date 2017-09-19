@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.LoginMapper">
 	<select id="findUser" resultType="User">
-		select * from user_s where username=#{username} and password=#{password}
+		select * from user_s where username=#{username}
 	</select>
 
 </mapper>

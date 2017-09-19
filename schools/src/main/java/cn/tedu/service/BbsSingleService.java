@@ -15,10 +15,11 @@ public interface BbsSingleService {
 	public List<Board> findAllBoard();
 
 	//更新评论次数
-	public void updateBbsRecount(Bbs bbs);
+//	public void updateBbsRecount(Bbs bbs);
+	
 	/**
 	 * 查询所有的评论以及回复
-	 * @param bssId
+	 * @param bssId 帖子id
 	 */
 	public List findAllReplyAll(String bssId);
 }

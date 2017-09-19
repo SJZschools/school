@@ -17,7 +17,7 @@
 
 
                 <!-- Style Sheet-->
-                <link rel="stylesheet" href="style.css"/>
+                <link rel="stylesheet" href="${ctx}/style.css"/>
                 <link rel='stylesheet' id='bootstrap-css-css'  href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='responsive-css-css'  href='${ctx}/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
@@ -29,7 +29,35 @@
                 <!--[if lt IE 9]>
                 <script src="${ctx}/js/html5.js"></script></script>
                 <![endif]-->
-
+			<script src="js/jquery-1.4.2.js"></script>
+			<script type="text/javascript">
+				/* 通过jQuery实现回复框的出现 */
+				function openDiv(thisobj){
+					$(thisobj).parents("div").next().next().siblings().find("form").hide();//隐藏其他分组的div(除当前分组div以外的)
+					$(thisobj).next().toggle();//切换当前分组的状态(如果显示则隐藏, 如果隐藏则显示)
+					$(thisobj).next().slideToggle();//切换当前分组的状态(如果显示则隐藏, 如果隐藏则显示)
+				}
+				
+				
+				/* 通过js实现访QQ列表好友分组
+				function openDiv(thisobj){
+					var oDiv = thisobj.parentNode.getElementsByTagName("div")[0];
+					var aDiv = document.getElementsByTagName("div");
+			
+					//判断当前分组div是展开还是关闭
+					if(oDiv.style.display == "block"){
+						//如果当前div是打开的, 只需关闭该div即可
+						oDiv.style.display = "none";
+					}else{
+						//如果当前div是关闭的, 先关闭其他分组的div, 再打开当前的  
+						for(var i=0;i<aDiv.length; i++){
+							aDiv[i].style.display = "none";
+						}
+						oDiv.style.display = "block";
+					}
+				}
+				 */
+			</script>
         </head>
 
         <body>
@@ -42,7 +70,7 @@
 
                                         <div class="logo-container">
                                                 <!-- Website Logo -->
-                                                <a href="index.html"  title="Knowledge Base Theme">
+                                                <a href="${ctx}/index.html"  title="Knowledge Base Theme">
                                                         <img src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
                                                 </a>
                                         </div>
@@ -52,11 +80,11 @@
                                         <nav class="main-nav">
                                                 <div class="menu-top-menu-container">
                                                         <ul id="menu-top-menu" class="clearfix">
-                                                                <li><a href="index">首页</a></li>
-                                                                <li><a href="bbs_home">校园论坛</a></li>
-                                                                <li><a href="bbs_post">发帖</a></li>
-                                                                <li><a href="bbs_self">个人信息</a></li>
-                                                                <li><a href="#">退出</a></li>
+                                                                <li><a href="${ctx}/index">首页</a></li>
+                                                                <li><a href="${ctx}/bbs_home">校园论坛</a></li>
+                                                                <li><a href="${ctx}/bbs_post">发帖</a></li>
+                                                                <li><a href="${ctx}/bbs_self">个人信息</a></li>
+                                                                <li><a href="${ctx}/login.html">退出</a></li>
                                                         </ul>
                                                 </div>
                                         </nav>
@@ -116,7 +144,7 @@
 																							
                                                                                              <h5 class="author">
                                                                                                      <cite class="fn">${rl.reply.user.nickname }</cite>
-                                                                                                     - <a class="comment-reply-link" href="#pinglun">Reply</a>
+                                                                                                     - <a class="comment-reply-link" href="javascript:void(0)" onclick="openDiv(this)">回复</a>
                                                                                              </h5>
 
                                                                                              <p class="date">
@@ -130,8 +158,23 @@
                                                                                      <div class="comment-body">
                                                                                              <p>${rl.reply.replyTxt }</p>
                                                                                      </div><!-- end of comment-body -->
-                                                                                    	<ul class="children">
+                                                                                     
+                                                                                   	<!-- 回复提交框 -->
+																						 <form id="pinglun" action="${ctx}/doBoard?replyId=${rl.reply.replyId}" method="post" >
 
+
+						                                                                       <div>
+						                                                                               <textarea class="span8" name="comment" id="comment" cols="58" rows="2"></textarea>
+						                                                                       </div>
+																							
+						                                                                       <div>
+						                                                                               <input class="btn" name="submit" type="submit" id="submit"  value="提交">
+						                                                                       </div>
+
+                                                             							</form>
+                                                                						<!-- 回复提交框 -->
+                                                                                    	
+                                                                                    	<ul class="children">
 			                                                                                <li class="comment byuser comment-author-saqib-sarwar bypostauthor odd alt depth-2" id="li-comment-3">
 		                                                                                        <article id="comment-3">
 																									<c:forEach items="${rl.boardList}" var="bd" varStatus="status">
@@ -173,7 +216,7 @@
                                                                 </div>
 
 
-                                                                <form id="pinglun" action="#" method="post" id="commentform">
+                                                                <form id="pinglun" action="${ctx}/doReply?bbsId=${bbs.bssId}" method="post" id="commentform">
 
 
                                                                         <div>
@@ -194,21 +237,33 @@
                                         <!-- end of page content -->
 
 
-                                        <!-- start of sidebar -->
-                                        <aside class="span4 page-sidebar">
+                                       	<!-- start of sidebar -->
+										<aside class="span4 page-sidebar">
+											<section class="widget"><h3 class="title">相关网站</h3>
+						                            <ul>
+						                                    <li><a href="https://www.oracle.com/index.html" >Oracle</a><li>
+															<li><a href="http://projects.spring.io/spring-boot/" >SpringBoot</a><li>
+															<li><a href="http://maven.apache.org/" >Maven</a><li>
+															<li><a href="https://www.eclipse.org/downloads/" >Eclipse</a><li>
+															<li><a href="http://tomcat.apache.org/" >Tomcat</a></li>
+						                            </ul>
+						                    </section>
+											<section class="widget"><h3 class="title">联系我们</h3>
+						                            <ul>
+						                                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=378674193&site=qq&menu=yes">联系QQ</a></li>
+						                				<li><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=g7K2s7W2s7q7sbHD8vKt4Ozu">发送邮件</a></li>
+						                            </ul>
+						                    </section>
+					
 
-                                                <section class="widget">
-                                                        <div class="support-widget">
-                                                                <h3 class="title">${bbs.user.nickname }</h3>
-                                                        </div>
-                                                </section>
-
-                                        </aside>
-                                        <!-- end of sidebar -->
+										</aside>
+				<!-- end of sidebar -->
+                                        
                                 </div>
                         </div>
                 </div>
                 <!-- End of Page Container -->
+                
 
                 <!-- Start of Footer -->
                 <footer id="footer-wrapper">
@@ -220,7 +275,7 @@
                                         <div class="row">
                                                 <div class="span6">
                                                         <p class="copyright">
-                                                                Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect from <a href="http://www.cssmoban.com/" title="达内校园" target="_blank">达内校园</a>
+                                                                Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect from <a href="#" title="达内校园" target="_blank">达内校园</a>
                                                         </p>
                                                 </div>
                                                 <div class="span6">

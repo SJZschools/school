@@ -14,9 +14,9 @@
 
         <!-- CSS -->
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
-        <link rel="stylesheet" href="css/loginreset.css">
-        <link rel="stylesheet" href="css/loginsupersized.css">
-        <link rel="stylesheet" href="css/loginstyle.css">
+        <link rel="stylesheet" href="${ctx}/css/loginreset.css">
+        <link rel="stylesheet" href="${ctx}/css/loginsupersized.css">
+        <link rel="stylesheet" href="${ctx}/css/loginstyle.css">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>

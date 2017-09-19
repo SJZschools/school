@@ -7,6 +7,6 @@ import cn.tedu.pojo.User;
 
 public interface LoginMapper {
 
-	User findUser(@Param("username")String username,@Param("password") String password);
+	User findUser(String username);
 
 }

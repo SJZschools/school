@@ -28,6 +28,10 @@ public interface BbsMapper {
 	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context) "
 			+ "values(#{bssId},#{creatId},#{bssTitle},#{bssClass},#{bssContext})")
 	public void saveBBS(Bbs bbs);
+<<<<<<< HEAD
+
+=======
+>>>>>>> dml
 
 	//查询帖子数量
 	public int findCount();
@@ -35,7 +39,33 @@ public interface BbsMapper {
 	//查询所有
 	public List<Bbs> findAllBbs(@Param("nowPage")Integer nowPage, @Param("pageCount")Integer pageCount);
 
+	/**
+	 * 根据帖子Id 更新点赞次数
+	 * @param bbsId
+	 * @param count 
+	 */
+	public void updateGreat(@Param(value="bbsId")String bbsId,@Param(value="count")int count);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+	
+	/**
+	 * 查询帖子数量
+	 * @return
+	 */
+	public Bbs findBbsFirst();
+
+	/**
+	 * 查询最新帖子
+	 * @return
+	 */
+	public Bbs findBbsByFirstTime();
+=======
+	public String findBbsIdByReplyId(String replyId);
+
+>>>>>>> jc
 
 	
+=======
+>>>>>>> dml
 }

@@ -19,6 +19,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import cn.tedu.mapper.BbsMapper;
+import cn.tedu.mapper.GreatMapper;
 import cn.tedu.pojo.Bbs;
 
 @Service
@@ -26,6 +27,10 @@ public class BbsServiceImpl implements BbsService{
 	
 	@Autowired
 	private BbsMapper bbsMapper;
+	
+	@Autowired
+	GreatMapper greatMapper;
+	
 	//根据recount（评论数量）查询所有Bbs
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
@@ -120,12 +125,38 @@ public class BbsServiceImpl implements BbsService{
 		
 		return bbsMapper.findCount();
 	}
-
+	
+	//从数据库里查询所有帖子
 	@Override
 	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount) {
 		Integer nowPaget  = (nowPage-1)*10+1;
 		Integer pageCountt = nowPaget+pageCount-1;
 		return bbsMapper.findAllBbs(nowPaget,pageCountt);
+	}
+
+	@Override
+	public void updateGreat(String bbsId ,int count) {
+		bbsMapper.updateGreat(bbsId , count);
+	}
+
+<<<<<<< HEAD
+	//查询帖子数量
+	@Override
+	public Bbs findBbsFirst() {
+		
+		return bbsMapper.findBbsFirst();
+	}
+
+	@Override
+	public Bbs findBbsByFirstTime() {
+		
+		return bbsMapper.findBbsByFirstTime();
+=======
+	@Override
+	public String findBbsIdByReplyId(String replyId) {
+		
+		return bbsMapper.findBbsIdByReplyId(replyId);
+>>>>>>> jc
 	}
 
 

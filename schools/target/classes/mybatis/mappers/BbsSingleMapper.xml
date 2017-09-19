@@ -20,6 +20,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    where r.user_id = u.id
 	</select>
 	
+	<select id="findAllReplyById" resultMap="replyRM">
+		select u.* ,m.nickname from reply u ,(select id,nickname,reply_id  from user_s ,reply where id = user_id) m where m.id = u.user_id and m.reply_id = u.reply_id and bss_id = #{bbsId}
+
+	</select>
+	
 	<resultMap type="cn.tedu.pojo.Reply" id="replyRM" autoMapping="true">
 		<id column="reply_id" property="replyId"/>
 		
@@ -50,9 +55,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</association>
 	</resultMap>
 	
-	<update id="updateBbsRecount">
+	<!-- <update id="updateBbsRecount">
 		update bbs set recount=recount+1 where bss_id = #{bssId}
-	</update>
+	</update> -->
+	
+	<!-- 论坛评论与回复 -->
 	<select id="findAllBoardById" resultMap="boardRM">
 		
 		select bu.nickname,bu.response_txt,bu.response_time,info.reply_id 

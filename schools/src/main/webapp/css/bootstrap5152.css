@@ -288,6 +288,9 @@ a:hover {
 .span8 {
   width: 620px;
 }
+.span81 {
+  width: 620px;
+}
 
 .span7 {
   width: 540px;
@@ -414,6 +417,7 @@ a:hover {
   width: 65.95745%;
   *width: 65.90426%;
 }
+
 .row-fluid .span7 {
   width: 57.44681%;
   *width: 57.39362%;

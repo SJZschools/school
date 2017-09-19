@@ -21,6 +21,21 @@ public interface BbsService {
 	
 	//帖子发布
 	public void saveBBS(Bbs bbs);
+	/**
+	 * 根据帖子Id 更新点赞次数
+	 * @param bbsId 帖子的id
+	 * @param count 加还是减
+	 */
+	public void updateGreat(String bbsId, int count);
+	/**
+	 * 根据回复id，查询所在帖子id
+	 * @param replyId 回复id
+	 * @return
+	 */
+	public String findBbsIdByReplyId(String replyId);
+
+	//查询最多评论数量的Bbs
+//	public List<Bbs> findBbsTop();
 
 
 
@@ -31,6 +46,13 @@ public interface BbsService {
 
 	//查询所有
 	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount);
+
+	//查询评论数最多的帖子
+	public Bbs findBbsFirst();
+
+	//查询最新的帖子
+	public Bbs findBbsByFirstTime();
+
 
 	
 }
