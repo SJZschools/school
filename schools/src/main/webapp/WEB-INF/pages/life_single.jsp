@@ -20,7 +20,7 @@
                 
 
                 <!-- Style Sheet-->
-                <link rel="stylesheet" href="style.css"/>
+                <link rel="stylesheet" href="${ctx}/style.css"/>
                 <link rel='stylesheet' id='bootstrap-css-css'  href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='responsive-css-css'  href='${ctx}/css/responsive5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
@@ -46,7 +46,7 @@
 
                                         <div class="logo-container">
                                                 <!-- Website Logo -->
-                                                <a href="index.html"  title="Knowledge Base Theme">
+                                                <a href="${ctx}/index.html"  title="Knowledge Base Theme">
                                                         <img src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
                                                 </a>
                                         </div>
@@ -56,10 +56,10 @@
                                         <nav class="main-nav">
                                                 <div class="menu-top-menu-container">
                                                         <ul id="menu-top-menu" class="clearfix">
-                                                                <li><a href="index.html">首页</a></li>
-                                                                <li><a href="lifeHome.html">校园动态</a></li>                                                                
-                                                                <li><a href="self.html">个人信息</a></li>
-                                                                <li><a href="login.html">退出</a></li>
+                                                                <li><a href="${ctx}/index.html">首页</a></li>
+                                                                <li><a href="${ctx}/lifeHome/1.html">校园动态</a></li>                                                                
+                                                                <li><a href="${ctx}/bbs_self.html">个人信息</a></li>
+                                                                <li><a href="${ctx}/login.html">退出</a></li>
                                                         </ul>
                                                 </div>
                                         </nav>
@@ -142,7 +142,7 @@
 														<font face="宋体" size="2" >
 														<c:forEach items="${hotList}" var="h">
 														<img src="${ctx}/images/dz.png">
-														<a href="lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)">${h.dynamicTitle}</a></br></br>
+														<a href="${ctx}/lifeSingle?dynamicId=${h.dynamicId}" onfocus="changeStyle(this.id)">${h.dynamicTitle}</a></br></br>
 														</c:forEach>
 														</marquee>
                                                         

@@ -44,11 +44,14 @@ public class IndexController {
 		model.addAttribute("firstDynamic",firstDynamic);
 		return "/index";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("map")
 	public String toMap(){
 		return "map";
 	}
 	
+=======
+>>>>>>> lijialun
 
 }

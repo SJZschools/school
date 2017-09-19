@@ -23,7 +23,7 @@
 
 
 <!-- Style Sheet-->
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
 	href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='responsive-css-css'
@@ -55,7 +55,7 @@
 
 				<div class="logo-container">
 					<!-- Website Logo -->
-					<a href="index.html" title="Knowledge Base Theme"> <img
+					<a href="${ctx}/index.html" title="Knowledge Base Theme"> <img
 						src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
 					</a>
 				</div>
@@ -66,10 +66,17 @@
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
 							<li><a href="${ctx}/index">首页</a></li>
+<<<<<<< HEAD
 							<li><a href="${ctx}/bbs_home/${nowPage1}">校园论坛</a></li>
 							<li><a href="${ctx}/bbs_post">发帖</a></li>
 							<li><a href="${ctx}/bbs_self">个人信息</a></li>
 							<li><a href="#">退出</a></li>
+=======
+							<li><a href="${ctx}/bbs_home">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<li><a href="${ctx}/bbs_self">个人信息</a></li>
+							<li><a href="${ctx}/login.html">退出</a></li>
+>>>>>>> lijialun
 						</ul>
 					</div>
 				</nav>
@@ -153,6 +160,7 @@
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
+<<<<<<< HEAD
 					<section class="widget"><h3 class="title">相关网站</h3>
                             <ul>
                                     <li><a href="https://www.oracle.com/index.html" >Oracle</a><li>
@@ -169,6 +177,18 @@
                             </ul>
                     </section>
 					
+=======
+				
+					<section class="widget">
+						<h3 class="title">标签</h3>
+						<div class="tagcloud">
+							<a href="${ctx}/bbs_home?bssClass=java" class="btn btn-mini">java</a>
+							<a href="${ctx}/bbs_home?bssClass=css" class="btn btn-mini">css</a>
+							<a href="${ctx}/bbs_home?bssClass=net" class="btn btn-mini">net</a>
+						</div>
+					</section>
+
+>>>>>>> lijialun
 
 				</aside>
 				<!-- end of sidebar -->
@@ -189,7 +209,7 @@
 					<div class="span6">
 						<p class="copyright">
 							Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect
-							from <a href="http://www.cssmoban.com/" title="网页模板"
+							from <a href="#" title="null"
 								target="_blank">网页模板</a>
 						</p>
 					</div>

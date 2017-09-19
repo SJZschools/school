@@ -3,7 +3,11 @@
 <%@ include file="base.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@	taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<<<<<<< HEAD
 <c:set var="nowPage1" value="1"/>
+=======
+<c:set var="nowPage" value="1"/>
+>>>>>>> lijialun
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -16,7 +20,7 @@
         <title>达内校园网</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="${ctx}/apple-touch-icon.png">
 
         <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css">
         <link rel="stylesheet" href="${ctx}/css/bootstrap-theme.min.css">
@@ -76,16 +80,16 @@
                         <h4>一分钟了解达内校园网</h4>
                         <p>达内校园网旨在为达内学员提供技术交流平台</p>
                         <div class="primary-button">
-                          <a href="login">开始探索</a>
+                          <a href="${ctx}/login">开始探索</a>
                         </div>
-                        <div class="primary-button"><a href="map">学校周边</a></div>
+                        <div class="primary-button"><a href="${ctx}/map">学校周边</a></div>
                       </div>
                     </div>
                   </div>                  
                 </div>
               </div>
             </li>
-            <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+            <div class="copyrights">Collect from <a href="#" >达内校园网</a></div>
 
             <li>
               <div class="heading">
@@ -106,7 +110,11 @@
                               <h4><a href="${ctx}/bbs_single?bssId=${bbsRecount.bssId }">${bbsRecount.bssTitle }</a></h4>
                               <p>${bbsRecount.bssContext }</p>
                               <div class="primary-button">
+<<<<<<< HEAD
                                 <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
+=======
+                                <a href="${ctx}/bbs_home">连接到论坛</a>
+>>>>>>> lijialun
                               </div>
                             </div>
                           </div>
@@ -117,12 +125,16 @@
                               <h4><a href="${ctx}/bbs_single?bssId=${bbscreatTime.bssId }">${bbscreatTime.bssTitle }</a></h4>
                               <p>${bbscreatTime.bssContext }</p>
                               <div class="primary-button">
+<<<<<<< HEAD
                                 <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
+=======
+                                <a href="${ctx}/bbs_home">连接到论坛</a>
+>>>>>>> lijialun
                               </div>
                             </div>
                           </div>
                           <div class="col-md-5 right-image">
-                            <img src="${ctx}/images/right-about-image.jpg">
+                            <img src="${ctx}/images/right-about-image.png">
                           </div>
                         </div>
                       </div>
@@ -149,20 +161,20 @@
                           </div>
                           <div class="col-md-5">
                             <div class="right-feature-text">
-                              <h3><a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}">${firstDynamic.dynamicTitle}</a></h3>
+                              <h3><a href="${ctx}/lifeSingle?dynamicId=${firstDynamic.dynamicId}">${firstDynamic.dynamicTitle}</a></h3>
                               <em>更新于：<fmt:formatDate value="${firstDynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></em>
                               <p>
                               ${ fn:length(firstDynamic.dynamicContent) >45 ? fn:substring(firstDynamic.dynamicContent ,0,45) : firstDynamic.dynamicContent } ${ fn:length(firstDynamic.dynamicContent ) >45 ? '...':''}
-                              <a href="lifeSingle?dynamicId=${firstDynamic.dynamicId}"> 查看详细</a></p>
+                              <a href="${ctx}/lifeSingle?dynamicId=${firstDynamic.dynamicId}"> 查看详细</a></p>
                               <div class="feature-list">                                
                                   <h4><font color="red" face="方正姚体">最近更新：</font></h4>	
                                   <c:set var="count" value="0"></c:set>
                                   <c:forEach items="${newList}" var="n">
-									<a href="lifeSingle?dynamicId=${n.dynamicId}" onfocus="changeStyle(this.id)"><p>${n.dynamicTitle}</p></a>
+									<a href="${ctx}/lifeSingle?dynamicId=${n.dynamicId}" onfocus="changeStyle(this.id)"><p>${n.dynamicTitle}</p></a>
 								  </c:forEach>
                               </div>
                               <div class="primary-button">
-                                <a href="lifeHome">查看更多动态</a>
+                                <a href="${ctx}/lifeHome/${nowPage }">查看更多动态</a>
                               </div>
                             </div>
                           </div>
