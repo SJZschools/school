@@ -2,6 +2,8 @@ package cn.tedu.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import cn.tedu.pojo.Bbs;
 
 public interface BbsService {
@@ -19,6 +21,10 @@ public interface BbsService {
 	
 	//帖子发布
 	public void saveBBS(Bbs bbs);
+<<<<<<< HEAD
 
+=======
+	public void uploadObject(MultipartFile mFile);
+>>>>>>> dml
 	
 }
