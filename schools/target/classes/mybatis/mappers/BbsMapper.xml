@@ -11,10 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="findAllByTime" resultMap="bbsRM">
-		select * from (select ROWNUM rn,b.bss_id,b.bss_title,u.nickname,b.creat_time,b.recount,b.bss_class
+		select * from 
+		( select ROWNUM rn,b.bss_id,b.bss_title,u.nickname,b.creat_time,b.recount,b.bss_class
 		 from bbs b, user_s u 
 		 where b.creat_id = u.id 
-		 order by creat_time desc) where rn between #{nowPage} and #{pageCount}
+		 order by creat_time desc ) 
+		
+		 where rn between #{nowPage} and #{pageCount}  
 	</select>
 	
 	<select id="findAllByBbsId" resultMap="bbsRM">
@@ -29,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from (select ROWNUM rn,b.bss_id,b.bss_title,b.creat_time,b.recount,u.nickname
 		 from bbs b, user_s u 
 		 where b.creat_id = u.id 
-		 order by recount desc ) where rn between #{nowPage} and #{pageCount}
+		 order by recount desc ) where rn between #{nowPage} and #{pageCount} 
 	</select>
 	
 	
