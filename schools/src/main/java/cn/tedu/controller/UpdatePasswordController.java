@@ -20,7 +20,7 @@ public class UpdatePasswordController extends BaseController{
 		return "/updatePassword";
 	}
 	@RequestMapping("/upPassword")
-	public String upPassword(String oldPassword,String new1Password,String new2Password,HttpSession session){
+	public String upPassword(String oldPassword,String new1Password,String new2Password,HttpSession session,Model model){
 		//获取session中的用户信息
 		String username=((User)session.getAttribute("userSession")).getUsername();
 		String pw=((User)session.getAttribute("userSession")).getPassword();
@@ -30,6 +30,8 @@ public class UpdatePasswordController extends BaseController{
 		//判断原密码是否正确
 		
 		if(!pw.equals(op)){
+			String oldPassword_msg="原密码不正确";
+			model.addAttribute("oldPassword_msg", oldPassword_msg);
 			return "/updatePassword";
 		}
 		//更改用户密码

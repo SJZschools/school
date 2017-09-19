@@ -30,6 +30,7 @@
 <script type="text/javascript" src="/js/layer/layer.js"></script>
 <style type="text/css"></style>
 <script type="text/javascript">
+
 var formObj = {
 		/* 检查输入项是否为空 */
 		"checkNull" : function(name, msg){
@@ -119,7 +120,7 @@ var formObj = {
 										<h4>旧密码：</h4> <input type="password" name="oldPassword"
 										class="password1" onblur="formObj.checkNull('oldPassword', '密码不为空')"
 							onfocus="formObj.setMsg('oldPassword', '')"  value="${ param.oldPassword }" placeholder="oldPassword">
-							<span id="oldPassword_msg"></span>
+							<span id="oldPassword_msg">${oldPassword_msg }</span>
 									</li>
 									<br>
 									<br>
