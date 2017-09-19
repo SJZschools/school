@@ -62,5 +62,11 @@ public class BbsServiceImpl implements BbsService{
 		bbsMapper.updateGreat(bbsId , count);
 	}
 
+	@Override
+	public String findBbsIdByReplyId(String replyId) {
+		
+		return bbsMapper.findBbsIdByReplyId(replyId);
+	}
+
 
 }

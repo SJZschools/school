@@ -35,6 +35,8 @@ public interface BbsMapper {
 	 */
 	public void updateGreat(@Param(value="bbsId")String bbsId,@Param(value="count")int count);
 
+	public String findBbsIdByReplyId(String replyId);
+
 
 	
 }

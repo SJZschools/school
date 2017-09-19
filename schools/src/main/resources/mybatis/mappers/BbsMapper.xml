@@ -40,4 +40,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateGreat">
 		update bbs set recount = recount + #{count} where bss_id = #{bbsId}
 	</update>
+	
+	<select id="findBbsIdByReplyId" resultType="String">
+		select bss_id from reply where reply_id = #{replyId}
+	</select>
 </mapper>

@@ -25,6 +25,12 @@ public interface BbsService {
 	 * @param count 加还是减
 	 */
 	public void updateGreat(String bbsId, int count);
+	/**
+	 * 根据回复id，查询所在帖子id
+	 * @param replyId 回复id
+	 * @return
+	 */
+	public String findBbsIdByReplyId(String replyId);
 
 	//查询最多评论数量的Bbs
 //	public List<Bbs> findBbsTop();

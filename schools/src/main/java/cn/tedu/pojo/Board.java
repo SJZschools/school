@@ -11,6 +11,13 @@ public class Board {
 	private String userId;
 	private String responseTxt;//回复内容
 	private Date responseTime;//回复时间
+	private String bbsId;
+	public String getBbsId() {
+		return bbsId;
+	}
+	public void setBbsId(String bbsId) {
+		this.bbsId = bbsId;
+	}
 	public String getResponseId() {
 		return responseId;
 	}
