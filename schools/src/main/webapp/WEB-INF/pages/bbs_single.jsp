@@ -38,43 +38,20 @@
 					$(thisobj).next().slideToggle();//切换当前分组的状态(如果显示则隐藏, 如果隐藏则显示)
 				}
 				
-				
-				/* 通过js实现访QQ列表好友分组
-				function openDiv(thisobj){
-					var oDiv = thisobj.parentNode.getElementsByTagName("div")[0];
-					var aDiv = document.getElementsByTagName("div");
-			
-					//判断当前分组div是展开还是关闭
-					if(oDiv.style.display == "block"){
-						//如果当前div是打开的, 只需关闭该div即可
-						oDiv.style.display = "none";
-					}else{
-						//如果当前div是关闭的, 先关闭其他分组的div, 再打开当前的  
-						for(var i=0;i<aDiv.length; i++){
-							aDiv[i].style.display = "none";
-						}
-						oDiv.style.display = "block";
-					}
-				}
-				 */
 			</script>
         </head>
 
         <body>
-
                 <!-- Start of Header -->
                 <div class="header-wrapper">
                         <header>
                                 <div class="container">
-
-
                                         <div class="logo-container">
                                                 <!-- Website Logo -->
                                                 <a href="${ctx}/index.html"  title="Knowledge Base Theme">
                                                         <img src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
                                                 </a>
                                         </div>
-
 
                                         <!-- Start of Main Navigation -->
                                         <nav class="main-nav">

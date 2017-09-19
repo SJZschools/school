@@ -39,12 +39,6 @@
       
       map.centerAndZoom(new BMap.Point(114.54071,38.050741),17);
     }
-    /*function loadScript(){
-	    var script = document.createElement("script");
-	    script.src = "http://api.map.baidu.com/api?v=2.0&ak=d8OG9NDHyPu6uySMtctpuMNhLT100Mhz&callback=initialize";
-	    document.body.appendChild(script);
-    }
-    window.onload = loadScript;*/
 
     //设置地图事件
     function setMapEvent(){

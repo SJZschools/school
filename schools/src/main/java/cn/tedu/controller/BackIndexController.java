@@ -26,10 +26,4 @@ public class BackIndexController {
 		return "back/index";
 	}
 	
-	
-	
-	
-	
-	
-	
 }

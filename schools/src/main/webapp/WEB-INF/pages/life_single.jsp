@@ -16,9 +16,6 @@
 
                 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
 
-
-                
-
                 <!-- Style Sheet-->
                 <link rel="stylesheet" href="${ctx}/style.css"/>
                 <link rel='stylesheet' id='bootstrap-css-css'  href='${ctx}/css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />
@@ -27,7 +24,6 @@
                 <link rel='stylesheet' id='main-css-css'  href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='custom-css-css'  href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
 		        <link rel="stylesheet" href="${ctx}/css/fontAwesome.css">
-		        
 
                 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                 <!--[if lt IE 9]>
@@ -50,7 +46,6 @@
                                                         <img src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
                                                 </a>
                                         </div>
-
 
                                         <!-- Start of Main Navigation -->
                                         <nav class="main-nav">
@@ -78,8 +73,6 @@
                                         <!-- start of page content -->
                                         <div class="span8 page-content">
 
-                                                
-
                                                 <article class=" type-post format-standard hentry clearfix">
 
                                                         <h1 class="post-title">${dynamic.dynamicTitle}</h1>
@@ -88,7 +81,6 @@
                                                         		<span class="date">更新于：<fmt:formatDate value="${dynamic.dynamicTime}" pattern="yyyy-MM-dd HH:mm:ss"/></span>                                                                
                                                                 <span class="like-count">${dynamic.rcount}</span>
                                                         </div><!-- end of post meta -->
-
                                                         <blockquote><p>
                                                         ${dynamic.dynamicContent}
                                                         </p></blockquote>

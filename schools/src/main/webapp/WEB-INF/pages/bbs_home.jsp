@@ -66,17 +66,10 @@
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
 							<li><a href="${ctx}/index">首页</a></li>
-<<<<<<< HEAD
 							<li><a href="${ctx}/bbs_home/${nowPage1}">校园论坛</a></li>
 							<li><a href="${ctx}/bbs_post">发帖</a></li>
 							<li><a href="${ctx}/bbs_self">个人信息</a></li>
 							<li><a href="#">退出</a></li>
-=======
-							<li><a href="${ctx}/bbs_home">校园论坛</a></li>
-							<li><a href="${ctx}/bbs_post">发帖</a></li>
-							<li><a href="${ctx}/bbs_self">个人信息</a></li>
-							<li><a href="${ctx}/login.html">退出</a></li>
->>>>>>> lijialun
 						</ul>
 					</div>
 				</nav>
@@ -160,7 +153,7 @@
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
-<<<<<<< HEAD
+
 					<section class="widget"><h3 class="title">相关网站</h3>
                             <ul>
                                     <li><a href="https://www.oracle.com/index.html" >Oracle</a><li>
@@ -177,7 +170,7 @@
                             </ul>
                     </section>
 					
-=======
+
 				
 					<section class="widget">
 						<h3 class="title">标签</h3>
@@ -188,7 +181,7 @@
 						</div>
 					</section>
 
->>>>>>> lijialun
+
 
 				</aside>
 				<!-- end of sidebar -->

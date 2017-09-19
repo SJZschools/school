@@ -45,7 +45,7 @@ public class LoginController {
 	           subject.login(token);
 	           User user = (User) subject.getPrincipal();
 	           session.setAttribute("userSession", user);
-	           return "index";
+	           return "redirect:/index";
 
 	       }catch (AuthenticationException a){
 	    	   a.printStackTrace();

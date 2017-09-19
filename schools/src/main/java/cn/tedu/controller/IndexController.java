@@ -23,10 +23,7 @@ public class IndexController {
 	@Autowired
 	private BbsService bbsService;
 	
-	@RequestMapping("/")
-	public String demo(){
-		return "redirect:/index";
-	}
+	
 	@RequestMapping("/index")
 	public String inde(Model model){
 		List<Dynamic> newList = dynamicService.findNew();

@@ -43,12 +43,12 @@
 
     <body>
           <video autoplay muted loop >
-            <source src="videos/video1.mp4">
+            <source src="${ctx}/videos/video1.mp4">
           </video>
 		
         <div class="page-container">
             <h1>用户登陆</h1>
-            <form action="tologin" method="post">
+            <form action="${ctx}/tologin" method="post">
                 <input type="text" name="username" class="username" placeholder="Username">
                 <input type="password" name="password" class="password" placeholder="Password">
                 <div>${errorInfo }</div>
