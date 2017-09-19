@@ -11,5 +11,11 @@
 		where id=#{id}
 	</update>
 	
-	
+	<update id="updateUserPassword">
+		update user_s
+		<set>
+			password=#{password,jdbcType=VARCHAR}
+		</set>
+		where id=#{id}
+	</update>
 </mapper>

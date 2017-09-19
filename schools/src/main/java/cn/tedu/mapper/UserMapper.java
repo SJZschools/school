@@ -22,6 +22,7 @@ public interface UserMapper {
 	@Insert("insert into u_h_p (u_id,h_id) values (#{id},#{s})")
 	public void addHU(@Param("id")String id, @Param("s")String s);
 
+	public void updateUserPassword(User user);
 
 
 }

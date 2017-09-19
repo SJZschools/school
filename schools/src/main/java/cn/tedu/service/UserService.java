@@ -21,7 +21,7 @@ public interface UserService {
 	public void addHU(String id, String s);
 
 
+	public void updateUserPassword(User user);
 
 
-	
 }
