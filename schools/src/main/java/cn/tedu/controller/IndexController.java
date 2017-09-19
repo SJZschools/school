@@ -32,28 +32,9 @@ public class IndexController {
 		return "/index";
 	}
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/wanganqi
-=======
-
->>>>>>> wanganqi
 	@RequestMapping("map")
 	public String toMap(){
 		return "map";
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-=======
-	
->>>>>>> master
->>>>>>> origin/wanganqi
-=======
-
-	
->>>>>>> wanganqi
 }
