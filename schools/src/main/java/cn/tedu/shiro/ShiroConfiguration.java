@@ -65,15 +65,15 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean
                 .setSecurityManager(getDefaultWebSecurityManager());
         shiroFilterFactoryBean.setLoginUrl("/login");
-        shiroFilterFactoryBean.setSuccessUrl("/index.jsp");
-        filterChainDefinitionMap.put("/assets/**", "anon");
+        shiroFilterFactoryBean.setSuccessUrl("/index");
         filterChainDefinitionMap.put("/css/**", "anon");
+        filterChainDefinitionMap.put("/staticfile/**", "anon");
         filterChainDefinitionMap.put("/fonts/**", "anon");
         filterChainDefinitionMap.put("/images/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
-        filterChainDefinitionMap.put("/manager/**", "anon");
+        filterChainDefinitionMap.put("/videos/**", "anon");
         filterChainDefinitionMap.put("/tologin", "anon");
-        filterChainDefinitionMap.put("/index.jsp", "anon");
+        filterChainDefinitionMap.put("/index", "anon");
         filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean
                 .setFilterChainDefinitionMap(filterChainDefinitionMap);

@@ -21,11 +21,11 @@ public class Credential extends  SimpleCredentialsMatcher{
 		//字符串的转化工具
 		String password = String.valueOf(loginToken.getPassword());
 	
-		//获取加密后的密码MD5HashPassword
-		String md5Password = MD5HashPassword.getPassword(username, password);
+		/*//获取加密后的密码MD5HashPassword
+		String md5Password = MD5HashPassword.getPassword(username, password);*/
 		
-		//将密码存入令牌中
-		/*loginToken.setPassword(md5Password.toCharArray());*/
+		/*//将密码存入令牌中
+		loginToken.setPassword(md5Password.toCharArray());*/
 		//将用户输入的内容核真实数据做匹配
 		return super.doCredentialsMatch(loginToken, info);
 	}
