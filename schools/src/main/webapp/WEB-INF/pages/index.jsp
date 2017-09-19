@@ -76,7 +76,10 @@
                         <h4>一分钟了解达内校园网</h4>
                         <p>达内校园网旨在为达内学员提供技术交流平台</p>
                         <div class="primary-button">
+                        <c:if test="${userSession==null }">
                           <a href="login">开始探索</a>
+                          </c:if>
+                          <c:if test="${userSession!=null}">欢迎您！<span style="color:red">${userSession.username }</span></c:if>
                         </div>
                         <div class="primary-button"><a href="map">学校周边</a></div>
                       </div>

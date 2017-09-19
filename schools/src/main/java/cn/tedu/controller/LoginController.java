@@ -44,4 +44,7 @@ public class LoginController {
 		model.addAttribute("errorInfo",errorInfo);
 		return "login";
 	}
+	
+
+	
 }

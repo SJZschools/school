@@ -65,11 +65,21 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
+						
 							<li><a href="index">首页</a></li>
 							<li><a href="bbs_home">校园论坛</a></li>
 							<li><a href="bbs_post">发帖</a></li>
-							<li><a href="bbs_self">个人信息</a></li>
-							<li><a href="#">退出</a></li>
+							<c:if test="${userSession.username=='admin' }">
+							<li><a href="../back">后台管理</a></li></c:if>
+							<c:if test="${userSession!=null }">
+							<!-- <li>个人信息</a></li> -->
+							<li><a href="../bbs_self"><span style="color:red">${userSession.username}</span></a></li>
+							<li><a href="../loginout">退出</a></li>
+							</c:if>
+							<c:if test="${userSession==null }">
+							<li><a href="../login">登录</a>
+							</c:if>
+							
 						</ul>
 					</div>
 				</nav>
