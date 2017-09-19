@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.tedu.mapper.BbsMapper;
+import cn.tedu.mapper.GreatMapper;
 import cn.tedu.pojo.Bbs;
 
 @Service
@@ -15,6 +16,10 @@ public class BbsServiceImpl implements BbsService{
 	
 	@Autowired
 	private BbsMapper bbsMapper;
+	
+	@Autowired
+	GreatMapper greatMapper;
+	
 	//根据recount（评论数量）查询所有Bbs
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
@@ -50,6 +55,11 @@ public class BbsServiceImpl implements BbsService{
 
 	public void saveBBS(Bbs bbs) {
 		bbsMapper.saveBBS(bbs);
+	}
+
+	@Override
+	public void updateGreat(String bbsId ,int count) {
+		bbsMapper.updateGreat(bbsId , count);
 	}
 
 

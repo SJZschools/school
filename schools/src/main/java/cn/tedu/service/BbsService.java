@@ -19,6 +19,15 @@ public interface BbsService {
 	
 	//帖子发布
 	public void saveBBS(Bbs bbs);
+	/**
+	 * 根据帖子Id 更新点赞次数
+	 * @param bbsId 帖子的id
+	 * @param count 加还是减
+	 */
+	public void updateGreat(String bbsId, int count);
+
+	//查询最多评论数量的Bbs
+//	public List<Bbs> findBbsTop();
 
 	
 }

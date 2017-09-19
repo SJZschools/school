@@ -2,18 +2,14 @@ package cn.tedu.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
-<<<<<<< HEAD
-import cn.tedu.pojo.User;
-=======
-import cn.tedu.pojo.Board;
-import cn.tedu.pojo.Reply;
->>>>>>> jc
 import cn.tedu.service.BbsService;
 import cn.tedu.service.BbsSingleService;
 
@@ -46,6 +42,9 @@ public class BbsController {
 		
 		//查询所有Bbs并根据（创建时间）排序
 		List<Bbs> bbsListT = bbsService.findAllByTime();
+		
+		//查询最多评论数量的Bbs
+//		List<Bbs> bbsListTop = bbsService.findBbsTop();
 		
 		//根据bssClass（标签）查询相应的Bbs
 //		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
@@ -82,36 +81,46 @@ public class BbsController {
 	/*
 	 * 更新评论数量
 	 */
-	@RequestMapping("updateBbsRecount")
-	public String updateBbsRecount(Bbs bbs){
-		bbsSingleService.updateBbsRecount(bbs);
-		return "bbs_single";
-	}
+//	@RequestMapping("updateBbsRecount")
+//	public String updateBbsRecount(Bbs bbs){
+//		bbsSingleService.updateBbsRecount(bbs);
+//		return "bbs_single";
+//	}
 	
 	@RequestMapping("bbs_post")
 	public String toBBSPost(){
 		return "bbs_post";
 	}
-	
-<<<<<<< HEAD
 	//明明冲突项
 	/*@RequestMapping("bbs_self")
 	public String toBBSSelf(){
 		return "bbs_self";
 	}*/
 
-	
-=======
 	@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		//根据帖子id查询详细信息
 		Bbs bbs = bbsService.findAllByBbsId(bssId);
 		model.addAttribute("bbs", bbs);
 		
+		//论坛评论与回复
 		List allList = bbsSingleService.findAllReplyAll(bssId);
 		model.addAttribute("allList", allList);
 		
 		return "bbs_single";
 	}
->>>>>>> jc
+	
+	@RequestMapping("/bbs_singleback")
+	public String toBBSSingle1(Model model , HttpSession session){
+		//根据帖子id查询详细信息
+		String bssId = (String) session.getAttribute("doReBbsID");
+		Bbs bbs = bbsService.findAllByBbsId(bssId);
+		model.addAttribute("bbs", bbs);
+		
+		//论坛评论与回复
+		List allList = bbsSingleService.findAllReplyAll(bssId);
+		model.addAttribute("allList", allList);
+		
+		return "bbs_single";
+	}
 }

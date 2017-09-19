@@ -26,11 +26,11 @@ public class BbsSingleServiceImpl implements BbsSingleService{
 	}
 
 	//更新评论次数
-	@Override
-	public void updateBbsRecount(Bbs bbs) {
-		
-		bbsSingleMapper.updateBbsRecount(bbs);
-	}
+//	@Override
+//	public void updateBbsRecount(Bbs bbs) {
+//		
+//		bbsSingleMapper.updateBbsRecount(bbs);
+//	}
 
 	//根据评论Id查询回复信息
 	@Override
@@ -39,11 +39,12 @@ public class BbsSingleServiceImpl implements BbsSingleService{
 		return bbsSingleMapper.findAllBoard();
 	}
 
+	//论坛评论与回复
 	@SuppressWarnings("unchecked")
 	@Override
 	public List findAllReplyAll(String bssId) {
 		List<Map<Reply, List<Board>>> allList = new ArrayList<Map<Reply, List<Board>>>();
-		List<Reply> replyList = bbsSingleMapper.findAllReply();
+		List<Reply> replyList = bbsSingleMapper.findAllReplyById(bssId);
 		for(Reply reply : replyList){
 			Map map = new HashMap();
 			map.put("reply", reply);

@@ -101,8 +101,8 @@
                           </div>
                           <div class="col-md-5">
                             <div class="right-about-text">
-                              <h4>帖子标题点击连接到帖子</h4>
-                              <p>Fusce neque leo, dapibus sed imperdiet sed, vulputate sed purus. Nam eget justo in nibh facilisis rhoncus. Donec et risus non mauris lobortis convallis. Aliquam id urna quis ante blandit semper.</p>
+                              <h4></h4>
+                              <p></p>
                               <div class="primary-button">
                                 <a href="bbs_home">连接到论坛</a>
                               </div>
@@ -112,8 +112,8 @@
                         <div class="row">
                           <div class="col-md-7">
                             <div class="left-about-text">
-                              <h4>帖子标题点击连接到帖子</h4>
-                              <p>Nam aliquam ultrices interdum. Vivamus metus mi, accumsan a tincidunt a, efficitur id felis. Vivamus non nibh malesuada, vestibulum nulla in, iaculis sem. Aenean tincidunt faucibus ipsum, ac aliquet nunc accumsan sed. Nulla sodales nunc sit amet libero egestas, ut interdum ex congue.</p>
+                              <h4></h4>
+                              <p></p>
                               <div class="primary-button">
                                 <a href="bbs_home">连接到论坛</a>
                               </div>
