@@ -114,8 +114,8 @@ $(document).ready(function(){
         <td>${dyn.dynamicId}</td>
         <td>${dyn.dynamicTitle}</td>
         <td>${dyn.rname}</td>
-   
-        <td>${dyn.dynamicTime}</td>
+      	<%--  <td>${dyn.dynamicTime}</td> --%>
+        <td><fmt:formatDate pattern="yyyy/MM/dd " value="${dyn.dynamicTime}" /></td>
         <td><a id="${dyn.dynamicId}" href="#" class="tablelink1">查看</a>     <a id="${dyn.dynamicId}" href="#" class="tablelink"> 删除</a></td>
         </tr> 
         </c:forEach>

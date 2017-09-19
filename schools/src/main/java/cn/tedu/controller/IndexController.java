@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.tedu.pojo.Dynamic;
 import cn.tedu.service.DynamicService;
@@ -34,13 +33,18 @@ public class IndexController {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/wanganqi
+=======
+
+>>>>>>> wanganqi
 	@RequestMapping("map")
 	public String toMap(){
 		return "map";
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -48,4 +52,8 @@ public class IndexController {
 	
 >>>>>>> master
 >>>>>>> origin/wanganqi
+=======
+
+	
+>>>>>>> wanganqi
 }

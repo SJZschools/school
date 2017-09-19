@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.BackBBsMapper">
 	<select id="findCount" resultType="java.lang.Integer">
-		select count(*) from bbs
+		select count(*) from bbs   
 	</select>
 
 	<select id="findAllBBs" resultType="Bbs">
-		select * from bbs
+		select * from (select ROWNUM rn,creat_id,bss_title,bss_context,bss_id,creat_time from bbs)  where rn between #{nowPaget} and #{pageCountt}
 	</select>
 	
 	<select id="findBBsById" resultType="Bbs">

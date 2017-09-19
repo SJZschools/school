@@ -24,20 +24,23 @@ public class BackBBsServiceImpl implements BackBBsService {
 		return backBBsMapper.findAllBBs(nowPaget,pageCountt);
 	}
 	@Override
+	//根据id查询帖子
 	public Bbs findBBsById(String bbsId) {
 		return backBBsMapper.findBBsById(bbsId);
 	}
 	@Override
 	public void deleteAllB(String ids) {
 		String[] idss = ids.split(",");
+		// 用循环批量删除
 		if(idss.length>=1){
 			for(String id : idss){
 				if(id != null && !"".equals(id)){
 					backBBsMapper.deleteAllB(id);
 					//删除该帖子的点赞表
 					backBBsMapper.deleteAllG(id);
-					//删除该帖子的
+					//删除该帖子的评论表
 					backBBsMapper.deleteAllBo(id);
+					//删除该帖子的回复表
 					backBBsMapper.deleteAllR(id);
 				}
 			}

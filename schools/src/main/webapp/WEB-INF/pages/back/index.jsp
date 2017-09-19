@@ -39,12 +39,10 @@
     
     <ul class="iconlist">
     
-    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="student/${nowPage }" >学生管理</a></p></li>
-	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="discuss/${nowPage }">论坛管理</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico02.png" /><p><a href="study.html">学习资料</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="form.html">视频管理</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico05.png" /><p><a href="question.html">学员反馈</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico06.png" /><p><a href="search.html">查询</a></p></li> 
+    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="${ctx}/student/${nowPage }" >学生管理</a></p></li>
+	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="${ctx}/discuss/${nowPage }">论坛管理</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="${ctx}/back/ScDynam">校园动态</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico05.png" /><p><a href="${ctx}/back/advice">学员反馈</a></p></li>
             
     </ul>
     
