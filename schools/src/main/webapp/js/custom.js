@@ -241,9 +241,21 @@ jQuery(document).ready(function(e) {
 //        var likeNum = parseInt(likeHtml, 10);
 //        likeNum++;
 //        likeButton.html(likeNum);
-    	
-    	
-    	
+    	var id = $(this).attr("id")
+    	$.ajax({
+    	    url:"/findGreat",
+    	    type:"post",
+    	    data:{"id":id},
+    	    success: function(result) {
+    	    	if(result == "ok"){
+    	    		window.location.href="/addGreat?bbsId="+id; 
+    	    	}
+    	    	if(result == "no"){
+    	    		window.location.href="/minusGreat?bbsId="+id; 
+    	    }  
+    	    }
+    	    
+    	}); 
          //   $('#like-it-form').ajaxSubmit(options);
     });
 

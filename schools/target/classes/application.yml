@@ -16,3 +16,5 @@ mybatis:
   mapper-locations: classpath:/mybatis/mappers/*.xml
   type-aliases-package: cn.tedu.pojo
   
+  
+  
