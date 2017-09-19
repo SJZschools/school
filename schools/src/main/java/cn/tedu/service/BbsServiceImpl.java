@@ -120,7 +120,8 @@ public class BbsServiceImpl implements BbsService{
 		
 		return bbsMapper.findCount();
 	}
-
+	
+	//从数据库里查询所有帖子
 	@Override
 	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount) {
 		Integer nowPaget  = (nowPage-1)*10+1;

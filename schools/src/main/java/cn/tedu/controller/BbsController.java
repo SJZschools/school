@@ -90,7 +90,6 @@ public class BbsController {
 		return "bbs_post";
 	}
 	
-
 	@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		//根据帖子id查询详细信息

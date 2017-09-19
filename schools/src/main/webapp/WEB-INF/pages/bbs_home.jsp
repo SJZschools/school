@@ -65,10 +65,10 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="index">首页</a></li>
-							<li><a href="bbs_home">校园论坛</a></li>
-							<li><a href="bbs_post">发帖</a></li>
-							<li><a href="bbs_self">个人信息</a></li>
+							<li><a href="${ctx}/index">首页</a></li>
+							<li><a href="${ctx}/bbs_home/${nowPage1}">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<li><a href="${ctx}/bbs_self">个人信息</a></li>
 							<li><a href="#">退出</a></li>
 						</ul>
 					</div>
