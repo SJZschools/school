@@ -119,7 +119,7 @@
 										onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"
 										value="<fmt:formatDate value="${userInfo.birthday }" pattern="yyyy-MM-dd"/>" />
 									</li>
-									<br>
+									<!-- <br>
 									<li class="article-entry standard">
 										<h4>爱好：</h4> <br> <input type="checkbox" name="hId"
 										value="1"
@@ -129,7 +129,7 @@
 										type="checkbox" name="hId" value="3"
 										<c:if test="${h}.equals('3')">checked="checked"</c:if> />读书
 
-									</li>
+									</li> -->
 									<br>
 									<li class="article-entry standard">
 										<h4>入学日期：</h4> <input type="text" style="width: 121px;"

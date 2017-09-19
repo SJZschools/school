@@ -116,27 +116,27 @@ var formObj = {
 							<section class="span4 articles-list">
 								<ul class="articles">
 									<li class="article-entry standard">
-										<h4>旧密码：</h4> <input type="text" name="oldPassword"
+										<h4>旧密码：</h4> <input type="password" name="oldPassword"
 										class="password1" onblur="formObj.checkNull('oldPassword', '密码不为空')"
-							onfocus="formObj.setMsg('oldPassword', '')"  value="${ param.oldPassword }">
+							onfocus="formObj.setMsg('oldPassword', '')"  value="${ param.oldPassword }" placeholder="oldPassword">
 							<span id="oldPassword_msg"></span>
 									</li>
 									<br>
 									<br>
 									<br>
 									<li class="article-entry standard">
-										<h4>新密码：</h4> <input type="text" name="new1Password"
+										<h4>新密码：</h4> <input type="password" name="new1Password"
 										class="password2" onblur="formObj.checkNull('new1Password', '密码不能为空')"
-							onfocus="formObj.setMsg('new1Password', '')"  value="${ param.new1Password }">
+							onfocus="formObj.setMsg('new1Password', '')"  value="${ param.new1Password }" placeholder="new1Password">
 							<span id="new1Password_msg"></span>
 									</li>
 									<br>
 									<br>
 									<br>
 									<li class="article-entry standard">
-										<h4>确认新密码：</h4> <input type="text" name="new2Password"
+										<h4>确认新密码：</h4> <input type="password" name="new2Password"
 										class="password3" onblur="formObj.checkNull('new2Password', '密码不能为空')"
-							onfocus="formObj.setMsg('new2Password', '')"  value="${ param.new2Password }">
+							onfocus="formObj.setMsg('new2Password', '')"  value="${ param.new2Password }" placeholder="new2Password">
 							<span id="new2Password_msg"></span>
 									</li>
 								</ul>
