@@ -122,7 +122,7 @@
                             </div>
                           </div>
                           <div class="col-md-5 right-image">
-                            <img src="${ctx}/images/right-about-image.jpg">
+                            <img src="${ctx}/images/right-about-image.png">
                           </div>
                         </div>
                       </div>
