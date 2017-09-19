@@ -3,11 +3,11 @@
 <%@ include file="base.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@	taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<<<<<<< HEAD
+
 <c:set var="nowPage1" value="1"/>
-=======
+
 <c:set var="nowPage" value="1"/>
->>>>>>> lijialun
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -110,11 +110,10 @@
                               <h4><a href="${ctx}/bbs_single?bssId=${bbsRecount.bssId }">${bbsRecount.bssTitle }</a></h4>
                               <p>${bbsRecount.bssContext }</p>
                               <div class="primary-button">
-<<<<<<< HEAD
+
                                 <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
-=======
-                                <a href="${ctx}/bbs_home">连接到论坛</a>
->>>>>>> lijialun
+
+
                               </div>
                             </div>
                           </div>
@@ -128,7 +127,6 @@
 
                                 <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
 
-                                <a href="${ctx}/bbs_home">连接到论坛</a>
 
                               </div>
                             </div>
