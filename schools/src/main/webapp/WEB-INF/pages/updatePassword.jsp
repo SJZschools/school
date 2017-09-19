@@ -151,7 +151,7 @@ var formObj = {
 		</div>
 	</form>
 	<!-- End of Page Container -->
-    <br> <br> <br>
+    <br> <br> <br> <br> <br> <br> <br>
 	<!-- Start of Footer -->
 	<footer id="footer-wrapper">
 

@@ -5,14 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!doctype html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9" lang="en-US"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html lang="en-US">
-<!--<![endif]-->
 <head>
-<!-- META TAGS -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript"
@@ -35,12 +29,6 @@
 	href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='custom-css-css'
 	href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
-
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-                <script src="${ctx}/js/html5.js"></script>
-                <![endif]-->
 
 </head>
 
