@@ -33,9 +33,19 @@ public class IndexController {
 		return "/index";
 	}
 	
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/wanganqi
 	@RequestMapping("map")
 	public String toMap(){
 		return "map";
 	}
+<<<<<<< HEAD
 
+=======
+=======
+	
+>>>>>>> master
+>>>>>>> origin/wanganqi
 }
