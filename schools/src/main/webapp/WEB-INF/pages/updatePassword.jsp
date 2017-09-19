@@ -56,6 +56,7 @@ var formObj = {
 			var res2 = formObj.checkNull("new1Password", "密码不能为空");
 			var res3 = formObj.checkNull("new2Password", "确认密码不能为空");
 			var res4 = formObj.checkNewPassword("Password", "两次密码不一致");
+			return res1&&res2&&res3&&res4;
 		},
 			/* 检查两次密码是否一致 */
 			"checkNewPassword" : function(name, msg){
