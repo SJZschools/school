@@ -8,12 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.tedu.pojo.Bbs;
-<<<<<<< HEAD
-import cn.tedu.pojo.User;
-=======
-import cn.tedu.pojo.Board;
-import cn.tedu.pojo.Reply;
->>>>>>> jc
 import cn.tedu.service.BbsService;
 import cn.tedu.service.BbsSingleService;
 
@@ -93,15 +87,7 @@ public class BbsController {
 		return "bbs_post";
 	}
 	
-<<<<<<< HEAD
-	//明明冲突项
-	/*@RequestMapping("bbs_self")
-	public String toBBSSelf(){
-		return "bbs_self";
-	}*/
 
-	
-=======
 	@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		//根据帖子id查询详细信息
@@ -113,5 +99,5 @@ public class BbsController {
 		
 		return "bbs_single";
 	}
->>>>>>> jc
+
 }

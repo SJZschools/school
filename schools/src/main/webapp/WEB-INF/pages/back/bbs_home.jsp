@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ include file="base.jsp"%>
+<%@ include file="../base.jsp"%>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->

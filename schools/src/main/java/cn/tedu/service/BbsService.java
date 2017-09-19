@@ -21,10 +21,10 @@ public interface BbsService {
 	
 	//帖子发布
 	public void saveBBS(Bbs bbs);
-<<<<<<< HEAD
 
-=======
+
+
 	public void uploadObject(MultipartFile mFile);
->>>>>>> dml
+
 	
 }
