@@ -87,7 +87,7 @@
 									<br>
 									<br>
 									<li class="article-entry standard">
-										<h4>标题：</h4> <input type="text" name="bssTitle">
+										<h4>标题：</h4> <input type="text" name="bssTitle"/>
 									</li>
 									<br>
 									<br>

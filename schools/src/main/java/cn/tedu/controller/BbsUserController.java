@@ -25,12 +25,10 @@ public class BbsUserController {
 	 */
 	@RequestMapping("/savebbs")
 	public String saveBBS(Bbs bbs,MultipartFile mFile,HttpSession session){
-		User user=new User();
-		user.setId("123");
-		session.setAttribute("userSession", user);
 		
 		String bId=UUID.randomUUID().toString();
 		bbs.setBssId(bId);
+		bbs.setRecount(1);
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);

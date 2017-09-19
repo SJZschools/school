@@ -61,10 +61,11 @@
                                         <nav class="main-nav">
                                                 <div class="menu-top-menu-container">
                                                         <ul id="menu-top-menu" class="clearfix">
-                                                                <li><a href="index.html">首页</a></li>
-                                                                <li><a href="lifeHome.html">校园动态</a></li>                                                                
-                                                                <li><a href="self.html">个人信息</a></li>
-                                                                <li><a href="login.html">退出</a></li>
+                                                                <li><a href="index">首页</a></li>
+																<li><a href="bbs_home">校园论坛</a></li>
+																<li><a href="bbs_post">发帖</a></li>
+																<li><a href="bbs_self">个人信息</a></li>
+																<li><a href="#">退出</a></li>
                                                         </ul>
                                                 </div>
                                         </nav>
