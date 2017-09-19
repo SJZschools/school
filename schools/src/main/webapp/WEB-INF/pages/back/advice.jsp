@@ -59,7 +59,7 @@ $(document).ready(function(){
     
     	<ul class="toolbar">
        
-        <li><span><img src="${ctx}/images/backimg/t04.png" /></span><a href="seeQuestion.html" target="rightFrame">统计</a></li>
+        <li><span><img src="${ctx}/images/backimg/t04.png" /></span><a href="/default" target="rightFrame">统计</a></li>
         </ul>
         
     </div>
