@@ -79,7 +79,7 @@ $(document).ready(function(){
         <tr>
         <td>${al.user.id }</td>
         <td>${al.user.nickname }</td>
-        <td>${al.adviceTime }</td>
+        <td><fmt:formatDate value="${al.adviceTime }" pattern="yyyy-MM-dd"/></td>
         <td><a href="/back/seeAdvice?id=${al.id}" class="tablelink">查看</a>     <a id = "${al.id}" href="#" class="tablelink1"> 删除</a></td>
         </tr> 
         </c:forEach>
