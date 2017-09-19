@@ -153,16 +153,22 @@
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
-				
-					<section class="widget">
-						<h3 class="title">标签</h3>
-						<div class="tagcloud">
-							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
-							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
-							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
-						</div>
-					</section>
-
+					<section class="widget"><h3 class="title">相关网站</h3>
+                            <ul>
+                                    <li><a href="https://www.oracle.com/index.html" >Oracle</a><li>
+									<li><a href="http://projects.spring.io/spring-boot/" >SpringBoot</a><li>
+									<li><a href="http://maven.apache.org/" >Maven</a><li>
+									<li><a href="https://www.eclipse.org/downloads/" >Eclipse</a><li>
+									<li><a href="http://tomcat.apache.org/" >Tomcat</a></li>
+                            </ul>
+                    </section>
+					<section class="widget"><h3 class="title">联系我们</h3>
+                            <ul>
+                                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=378674193&site=qq&menu=yes">联系QQ</a></li>
+                				<li><a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=g7K2s7W2s7q7sbHD8vKt4Ozu">发送邮件</a></li>
+                            </ul>
+                    </section>
+					
 
 				</aside>
 				<!-- end of sidebar -->

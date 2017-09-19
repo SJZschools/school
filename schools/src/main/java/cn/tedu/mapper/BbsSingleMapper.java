@@ -15,8 +15,15 @@ public interface BbsSingleMapper {
 	public List<Board> findAllBoard();
 
 	//更新评论次数
-	public void updateBbsRecount(Bbs bbs);
+//	public void updateBbsRecount(Bbs bbs);
 
+	//论坛评论与回复
 	public List<Board> findAllBoardById(String replyId);
+	/**
+	 * 根据论坛id查询所有评论
+	 * @param bssId 帖子id
+	 * @return 返回为评论集合
+	 */
+	public List<Reply> findAllReplyById(String bssId);
 
 }

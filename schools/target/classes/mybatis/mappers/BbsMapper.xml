@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from bbs b,user_s u 
 		where 
 		b.creat_id = u.id and
-		bss_id = #{bssId,jdbcType=NUMERIC}
+		bss_id = #{bssId,jdbcType=VARCHAR}
 	</select>
 	
 	<select id="findAllBbs" resultMap="bbsRM">
@@ -45,8 +45,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<result column="nickname" property="nickname"/>
 		</association>
 	</resultMap>
+<<<<<<< HEAD
 	
 	<select id="findCount" resultType="Integer">
 		select count(*) from bbs
 	</select>
+=======
+	<update id="updateGreat">
+		update bbs set recount = recount + #{count} where bss_id = #{bbsId}
+	</update>
+>>>>>>> jc
 </mapper>
