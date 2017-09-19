@@ -4,6 +4,6 @@ import cn.tedu.pojo.User;
 
 public interface LoginService {
 
-	User findUser(String username, String md5Password);
+	User findUser(String username);
 
 }
