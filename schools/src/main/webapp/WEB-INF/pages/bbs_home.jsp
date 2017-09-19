@@ -145,7 +145,7 @@
 							&nbsp   
 							<a class="page"  href="${ctx}/bbs_home/${page.nextPage}" style="font-size:16px;color:red">下一页</a>&nbsp
 							<a class="page"  href="${ctx}/bbs_home/${page.allPage}" style="font-size:16px;color:red">尾页</a>&nbsp
-					    	</div>
+				    	</div>
 					</div>
 				</div>
 				<!-- end of page content -->
