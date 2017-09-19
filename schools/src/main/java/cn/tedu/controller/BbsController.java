@@ -37,7 +37,6 @@ public class BbsController {
 	/*
 	 * 查询论坛信息
 	 */
-<<<<<<< HEAD
 //	@RequestMapping("bbs_home")
 //	public String findAll(Model model,String bssClass){
 //		
@@ -56,29 +55,27 @@ public class BbsController {
 //		//跳到论坛页面
 //		return "bbs_home";
 //	}
-=======
-	@RequestMapping("bbs_home")
-	public String findAll(Model model,String bssClass){
-		
-		//查询所有Bbs并根据（评论数量）排序
-		List<Bbs> bbsList = bbsService.findAll();
-		
-		//查询所有Bbs并根据（创建时间）排序
-		List<Bbs> bbsListT = bbsService.findAllByTime();
-		
-		//查询最多评论数量的Bbs
-//		List<Bbs> bbsListTop = bbsService.findBbsTop();
-		
-		//根据bssClass（标签）查询相应的Bbs
-//		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
-		
-		model.addAttribute("bbsList", bbsList);
-		model.addAttribute("bbsListT", bbsListT);
-//		model.addAttribute("bbsListC", bbsListC);
-		//跳到论坛页面
-		return "bbs_home";
-	}
->>>>>>> jc
+//	@RequestMapping("bbs_home")
+//	public String findAll(Model model,String bssClass){
+//		
+//		//查询所有Bbs并根据（评论数量）排序
+//		List<Bbs> bbsList = bbsService.findAll();
+//		
+//		//查询所有Bbs并根据（创建时间）排序
+//		List<Bbs> bbsListT = bbsService.findAllByTime();
+//		
+//		//查询最多评论数量的Bbs
+////		List<Bbs> bbsListTop = bbsService.findBbsTop();
+//		
+//		//根据bssClass（标签）查询相应的Bbs
+////		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
+//		
+//		model.addAttribute("bbsList", bbsList);
+//		model.addAttribute("bbsListT", bbsListT);
+////		model.addAttribute("bbsListC", bbsListC);
+//		//跳到论坛页面
+//		return "bbs_home";
+//	}
 	
 	/*
 	 * 根据id查询帖子的详细信息
@@ -115,16 +112,7 @@ public class BbsController {
 	public String toBBSPost(){
 		return "bbs_post";
 	}
-<<<<<<< HEAD
-	
-=======
-	//明明冲突项
-	/*@RequestMapping("bbs_self")
-	public String toBBSSelf(){
-		return "bbs_self";
-	}*/
 
->>>>>>> jc
 	@RequestMapping("bbs_single")
 	public String toBBSSingle(String bssId,Model model){
 		//根据帖子id查询详细信息
@@ -151,7 +139,6 @@ public class BbsController {
 		
 		return "bbs_single";
 	}
-<<<<<<< HEAD
 	
 	@RequestMapping("/bbs_home/{nowPage}")
 	public String toBBSPage(@PathVariable("nowPage") Integer nowPage,Model model){
@@ -189,7 +176,4 @@ public class BbsController {
 		return "bbs_home";
 	}
 
-	
-=======
->>>>>>> jc
 }
