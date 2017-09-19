@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="base.jsp"%>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
@@ -40,7 +40,7 @@
 <!--[if lt IE 9]>
                  <script src="${ctx}/js/html5.js"></script></script>
                 <![endif]-->
-
+	
 </head>
 
 <body>
@@ -63,10 +63,10 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="index.html">首页</a></li>
-							<li><a href="bbs_home.html">校园论坛</a></li>
-							<li><a href="bbs_post.html">发帖</a></li>
-							<li><a href="bbs_self.html">个人信息</a></li>
+							<li><a href="index">首页</a></li>
+							<li><a href="bbs_home">校园论坛</a></li>
+							<li><a href="bbs_post">发帖</a></li>
+							<li><a href="bbs_self">个人信息</a></li>
 							<li><a href="#">退出</a></li>
 						</ul>
 					</div>
@@ -78,7 +78,8 @@
 	</div>
 	<!-- End of Header -->
 
-
+	<form name="icform" method="post">
+	
 	<!-- Start of Page Container -->
 	<div class="page-container">
 		<div class="container">
@@ -95,27 +96,29 @@
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
+										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
+									<span class="article-meta">
+										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
+										href="bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
+										</a>${b.bssClass }</span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
 							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
-							<h3>师生问答</h3>
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
+							<h3>最新校帖</h3>
+							<c:forEach items="${bbsListT}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
+										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
+									<span class="article-meta">
+										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
+										href="bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
 										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
@@ -125,166 +128,24 @@
 					</div>
 
 					<div class="row home-listing-area">
-						<div class="span8">
-							<h2>校园生活</h2>
-						</div>
+						
 					</div>
-
-					<div class="row separator">
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-					</div>
-
-					<div class="row separator">
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-						<section class="span4 articles-list">
-
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-					</div>
-
-					<div class="row separator">
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single.html">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">${b.creatTime } <a
-										href="bbs_single.html"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-					</div>
-
 				</div>
 				<!-- end of page content -->
 
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
-
-					<section class="widget">
-						<div class="support-widget">
-							<h3 class="title">活跃学生</h3>
-							<p class="intro">Need more support? If you did not found an
-								answer, contact us for further help.</p>
-						</div>
-					</section>
-
-					<section class="widget">
-						<div class="quick-links-widget">
-							<h3 class="title">活跃小组</h3>
-							<ul id="menu-quick-links" class="menu clearfix">
-								<li><a href="index-2.html">Home</a></li>
-								<li><a href="articles-list.html">Articles List</a></li>
-								<li><a href="faq.html">FAQs</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-					</section>
-
+				
 					<section class="widget">
 						<h3 class="title">标签</h3>
 						<div class="tagcloud">
-							<a href="#" class="btn btn-mini">basic</a> <a href="#"
-								class="btn btn-mini">beginner</a> <a href="#"
-								class="btn btn-mini">blogging</a> <a href="#"
-								class="btn btn-mini">colour</a> <a href="#" class="btn btn-mini">css</a>
-							<a href="#" class="btn btn-mini">date</a> <a href="#"
-								class="btn btn-mini">design</a> <a href="#" class="btn btn-mini">files</a>
-							<a href="#" class="btn btn-mini">format</a> <a href="#"
-								class="btn btn-mini">header</a> <a href="#" class="btn btn-mini">images</a>
-							<a href="#" class="btn btn-mini">plugins</a> <a href="#"
-								class="btn btn-mini">setting</a> <a href="#"
-								class="btn btn-mini">templates</a> <a href="#"
-								class="btn btn-mini">theme</a> <a href="#" class="btn btn-mini">time</a>
-							<a href="#" class="btn btn-mini">videos</a> <a href="#"
-								class="btn btn-mini">website</a> <a href="#"
-								class="btn btn-mini">wordpress</a>
+							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
+							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
+							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
 						</div>
 					</section>
+
 
 				</aside>
 				<!-- end of sidebar -->
@@ -292,7 +153,8 @@
 		</div>
 	</div>
 	<!-- End of Page Container -->
-
+	
+	</form>
 
 	<!-- Start of Footer -->
 	<footer id="footer-wrapper">
@@ -335,8 +197,7 @@
 	<!-- script -->
 	<script type='text/javascript' src='${ctx}/js/jquery-1.8.3.min.js'></script>
 	<script type='text/javascript' src='${ctx}/js/jquery.easing.1.3.js'></script>
-	<script type='text/javascript'
-		src='${ctx}/js/prettyphoto/jquery.prettyPhoto.js'></script>
+	<script type='text/javascript' src='${ctx}/js/prettyphoto/jquery.prettyPhoto.js'></script>
 	<script type='text/javascript' src='${ctx}/js/jflickrfeed.js'></script>
 	<script type='text/javascript' src='${ctx}/js/jquery.liveSearch.js'></script>
 	<script type='text/javascript' src='${ctx}/js/jquery.form.js'></script>

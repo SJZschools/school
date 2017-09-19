@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="nowPage" value="1"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -39,12 +39,10 @@
     
     <ul class="iconlist">
     
-    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="student">学生管理</a></p></li>
-	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="discuss.html">论坛管理</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico02.png" /><p><a href="study.html">学习资料</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="form.html">视频管理</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico05.png" /><p><a href="question.html">学员反馈</a></p></li>
-    <li><img src="${ctx}/images/backimg/ico06.png" /><p><a href="search.html">查询</a></p></li> 
+    <li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="${ctx}/student/${nowPage }" >学生管理</a></p></li>
+	<li><img src="${ctx}/images/backimg/ico01.png" /><p><a href="${ctx}/discuss/${nowPage }">论坛管理</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico04.png" /><p><a href="${ctx}/back/ScDynam">校园动态</a></p></li>
+    <li><img src="${ctx}/images/backimg/ico05.png" /><p><a href="${ctx}/back/advice">学员反馈</a></p></li>
             
     </ul>
     

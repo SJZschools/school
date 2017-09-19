@@ -48,9 +48,10 @@
 		
         <div class="page-container">
             <h1>用户登陆</h1>
-            <form action="index.html" method="post">
+            <form action="tologin" method="post">
                 <input type="text" name="username" class="username" placeholder="Username">
                 <input type="password" name="password" class="password" placeholder="Password">
+                <div>${errorInfo }</div>
                 <button type="submit">登录</button>
                 <div class="error"><span>+</span></div>
             </form>

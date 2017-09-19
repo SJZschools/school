@@ -20,8 +20,21 @@
 	</resultMap>
 	
 	<select id="findDynamicById" resultMap="dyRM">
-		select * from dynamic_info where dynamic_id = #{dynamicId,jdbcType=NUMERIC}
+		select * from dynamic_info where dynamic_id = #{dynamicId,jdbcType=VARCHAR}
 	</select>	
-		
+	
+	<select id="findHot" resultMap="dyRM">		
+		select * from (select * from dynamic_info order by rcount) where rownum &lt; 11
+	</select>
+	
+	<select id="findNew" resultMap="dyRM">		
+		select * from (select * from (select * from dynamic_info order by dynamic_time desc) where rownum &lt; 7 
+		minus 
+		select * from (select * from dynamic_info order by dynamic_time desc) where rownum &lt; 2) order by dynamic_time desc
+	</select>
+	
+	<select id="findFirst" resultMap="dyRM">		
+		select * from (select * from dynamic_info order by dynamic_time desc) where rownum &lt; 2
+	</select>
 	
 </mapper>

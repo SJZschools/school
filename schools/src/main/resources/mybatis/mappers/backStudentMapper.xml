@@ -3,10 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.tedu.mapper.BackStudentMapper">
-	
+	<!-- SELECT *
+FROM (SELECT 
+       ROWNUM rn,empno,ename,
+       sal,deptno
+      FROM emp)
+WHERE rn BETWEEN 6 AND 10
+	 -->
 	<!--查询所有学生  -->
 	<select id="findAllStudent" resultMap="userRM">
-		select * from user_s u left join (select id userInfoId,name,sex,classes,homeplace,timeofenrollment from user_info) i on i.userInfoId = u.id
+		select * from (select * from user_s u left join (select ROWNUM rn,id userInfoId,name,sex,classes,card,timeofenrollment from user_info) i on i.userInfoId = u.id) 
+		where rn between #{nowPage} and #{pageCount}
 	</select>
 	<resultMap type="cn.tedu.pojo.User" id="userRM" autoMapping="true">
 		<!--完成主表映射  -->
@@ -18,10 +25,6 @@
 	<resultMap type="cn.tedu.pojo.UserInfo" id="infoRM" autoMapping="true">
 		<id column="userInfoId" property="id"/>
 		<result column="name" property="name"/>
-		<!-- <result column="sex" property="sex"/>
-		<result column="classes" property="classes"/>
-		<result column="homeplace" property="homeplace"/>
-		<result column="timeofenrollment" property="timeofenrollment"/> -->
 	</resultMap>
 
 	<!--添加新增学生  -->
@@ -30,8 +33,8 @@
 	</insert>
 	<!--添加新增学生信息  -->
 	<insert id="addBackStudentInfo">
-		insert into user_info (id,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
-					 values (#{id},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
+		insert into user_info (id,name,birthday,card,sex,tel,personal_remarks,timeofenrollment,classes)
+					 values (#{id},#{name},#{birthday},#{card},#{sex},#{tel},#{personalRemarks},#{timeofenrollment},#{classes})
 	</insert>
 
 
@@ -51,7 +54,9 @@
 		delete from user_info where id=#{id}
 	</delete>
 
-
+	<select id="findCount" resultType="java.lang.Integer">
+		select count(*) from user_s
+	</select>
 
 
 

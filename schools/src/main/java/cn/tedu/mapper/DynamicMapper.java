@@ -12,6 +12,11 @@ public interface DynamicMapper {
 	List<Dynamic> findAllByRcount();
 	//展示详细内容页面
 	Dynamic findDynamicById(String dynamicId);
-	
+	//查找最热动态
+	List<Dynamic> findHot();
+	//查找最热动态
+	List<Dynamic> findNew();
+	//查找最近一次更新动态
+	Dynamic findFirst();	
 
 }

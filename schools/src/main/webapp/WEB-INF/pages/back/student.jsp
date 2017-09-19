@@ -2,14 +2,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="nowPage1" value="1"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
 <link href="${ctx }/css/backstyle.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="${ctx }/js/jquery.js"></script>
+<script type="text/javascript" src="${ctx }/js/jquery-1.4.2.js"></script>
 
+
+<script>
+$(document).ready(function(){
+	$(".click1").click(function(){
+	  	var ids = "";
+	  	$(".checkone").each(function(){
+	  		if($(this).attr("checked") == true){
+	  			var id = $(this).val();
+	  			ids += id+",";
+	  		}
+	  	})
+	  	if(ids != ""){
+		 	var result = confirm("是否删除信息？")
+		 	if(result){
+		 		
+		 		window.location.href="${ctx}/deleteBackStudent?ids="+ids;
+		 	}
+	  	}
+	  	if(ids == ""){
+	  		alert("请选择删除信息！");
+	  	}
+	});
+});	
+	
+
+</script>
 
 
 </head>
@@ -17,22 +44,15 @@
 
 <body>
 
-	<div class="place">
-    <span>位置：</span>
-    <ul class="placeul">
-    <li><a href="backIndex">首页</a></li>
-    <li><a href="student">学员管理</a></li>
-   
-    </ul>
-    </div>
+	
     
     <div class="rightinfo">
     
     <div class="tools">
     
     	<ul class="toolbar">
-        <li ><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="addBackStudent" target="rightFrame">添加</a></li>
-        <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="deleteBackStudent" target="rightFrame">删除</a></li>
+        <li ><span><img src="${ctx }/images/backimg/t01.png" /></span><a href="${ctx }/addBackStudent" target="rightFrame">添加</a></li>
+        <li><span><img src="${ctx }/images/backimg/t03.png" /></span><a href="#" target="rightFrame" class="click1">删除</a></li>
         
         </ul>
         
@@ -47,11 +67,11 @@
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="selectAll" type="checkbox"  onclick="checkAll('studyId',this)"/></th>
+        <th>  </th>
         <th>学号<i class="sort"><img src="${ctx }/images/backimg/px.gif" /></i></th>
         <th>性别</th>
         <th>姓名</th>
-        <th>籍贯</th>
+        <th>身份证号</th>
         <th>班级</th>
         <th>入学时间</th>
         <th>操作</th>
@@ -61,15 +81,15 @@
         
         <c:forEach items="${userList }" var="user">
 	        <tr>
-	        <td><input name="studyId" id="id" type="checkbox" value="${user.id }" /></td>
+	        <td><input name="studyId" id="id" type="checkbox" class="checkone" value="${user.id }" /></td>
 	        <td>${user.id }</td>
 	        <td>${user.userInfo.sex }</td>
 	        <td>${user.username }</td>
-	        <td>${user.userInfo.homeplace }</td>
+	        <td>${user.userInfo.card }</td>
 	        <td>${user.userInfo.classes }</td>
 	        <td><fmt:formatDate value="${user.userInfo.timeofenrollment }" pattern="yyyy-MM-dd"/></td>
 	        <td> 
-	        	 <a href="updateBackStudent/${user.id }"  class="update" >修改</a>
+	        	 <a href="${ctx }/updateBackStudent/${user.id }"  class="update" >修改</a>
 	        </td>
 	        
 	        </tr> 
@@ -79,19 +99,17 @@
     </table>
     
    
-    <div class="pagin">
-    	<div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页</div>
-        <ul class="paginList">
-        <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-        <li class="paginItem"><a href="javascript:;">1</a></li>
-        <li class="paginItem current"><a href="javascript:;">2</a></li>
-        <li class="paginItem"><a href="javascript:;">3</a></li>
-        <li class="paginItem"><a href="javascript:;">4</a></li>
-        <li class="paginItem"><a href="javascript:;">5</a></li>
-        <li class="paginItem more"><a href="javascript:;">...</a></li>
-        <li class="paginItem"><a href="javascript:;">10</a></li>
-        <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
-        </ul>
+    <div class="pagin" style="font-size:16px;color:black">
+    	共有[${page.allCount }]条记录,&nbsp共[${page.allPage }]页,&nbsp当前页[${page.nowPage }]&nbsp&nbsp
+		<a  class="page" href="${ctx}/student/${nowPage1}" style="font-size:16px;color:red">首页</a>&nbsp
+		<a  class="page" href="${ctx}/student/${page.prevPage}" style="font-size:16px;color:red">上一页</a>&nbsp 
+	
+		<c:forEach items="${page.pageList }" var="pagelist">
+			<a class="page" href="${ctx}/student/${pagelist }" style="font-size:16px;color:red">[${pagelist }]</a>
+		</c:forEach>
+		&nbsp   
+		<a class="page"  href="${ctx}/student/${page.nextPage}" style="font-size:16px;color:red">下一页</a>&nbsp
+		<a class="page"  href="${ctx}/student/${page.allPage}" style="font-size:16px;color:red">尾页</a>&nbsp
     </div>
     
     
