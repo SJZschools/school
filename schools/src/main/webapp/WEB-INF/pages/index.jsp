@@ -106,7 +106,7 @@
                               <h4><a href="${ctx}/bbs_single?bssId=${bbsRecount.bssId }">${bbsRecount.bssTitle }</a></h4>
                               <p>${bbsRecount.bssContext }</p>
                               <div class="primary-button">
-                                <a href="bbs_home/${nowPage1 }">连接到论坛</a>
+                                <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
                               </div>
                             </div>
                           </div>
@@ -114,10 +114,10 @@
                         <div class="row">
                           <div class="col-md-7">
                             <div class="left-about-text">
-                              <h4></h4>
-                              <p></p>
+                              <h4><a href="${ctx}/bbs_single?bssId=${bbscreatTime.bssId }">${bbscreatTime.bssTitle }</a></h4>
+                              <p>${bbscreatTime.bssContext }</p>
                               <div class="primary-button">
-                                <a href="bbs_home/${nowPage1 }">连接到论坛</a>
+                                <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
                               </div>
                             </div>
                           </div>

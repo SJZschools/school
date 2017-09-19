@@ -44,6 +44,9 @@ public interface BbsService {
 	//查询评论数最多的帖子
 	public Bbs findBbsFirst();
 
+	//查询最新的帖子
+	public Bbs findBbsByFirstTime();
+
 
 	
 }

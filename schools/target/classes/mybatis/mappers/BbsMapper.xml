@@ -41,6 +41,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where recount = (select max(recount) from bbs)
 	</select>
 	
+	<select id="findBbsByFirstTime" resultMap="bbsRM">
+		select bss_title,bss_context,bss_id
+		from bbs 
+		where creat_time = (select max(creat_time) from bbs)
+	</select>
+	
 	<!-- <select id="findAllByClass" resultMap="bbsRM">
 		select * from bbs where bss_class = #{bssClass}
 	</select> -->

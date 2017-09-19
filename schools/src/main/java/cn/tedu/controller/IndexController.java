@@ -36,6 +36,10 @@ public class IndexController {
 		Bbs bbsRecount = bbsService.findBbsFirst();
 		model.addAttribute("bbsRecount", bbsRecount);
 		
+		//查询最新的帖子
+		Bbs bbscreatTime = bbsService.findBbsByFirstTime();
+		model.addAttribute("bbscreatTime", bbscreatTime);
+		
 		Dynamic firstDynamic = dynamicService.findFirst();
 		model.addAttribute("firstDynamic",firstDynamic);
 		return "/index";

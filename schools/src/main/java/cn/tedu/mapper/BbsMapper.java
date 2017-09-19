@@ -50,5 +50,11 @@ public interface BbsMapper {
 	 */
 	public Bbs findBbsFirst();
 
+	/**
+	 * 查询最新帖子
+	 * @return
+	 */
+	public Bbs findBbsByFirstTime();
+
 	
 }

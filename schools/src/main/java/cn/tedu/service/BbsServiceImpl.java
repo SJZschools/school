@@ -146,5 +146,11 @@ public class BbsServiceImpl implements BbsService{
 		return bbsMapper.findBbsFirst();
 	}
 
+	@Override
+	public Bbs findBbsByFirstTime() {
+		
+		return bbsMapper.findBbsByFirstTime();
+	}
+
 
 }

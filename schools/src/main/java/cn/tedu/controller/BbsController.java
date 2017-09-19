@@ -174,10 +174,8 @@ public class BbsController {
 		model.addAttribute("bbsList", bbsList);
 		model.addAttribute("bbsListT", bbsListT);
 		
-		//查询评论数量最多的帖子
-		Bbs bbsRecount = bbsService.findBbsFirst();
-		model.addAttribute("bbsRecount", bbsRecount);
-		System.out.println(bbsRecount);
+		
+		
 		return "bbs_home";
 	}
 }
