@@ -139,6 +139,7 @@ public class BbsServiceImpl implements BbsService{
 		bbsMapper.updateGreat(bbsId , count);
 	}
 
+<<<<<<< HEAD
 	//查询帖子数量
 	@Override
 	public Bbs findBbsFirst() {
@@ -150,6 +151,12 @@ public class BbsServiceImpl implements BbsService{
 	public Bbs findBbsByFirstTime() {
 		
 		return bbsMapper.findBbsByFirstTime();
+=======
+	@Override
+	public String findBbsIdByReplyId(String replyId) {
+		
+		return bbsMapper.findBbsIdByReplyId(replyId);
+>>>>>>> jc
 	}
 
 

@@ -160,11 +160,11 @@
                                                                                      </div><!-- end of comment-body -->
                                                                                      
                                                                                    	<!-- 回复提交框 -->
-																						 <form id="pinglun" action="#" method="post" id="commentform">
+																						 <form id="pinglun" action="${ctx}/doBoard?replyId=${rl.reply.replyId}" method="post" >
 
 
 						                                                                       <div>
-						                                                                               <textarea class="span81" name="comment" id="comment" cols="58" rows="2"></textarea>
+						                                                                               <textarea class="span8" name="comment" id="comment" cols="58" rows="2"></textarea>
 						                                                                       </div>
 																							
 						                                                                       <div>
