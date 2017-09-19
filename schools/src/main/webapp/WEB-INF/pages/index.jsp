@@ -125,11 +125,11 @@
                               <h4><a href="${ctx}/bbs_single?bssId=${bbscreatTime.bssId }">${bbscreatTime.bssTitle }</a></h4>
                               <p>${bbscreatTime.bssContext }</p>
                               <div class="primary-button">
-<<<<<<< HEAD
+
                                 <a href="${ctx }/bbs_home/${nowPage1 }">连接到论坛</a>
-=======
+
                                 <a href="${ctx}/bbs_home">连接到论坛</a>
->>>>>>> lijialun
+
                               </div>
                             </div>
                           </div>
