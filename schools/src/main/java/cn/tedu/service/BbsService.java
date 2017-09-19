@@ -11,7 +11,7 @@ public interface BbsService {
 	public List<Bbs> findAll();
 	
 	//根据creatTime（创建时间）查询所有Bbs
-	public List<Bbs> findAllByTime();
+	public List<Bbs> findAllByTime(Integer nowPage, Integer pageCount);
 
 	//根据bssId（帖子id）查询这条数据的详细信息
 	public Bbs findAllByBbsId(String bssId);
@@ -25,6 +25,12 @@ public interface BbsService {
 
 
 	public void uploadObject(MultipartFile mFile);
+
+	//查询帖子数量
+	public int findCount();
+
+	//查询所有
+	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount);
 
 	
 }

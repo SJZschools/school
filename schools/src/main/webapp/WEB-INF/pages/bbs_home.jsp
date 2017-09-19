@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" isErrorPage="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="base.jsp"%>
+<c:set var="nowPage1" value="1"/>
 <!doctype html>
 <!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
 <!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
@@ -96,17 +98,19 @@
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
+										<a href="${ctx}/bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
 									<span class="article-meta">
 										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
+										href="${ctx}/bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
 										</a>${b.bssClass }</span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
 							</c:forEach>
 						</section>
+						
+						
 
 						<section class="span4 articles-list">
 							<h3>最新校帖</h3>
@@ -114,21 +118,34 @@
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
+										<a href="${ctx}/bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
 									</h4> 
 									<span class="article-meta">
 										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
+										href="${ctx}/bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
 										</a></span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
 							</c:forEach>
+							
+							
 						</section>
 					</div>
 
 					<div class="row home-listing-area">
+						<div class="pagin" style="font-size:16px;color:black">
+					    	共有[${page.allCount }]条记录,&nbsp共[${page.allPage }]页,&nbsp当前页[${page.nowPage }]&nbsp&nbsp
+							<a  class="page" href="${ctx}/bbs_home/${nowPage1}" style="font-size:16px;color:red">首页</a>&nbsp
+							<a  class="page" href="${ctx}/bbs_home/${page.prevPage}" style="font-size:16px;color:red">上一页</a>&nbsp 
 						
+							<c:forEach items="${page.pageList }" var="pagelist">
+								<a class="page" href="${ctx}/bbs_home/${pagelist }" style="font-size:16px;color:red">[${pagelist }]</a>
+							</c:forEach>
+							&nbsp   
+							<a class="page"  href="${ctx}/bbs_home/${page.nextPage}" style="font-size:16px;color:red">下一页</a>&nbsp
+							<a class="page"  href="${ctx}/bbs_home/${page.allPage}" style="font-size:16px;color:red">尾页</a>&nbsp
+					    	</div>
 					</div>
 				</div>
 				<!-- end of page content -->
