@@ -28,7 +28,7 @@
 				var id = $("#id").val();
 				var personalRemarks = $("#personalRemarks").val();
 				/* */
-			    if(confirm("您保存么？")){
+			    if(confirm("您确定保存么？")){
 					/* $.post("${ctx}/saveBackStudent",{"username":username,"userInfo.card":card,"userInfo.birthday":birthday,"userInfo.timeofenrollment":timeofenrollment,"userInfo.sex":sex,"userInfo.tel":tel,"userInfo.classes":classes,"id":id,"userInfo.personalRemarks":personalRemarks},function(result){
 						if("true"==result){
 							alert("修改成功");
@@ -54,6 +54,34 @@
 		});
 	
 		
+	
+	</script>
+	
+	<script type="text/javascript">
+	var formObj = {
+			
+			
+			//检查是否为空
+			"checkNull" : function(name,msg){
+				var value = $("input[name='"+name+"']").val().trim();
+				//将消息显示的span清空
+				$("#"+name+"_msg").html("");
+				if(value==""){
+					formObj.setMsg(name,msg);
+					return false;
+				}
+				return true;
+			},
+			//设置提醒消息
+			"setMsg" : function(name,msg){
+				$("#"+name+"_msg").html(msg);
+				$("#"+name+"_msg").css("color","red");
+			},
+			
+			
+			
+		}
+	
 	
 	</script>
 
@@ -84,7 +112,12 @@
 	<table id="ec_table" class="tableRegion" width="98%" >
 		<tr class="odd">
 			<td>姓名:</td>
-			<td><input id="name" type="text" name="name" class="dfinput" value="${userInfo.name}"/></td>
+			<td><input id="name" type="text" name="name" class="dfinput" value="${userInfo.name}"
+				onblur="formObj.checkNull('name','姓名不能为空')"
+				onfocus="formObj.setMsg('name','')"
+			/>
+			<span id="name_msg"></span>
+			</td>
 			
 		</tr>
 	
@@ -94,7 +127,11 @@
 		</tr>
 		<tr class="odd">
 			<td>身份证号:</td>
-			<td><input type="text" id="card" name="card" class="dfinput" value="${userInfo.card}"/>
+			<td><input type="text" id="card" name="card" class="dfinput" value="${userInfo.card}"
+			  		onblur="formObj.checkNull('card','身份证不能为空')"
+				onfocus="formObj.setMsg('card','')"
+			  />
+			  <span id="card_msg"></span>
 			</td>
 			
 		</tr>
@@ -102,12 +139,20 @@
 			<td>出生日期:</td>
 			<td>
 				<input type="text" id="birthday" style="width:121px;" name="birthday" value="<fmt:formatDate value="${userInfo.birthday}" pattern="yyyy-MM-dd"/>"
-		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
+		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"
+		   			onblur="formObj.checkNull('birthday','出生日期不能为空')"
+				onfocus="formObj.setMsg('birthday','')"
+		   		/>
+		   		<span id="birthday_msg"></span>
 			</td>
 			<td>入学日期:</td>
 			<td>
 				<input type="text" id="timeofenrollment" style="width:121px;" name="timeofenrollment" value="<fmt:formatDate value="${userInfo.timeofenrollment}" pattern="yyyy-MM-dd"/>"
-		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"/>
+		   		onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});" class="dfinput"
+		   				onblur="formObj.checkNull('timeofenrollment','入学日期不能为空')"
+						onfocus="formObj.setMsg('timeofenrollment','')"
+		   		/>
+		   		<span id="timeofenrollment_msg"></span>
 			</td>
 		</tr>
 		
@@ -123,14 +168,29 @@
 		<tr class="odd">
 			
 			<td>电话号码:</td>
-			<td><input  type="text" id="tel" name="tel" class="dfinput" value="${userInfo.tel }"/></td>
+			<td><input  type="text" id="tel" name="tel" class="dfinput" value="${userInfo.tel }"
+					onblur="formObj.checkNull('tel','电话号码不能为空')"
+						onfocus="formObj.setMsg('tel','')"
+			/>
+				<span id="tel_msg"></span>
+			</td>
 			<td>班级:</td>
-			<td><input  type="text" id="classes" name="classes" class="dfinput" value="${userInfo.classes}"/></td>
+			<td><input  type="text" id="classes" name="classes" class="dfinput" value="${userInfo.classes}"
+					onblur="formObj.checkNull('classes','班级不能为空')"
+						onfocus="formObj.setMsg('classes','')"
+			/>
+			<span id="classes_msg"></span>
+			</td>
 		</tr>
 		<tr class="odd">
 			
 			<td>学号:</td>
-			<td><input  type="text" name="id" id="id" class="dfinput" value="${userInfo.id}"/></td>
+			<td><input  type="text" name="id" id="id" class="dfinput" value="${userInfo.id}"
+					onblur="formObj.checkNull('id','学号不能为空')"
+						onfocus="formObj.setMsg('id','')"
+			/>
+			<span id="id_msg"></span>
+			</td>
 		</tr>
 		
 		<tr class="odd">

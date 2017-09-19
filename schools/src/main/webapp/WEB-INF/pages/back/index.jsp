@@ -51,16 +51,7 @@
     <div class="xline"></div>
     <div class="box"></div>
     
-    <div class="welinfo">
-    <span><img src="${ctx}/images/backimg/dp.png" alt="提醒" /></span>
-    <b>信息管理系统使用指南</b>
-    </div>
     
-    <ul class="infolist">
-    <li><span>您可以快速进行文章发布管理操作</span><a class="ibtn">发布或管理文章</a></li>
-    <li><span>您可以快速发布产品</span><a class="ibtn">发布或管理产品</a></li>
-    <li><span>您可以进行密码修改、账户设置等操作</span><a class="ibtn">账户管理</a></li>
-    </ul>
     
     <div class="xline"></div>
     
