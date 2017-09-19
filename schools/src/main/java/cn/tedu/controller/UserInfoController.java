@@ -33,12 +33,12 @@ public class UserInfoController extends BaseController{
 	 */
 	@RequestMapping("/bbs_self")
 	public String toBBSSelf(Model model,HttpSession session){
-		//实验性质添加session
-		User user0=new User();
-		user0.setId("123");
-		user0.setPassword("123");
-		session.setAttribute("userSession", user0);
-		
+//		//实验性质添加session
+//		User user0=new User();
+//		user0.setId("123");
+//		user0.setPassword("123");
+//		session.setAttribute("userSession", user0);
+//		
 		//从session域中获得userId
 		String userId=((User)session.getAttribute("userSession")).getId();
 		
