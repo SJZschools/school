@@ -15,4 +15,6 @@ public interface HabitMapper {
 	@Select("select * from habit")
 	public List<Habit> findAll();
 
+	public Habit findHabitByName(String s);
+
 }

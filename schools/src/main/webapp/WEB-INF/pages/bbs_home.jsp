@@ -102,15 +102,15 @@
 										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
 										href="bbs_single?bssId=${b.bssId }"
 										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
+										</a>${b.bssClass }</span> <span class="like-count">${b.recount }</span>
 								</li>
 							</ul>
 							</c:forEach>
 						</section>
 
 						<section class="span4 articles-list">
-							<h3>师生问答</h3>
-							<c:forEach items="${bbsList}" var="b" varStatus="status">
+							<h3>最新校帖</h3>
+							<c:forEach items="${bbsListT}" var="b" varStatus="status">
 							<ul class="articles">
 								<li class="article-entry standard">
 									<h4>
@@ -128,85 +128,24 @@
 					</div>
 
 					<div class="row home-listing-area">
-						<div class="span8">
-							<h2>最新校帖</h2>
-						</div>
+						
 					</div>
-
-					<div class="row separator">
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsListT}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">
-										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a></span> <span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-
-						<section class="span4 articles-list">
-							<c:forEach items="${bbsListT}" var="b" varStatus="status">
-							<ul class="articles">
-								<li class="article-entry standard">
-									<h4>
-										<a href="bbs_single?bssId=${b.bssId }">${b.bssTitle }</a>
-									</h4> 
-									<span class="article-meta">
-										<fmt:formatDate value="${b.creatTime }" pattern="yyyy-MM-dd HH:mm:ss"/> in <a
-										href="bbs_single?bssId=${b.bssId }"
-										title="View all posts in Server &amp; Database">${b.user.nickname }
-										</a>
-									</span> 
-									<span class="like-count">${b.recount }</span>
-								</li>
-							</ul>
-							</c:forEach>
-						</section>
-					</div>
-
 				</div>
 				<!-- end of page content -->
 
 
 				<!-- start of sidebar -->
 				<aside class="span4 page-sidebar">
-
-					<section class="widget">
-						<div class="support-widget">
-							<h3 class="title">活跃学生</h3>
-							<p class="intro">Need more support? If you did not found an
-								answer, contact us for further help.</p>
-						</div>
-					</section>
-
-					<section class="widget">
-						<div class="quick-links-widget">
-							<h3 class="title">活跃小组</h3>
-							<ul id="menu-quick-links" class="menu clearfix">
-								<li><a href="index-2.html">Home</a></li>
-								<li><a href="articles-list.html">Articles List</a></li>
-								<li><a href="faq.html">FAQs</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-					</section>
-					
+				
 					<section class="widget">
 						<h3 class="title">标签</h3>
 						<div class="tagcloud">
-							<a href="#" class="btn btn-mini">java</a>
-							<a href="#" class="btn btn-mini">css</a>
-							<a href="#" class="btn btn-mini">net</a>
+							<a href="bbs_home?bssClass=java" class="btn btn-mini">java</a>
+							<a href="bbs_home?bssClass=css" class="btn btn-mini">css</a>
+							<a href="bbs_home?bssClass=net" class="btn btn-mini">net</a>
 						</div>
 					</section>
+
 
 				</aside>
 				<!-- end of sidebar -->

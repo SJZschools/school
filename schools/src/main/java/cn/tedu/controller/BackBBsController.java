@@ -60,7 +60,7 @@ public class BackBBsController {
 	public String todiscuss(Integer nowPage,Model model){
 		Page page = new Page();
 		page.setNowPage(nowPage);
-		//查询总记录是
+		//查询总记录数
 		int allCount = backBBsService.findCount();
 		
 		page.setAllCount(allCount);

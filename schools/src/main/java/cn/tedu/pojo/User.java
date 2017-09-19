@@ -1,5 +1,6 @@
 package cn.tedu.pojo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -14,7 +15,7 @@ public class User {
 	private UserInfo userInfo;//用户详情对象，注意mapper时的嵌套
 	
 	public List<Habit> getHabitList() {
-		return habitList;
+		return new ArrayList<Habit>();
 	}
 	public void setHabitList(List<Habit> habitList) {
 		this.habitList = habitList;

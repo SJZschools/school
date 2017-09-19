@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.tedu.mapper.UserMapper;
+import cn.tedu.pojo.Habit;
 import cn.tedu.pojo.User;
 @Service
 public class UserServiceImpl implements UserService {
@@ -23,8 +24,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void updateUserNickname(String nickname) {
-		userMapper.updateUserNickname(nickname);
+	public void updateUserNickname(User user) {
+		userMapper.updateUserNickname(user);
 	}
 
 	@Override
@@ -32,5 +33,13 @@ public class UserServiceImpl implements UserService {
 	public List<String> findHabitIdList(String userId) {
 		return userMapper.findHabitIdList(userId);
 	}
+
+
+	@Override
+	public void addHU(String id, String s) {
+		userMapper.addHU(id,s);
+		
+	}
+
 
 }
