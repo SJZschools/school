@@ -29,16 +29,16 @@ public class BbsServiceImpl implements BbsService{
 	//根据recount（评论数量）查询所有Bbs
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-
 	public List<Bbs> findAll() {
 		return bbsMapper.findAll();
 	}
 	
 	//根据creatTime（创建时间）查询所有Bbs
 	@Override
-	public List<Bbs> findAllByTime() {
-		
-		return bbsMapper.findAllByTime();
+	public List<Bbs> findAllByTime(Integer nowPage, Integer pageCount) {
+		Integer nowPaget  = (nowPage-1)*10+1;
+		Integer pageCountt = nowPaget+pageCount-1;
+		return bbsMapper.findAllByTime(nowPaget,pageCountt);
 	}
 	
 	//根据bssId（帖子id）查询这条数据的详细信息
@@ -113,6 +113,19 @@ public class BbsServiceImpl implements BbsService{
 	            //throw new ServiceException("文件上传失败");
 	        }
 		
+	}
+
+	@Override
+	public int findCount() {
+		
+		return bbsMapper.findCount();
+	}
+
+	@Override
+	public List<Bbs> findAllBbs(Integer nowPage, Integer pageCount) {
+		Integer nowPaget  = (nowPage-1)*10+1;
+		Integer pageCountt = nowPaget+pageCount-1;
+		return bbsMapper.findAllBbs(nowPaget,pageCountt);
 	}
 
 

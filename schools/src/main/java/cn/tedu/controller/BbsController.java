@@ -1,12 +1,15 @@
 package cn.tedu.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.tedu.Page;
 import cn.tedu.pojo.Bbs;
 import cn.tedu.service.BbsService;
 import cn.tedu.service.BbsSingleService;
@@ -32,24 +35,24 @@ public class BbsController {
 	/*
 	 * 查询论坛信息
 	 */
-	@RequestMapping("bbs_home")
-	public String findAll(Model model,String bssClass){
-		
-		//查询所有Bbs并根据（评论数量）排序
-		List<Bbs> bbsList = bbsService.findAll();
-		
-		//查询所有Bbs并根据（创建时间）排序
-		List<Bbs> bbsListT = bbsService.findAllByTime();
-		
-		//根据bssClass（标签）查询相应的Bbs
-//		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
-		
-		model.addAttribute("bbsList", bbsList);
-		model.addAttribute("bbsListT", bbsListT);
-//		model.addAttribute("bbsListC", bbsListC);
-		//跳到论坛页面
-		return "bbs_home";
-	}
+//	@RequestMapping("bbs_home")
+//	public String findAll(Model model,String bssClass){
+//		
+//		//查询所有Bbs并根据（评论数量）排序
+//		List<Bbs> bbsList = bbsService.findAll();
+//		
+//		//查询所有Bbs并根据（创建时间）排序
+//		List<Bbs> bbsListT = bbsService.findAllByTime();
+//		
+//		//根据bssClass（标签）查询相应的Bbs
+////		List<Bbs> bbsListC = bbsService.findAllByClass(bssClass);
+//		
+//		model.addAttribute("bbsList", bbsList);
+//		model.addAttribute("bbsListT", bbsListT);
+////		model.addAttribute("bbsListC", bbsListC);
+//		//跳到论坛页面
+//		return "bbs_home";
+//	}
 	
 	/*
 	 * 根据id查询帖子的详细信息
@@ -99,5 +102,42 @@ public class BbsController {
 		
 		return "bbs_single";
 	}
+	
+	@RequestMapping("/bbs_home/{nowPage}")
+	public String toBBSPage(@PathVariable("nowPage") Integer nowPage,Model model){
+		Page page = new Page();
+		page.setNowPage(nowPage);
+		//查询总记录是
+		 int allCount = bbsService.findCount();
+		
+		page.setAllCount(allCount);
+		//设置总页数
+		Integer pageCount = page.getPageCount();
+		int allPage = 0;
+		if(allCount%pageCount!=0){
+			allPage = allCount/pageCount+1;
+		}else{
+			allPage = allCount/pageCount;
+		}
+		page.setAllPage(allPage);
+		//设置List
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i=0;i<allPage;i++){
+			list.add(i+1);
+		}
+		page.setPageList(list);
+		if(allCount<10){
+			pageCount=allCount;
+		}
+		//从数据库里查询所有帖子
+		List<Bbs> bbsList = bbsService.findAllBbs(nowPage,pageCount );
+		//查询所有Bbs并根据（创建时间）排序
+		List<Bbs> bbsListT = bbsService.findAllByTime(nowPage,pageCount );
+		model.addAttribute("page",page);
+		model.addAttribute("bbsList", bbsList);
+		model.addAttribute("bbsListT", bbsListT);
+		return "bbs_home";
+	}
 
+	
 }
