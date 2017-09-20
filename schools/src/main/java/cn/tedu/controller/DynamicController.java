@@ -107,5 +107,54 @@ public class DynamicController {
 		
  		return "/life_home";
 	}
-
+	
+	@RequestMapping("/lifeHome")
+	public String sepPage1(@PathVariable("nowPage") Integer nowPage,Model model){
+		Page page = new Page();
+		nowPage = 1;
+		page.setNowPage(nowPage);
+		//查询总记录
+		int allCount = dynamicService.findAllCount();
+		page.setAllCount(allCount);
+		//设置总页数
+	    int pageCount = page.getPageCount();
+		int allPage = 0;
+		if(allCount%pageCount!=0){
+			allPage = allCount/pageCount+1;
+		}else{
+			allPage = allCount/pageCount;
+		}
+		page.setAllPage(allPage);
+		//设置List
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i=0;i<allPage;i++){
+			list.add(i+1);
+		}
+		page.setPageList(list);
+		if(allCount<10){
+			pageCount=allCount;
+		}
+		//从数据库里查询所有动态
+		List<Dynamic> dynamicList = dynamicService.findAllDynamic(nowPage,pageCount );
+		model.addAttribute("page",page);
+		model.addAttribute("dynamicList", dynamicList);
+		
+		//查询所有动态信息by日期
+		List<Dynamic> dynaList = dynamicService.findAllByTime(nowPage,pageCount);
+		model.addAttribute("dynaList",dynaList);
+				
+		//查询所有动态信息by点赞
+		List<Dynamic> dyList = dynamicService.findAllByRcount(nowPage,pageCount);
+		model.addAttribute("dyList",dyList);		
+				
+		//查找最新动态
+		List<Dynamic> newList = dynamicService.findNew();
+		model.addAttribute("newList",newList);
+				
+		//查找最近一次更新动态
+		Dynamic firstDynamic = dynamicService.findFirst();
+		model.addAttribute("firstDynamic",firstDynamic);
+		
+ 		return "/life_home";
+	}
 }

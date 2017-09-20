@@ -28,7 +28,8 @@ public class BbsUserController {
 		
 		String bId=UUID.randomUUID().toString();
 		bbs.setBssId(bId);
-		bbs.setRecount(1);
+		Integer recount = 1;
+		bbs.setRecount(recount);
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);
