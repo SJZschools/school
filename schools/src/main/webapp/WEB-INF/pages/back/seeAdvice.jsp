@@ -64,7 +64,7 @@ $(document).ready(function(e) {
    
     
     <ul class="forminfo">
-    <li><label>建议人<b>*</b></label><p name="" type="text" class="dfinput"  style="width:518px;">${advice.user.nickname }</p></li>
+    <li><label>建议人<b>*</b></label><p name="" type="text" class="dfinput"  style="width:518px;">${advice.user.username }</p></li>
  
     
     

@@ -18,7 +18,7 @@ public class AdviceController {
 	
 	@RequestMapping("/advice")
 	public String saveAdvice(Advice advice , HttpSession session){
-		User user = (User) session.getAttribute("user");
+		User user = (User) session.getAttribute("userSession");
 		adviceService.saveAdvice(advice , user);
 		return "/index";
 	}

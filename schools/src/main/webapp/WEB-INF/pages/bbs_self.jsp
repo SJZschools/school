@@ -224,8 +224,8 @@
 		<div id="footer-bottom-wrapper">
 			<div id="footer-bottom" class="container">
 				<div class="row">
-					<div class="span6">
-						<!-- Social Navigation -->
+					<!-- <div class="span6">
+						Social Navigation
 						<ul class="social-nav clearfix">
 							<li class="linkedin"><a target="_blank" href="#"></a></li>
 							<li class="stumble"><a target="_blank" href="#"></a></li>
@@ -237,7 +237,7 @@
 							<li class="twitter"><a target="_blank" href="#"></a></li>
 							<li class="facebook"><a target="_blank" href="#"></a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

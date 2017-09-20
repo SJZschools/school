@@ -20,11 +20,6 @@ public class BackDynamicServiceImpl implements BackDynamicService {
 	
 	public void saveDynam(Dynamic dynamic ,User user ) {
 		
-		//测试代码
-		user.setId("13212132asd");
-		user.setNickname("立即阿伦");
-		
-		
 		dynamic.setRid(user.getId());
 		dynamic.setRname(user.getNickname());
 		String id = UUID.randomUUID().toString();

@@ -205,7 +205,7 @@
 						<p class="copyright">
 							Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect
 							from <a href="#" title="null"
-								target="_blank">网页模板</a>
+								target="_blank">达内教育</a>
 						</p>
 					</div>
 					<div class="span6">

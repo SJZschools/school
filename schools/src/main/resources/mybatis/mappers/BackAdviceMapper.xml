@@ -17,7 +17,7 @@
 	</resultMap>
 	
 	<select id="findAllById" resultMap="adviceRM">
-		select a.* , u.nickname from user_s u , advice a where u.id = a.user_id and a.id = #{id}
+		select a.* , u.username from user_s u , advice a where u.id = a.user_id and a.id = #{id}
 	</select>
 	<delete id="deleteAdviceById">
 		delete from advice where id = #{id}
