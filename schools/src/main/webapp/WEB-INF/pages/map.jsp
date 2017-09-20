@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<link rel="stylesheet" href="${ctx}/css/templatemo-style.css">
 <style type="text/css">
 *{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
@@ -28,7 +28,11 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 	<div id="r-result"></div>
 
 </div>
-
+<footer>
+    <p >Copyright &copy;  2017  Tedu  石家庄先天下教学中心   
+                                
+    |  - Design By JSD1706<a href="http://www.tedu.cn/" target="_blank" title="达内教育"> @达内教育</a></p>
+	</footer>
 
 <script type="text/javascript">
 // 百度地图API功能

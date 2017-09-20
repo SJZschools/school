@@ -32,6 +32,6 @@ public class BbsUserController {
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);
-		return "/bbs_home";
+		return "redirect:/bbs_home";
 	}
 }

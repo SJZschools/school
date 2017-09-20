@@ -23,7 +23,7 @@
                 <link rel='stylesheet' id='pretty-photo-css-css'  href='${ctx}/js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />
                 <link rel='stylesheet' id='main-css-css'  href='${ctx}/css/main5152.css?ver=1.0' type='text/css' media='all' />
                 <link rel='stylesheet' id='custom-css-css'  href='${ctx}/css/custom5152.html?ver=1.0' type='text/css' media='all' />
-
+				<link rel="stylesheet" href="${ctx}/css/templatemo-style.css">
 
                 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
                 <!--[if lt IE 9]>
@@ -245,38 +245,11 @@
                 
 
                 <!-- Start of Footer -->
-                <footer id="footer-wrapper">
-                        
-
-                        <!-- Footer Bottom -->
-                        <div id="footer-bottom-wrapper">
-                                <div id="footer-bottom" class="container">
-                                        <div class="row">
-                                                <div class="span6">
-                                                        <p class="copyright">
-                                                                Copyright © 2013. All Rights Reserved by KnowledgeBase.Collect from <a href="#" title="达内校园" target="_blank">达内校园</a>
-                                                        </p>
-                                                </div>
-                                                <div class="span6">
-                                                        <!-- Social Navigation -->
-                                                        <ul class="social-nav clearfix">
-                                                                <li class="linkedin"><a target="_blank" href="#"></a></li>
-                                                                <li class="stumble"><a target="_blank" href="#"></a></li>
-                                                                <li class="google"><a target="_blank" href="#"></a></li>
-                                                                <li class="deviantart"><a target="_blank" href="#"></a></li>
-                                                                <li class="flickr"><a target="_blank" href="#"></a></li>
-                                                                <li class="skype"><a target="_blank" href="skype:#?call"></a></li>
-                                                                <li class="rss"><a target="_blank" href="#"></a></li>
-                                                                <li class="twitter"><a target="_blank" href="#"></a></li>
-                                                                <li class="facebook"><a target="_blank" href="#"></a></li>
-                                                        </ul>
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                        <!-- End of Footer Bottom -->
-
-                </footer>
+     <footer>
+    <p >Copyright &copy;  2017  Tedu  石家庄先天下教学中心   
+                                
+    |  - Design By JSD1706<a href="http://www.tedu.cn/" target="_blank" title="达内教育"> @达内教育</a></p>
+	</footer>
                 <!-- End of Footer -->
 
                 <a href="#top" id="scroll-top"></a>

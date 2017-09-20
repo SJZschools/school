@@ -65,6 +65,7 @@ public class BbsServiceImpl implements BbsService{
 	@Transactional(propagation=Propagation.REQUIRED)
 
 	public void saveBBS(Bbs bbs) {
+		bbs.setCreatTime(new Date());
 		bbsMapper.saveBBS(bbs);
 	}
 	@Override

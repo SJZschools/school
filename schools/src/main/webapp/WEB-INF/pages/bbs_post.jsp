@@ -14,6 +14,7 @@
 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
 
 <!-- Style Sheet-->
+<link rel="stylesheet" href="${ctx}/css/templatemo-style.css">
 <link rel="stylesheet" type="text/css" href="${ctx}/css/upload/uploadImg.css" />
 <link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
@@ -37,7 +38,7 @@
 </head>
 
 <body>
-	<form name="icform" method="post" action="${ctx}/savebbs" enctype="multipart/form-data" >
+	
 		<!-- Start of Header -->
 		<div class="header-wrapper">
 			<header>
@@ -72,7 +73,7 @@
 			</header>
 		</div>
 		<!-- End of Header -->
-
+<form name="icform" method="post" action="${ctx}/savebbs" enctype="multipart/form-data" >
 		<!-- Start of Page Container -->
 		<div class="page-container">
 			<div class="container">
@@ -142,40 +143,12 @@
 		</div>
 		</div>
 		<!-- End of Page Container -->
-
+</form>
 		<!-- Start of Footer -->
-		<footer id="footer-wrapper">
-
-			<!-- Footer Bottom -->
-			<div id="footer-bottom-wrapper">
-				<div id="footer-bottom" class="container">
-					<div class="row">
-						<div class="span6">
-							<p class="copyright">
-								Copyright 2013. All Rights Reserved by KnowledgeBase.Collect
-								from <a href="#" title="达内校园"
-									target="_blank">达内校园</a>
-							</p>
-						</div>
-						<!-- <div class="span6">
-							Social Navigation
-							<ul class="social-nav clearfix">
-								<li class="linkedin"><a target="_blank" href="#"></a></li>
-								<li class="stumble"><a target="_blank" href="#"></a></li>
-								<li class="google"><a target="_blank" href="#"></a></li>
-								<li class="deviantart"><a target="_blank" href="#"></a></li>
-								<li class="flickr"><a target="_blank" href="#"></a></li>
-								<li class="skype"><a target="_blank" href="skype:#?call"></a></li>
-								<li class="rss"><a target="_blank" href="#"></a></li>
-								<li class="twitter"><a target="_blank" href="#"></a></li>
-								<li class="facebook"><a target="_blank" href="#"></a></li>
-							</ul>
-						</div> -->
-					</div>
-				</div>
-			</div>
-			<!-- End of Footer Bottom -->
-
+		<footer>
+		    <p >Copyright &copy;  2017  Tedu  石家庄先天下教学中心   
+		                                
+		    |  - Design By JSD1706<a href="http://www.tedu.cn/" target="_blank" title="达内教育"> @达内教育</a></p>
 		</footer>
 		<!-- End of Footer -->
 
@@ -191,7 +164,7 @@
 		<script type='text/javascript' src='${ctx}/js/jquery.form.js'></script>
 		<script type='text/javascript' src='${ctx}/js/jquery.validate.min.js'></script>
 		<script type='text/javascript' src='${ctx}/js/custom.js'></script>
-	</form>
+	
 </body>
 
 </html>

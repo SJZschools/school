@@ -14,7 +14,7 @@
 <title>个人信息</title>
 
 <link rel="shortcut icon" href="${ctx}/images/favicon.png" />
-
+<link rel="stylesheet" href="${ctx}/css/templatemo-style.css">
 <!-- Style Sheet-->
 <link rel="stylesheet" href="${ctx}/style.css" />
 <link rel='stylesheet' id='bootstrap-css-css'
@@ -218,32 +218,11 @@
 	<!-- End of Page Container -->
 
 	<!-- Start of Footer -->
-	<footer id="footer-wrapper">
-
-		<!-- Footer Bottom -->
-		<div id="footer-bottom-wrapper">
-			<div id="footer-bottom" class="container">
-				<div class="row">
-					<!-- <div class="span6">
-						Social Navigation
-						<ul class="social-nav clearfix">
-							<li class="linkedin"><a target="_blank" href="#"></a></li>
-							<li class="stumble"><a target="_blank" href="#"></a></li>
-							<li class="google"><a target="_blank" href="#"></a></li>
-							<li class="deviantart"><a target="_blank" href="#"></a></li>
-							<li class="flickr"><a target="_blank" href="#"></a></li>
-							<li class="skype"><a target="_blank" href="skype:#?call"></a></li>
-							<li class="rss"><a target="_blank" href="#"></a></li>
-							<li class="twitter"><a target="_blank" href="#"></a></li>
-							<li class="facebook"><a target="_blank" href="#"></a></li>
-						</ul>
-					</div> -->
-				</div>
-			</div>
-		</div>
-		<!-- End of Footer Bottom -->
-
-	</footer>
+		<footer>
+	    <p >Copyright &copy;  2017  Tedu  石家庄先天下教学中心   
+	                                
+	    |  - Design By JSD1706<a href="http://www.tedu.cn/" target="_blank" title="达内教育"> @达内教育</a></p>
+		</footer>
 	<!-- End of Footer -->
 
 	<a href="#top" id="scroll-top"></a>
