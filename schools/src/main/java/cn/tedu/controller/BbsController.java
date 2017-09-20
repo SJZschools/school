@@ -97,5 +97,41 @@ public class BbsController {
 		return "bbs_home";
 	}
 
-
+	@RequestMapping("/bbs_home")
+	public String toBBSPage1(Integer nowPage,Model model){
+		Page page = new Page();
+		nowPage = 1;
+		page.setNowPage(nowPage);
+		//查询总记录是
+		 int allCount = bbsService.findCount();
+		
+		page.setAllCount(allCount);
+		//设置总页数
+		Integer pageCount = page.getPageCount();
+		int allPage = 0;
+		if(allCount%pageCount!=0){
+			allPage = allCount/pageCount+1;
+		}else{
+			allPage = allCount/pageCount;
+		}
+		page.setAllPage(allPage);
+		//设置List
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i=0;i<allPage;i++){
+			list.add(i+1);
+		}
+		page.setPageList(list);
+		if(allCount<10){
+			pageCount=allCount;
+		}
+		//从数据库里查询所有帖子
+		List<Bbs> bbsList = bbsService.findAllBbs(nowPage,pageCount );
+		//查询所有Bbs并根据（创建时间）排序
+		List<Bbs> bbsListT = bbsService.findAllByTime(nowPage,pageCount );
+		model.addAttribute("page",page);
+		model.addAttribute("bbsList", bbsList);
+		model.addAttribute("bbsListT", bbsListT);
+		
+		return "bbs_home";
+	}
 }

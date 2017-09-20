@@ -22,6 +22,7 @@ public class BoardController {
 	@RequestMapping("/doBoard")
 	public String reply(String replyId , String comment , HttpSession session){
 		String bssId = bbsService.findBbsIdByReplyId(replyId);
+		session.removeAttribute("doReBbsID");
 		session.setAttribute("doReBbsID",bssId );
 		User user = (User) session.getAttribute("userSession");
 		String userId = user.getId();

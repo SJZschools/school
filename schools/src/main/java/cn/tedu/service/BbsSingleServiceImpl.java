@@ -45,11 +45,16 @@ public class BbsSingleServiceImpl implements BbsSingleService{
 	public List findAllReplyAll(String bssId) {
 		List<Map<Reply, List<Board>>> allList = new ArrayList<Map<Reply, List<Board>>>();
 		List<Reply> replyList = bbsSingleMapper.findAllReplyById(bssId);
+		List<Board> boardList =new ArrayList<>();
 		for(Reply reply : replyList){
+			boardList.clear();
 			Map map = new HashMap();
+			
 			map.put("reply", reply);
-			List<Board> boardList = bbsSingleMapper.findAllBoardById(reply.getReplyId());
+			
+			boardList = bbsSingleMapper.findAllBoardById(reply.getReplyId());
 			map.put("boardList", boardList);
+			
 			allList.add(map);
 		}
 		return allList;

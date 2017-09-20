@@ -68,8 +68,10 @@
 							<li><a href="${ctx}/index">首页</a></li>
 							<li><a href="${ctx}/bbs_home/${nowPage1}">校园论坛</a></li>
 							<li><a href="${ctx}/bbs_post">发帖</a></li>
-							<li><a href="${ctx}/bbs_self">个人信息</a></li>
-							<li><a href="#">退出</a></li>
+							<c:if test="${userSession!=null }">
+							<li><a href="${ctx}/bbs_self"><span style="color:red">${userSession.username}</span></a></li>
+							<li><a href="${ctx}/loginout">退出</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</nav>

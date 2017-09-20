@@ -33,26 +33,11 @@ public class UserInfoController extends BaseController{
 	 */
 	@RequestMapping("/bbs_self")
 	public String toBBSSelf(Model model,HttpSession session){
-//		//实验性质添加session
-//		User user0=new User();
-//		user0.setId("123");
-//		user0.setPassword("123");
-//		session.setAttribute("userSession", user0);
-//		
 		//从session域中获得userId
 		String userId=((User)session.getAttribute("userSession")).getId();
 		
 		//从数据库拿到爱好信息  实现回显
 		List<String> uHabitList=userService.findHabitIdList(userId);
-		
-		//List<Habit> habitList=habitService.findAll();
-//		//实现回显
-//		for(Habit habit:habitList){
-//			if(uHabitList.contains(habit.gethId())){
-//				habit.setChecked(true);
-//			}
-//		}
-		
 		
 		//查询信息
 		User user=userService.findUserById(userId);
@@ -68,10 +53,6 @@ public class UserInfoController extends BaseController{
 		
 		userService.updateUserNickname(user);
 		userInfoService.updateself(userInfo);
-		//添加爱好  中间表
-//		for(String s:hId){
-//			userService.addHU(user.getId(),s);
-//		}
 		return "redirect:/index";
 	}
 }

@@ -64,10 +64,7 @@ public class BackDynamicController {
 	//保存动态信息
 	@RequestMapping("/saveDynam")
 	public String toSaveDynam(Dynamic dynamic , HttpSession session){
-		//User user = (User) session.getAttribute("user");
-		//测试代码
-		User user = new User();
-		
+		User user = (User) session.getAttribute("userSession");
 	    backDynamicService.saveDynam(dynamic , user);
 		System.out.println(dynamic);
 		return "redirect:/back/ScDynam";

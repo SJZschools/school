@@ -41,7 +41,7 @@
 
 				<div class="logo-container">
 					<!-- Website Logo -->
-					<a href="${ctx}/index.html" title="Knowledge Base Theme"> <img
+					<a href="${ctx}/index" title="Knowledge Base Theme"> <img
 						src="${ctx}/images/logo.png" alt="Knowledge Base Theme">
 					</a>
 				</div>
@@ -51,11 +51,13 @@
 				<nav class="main-nav">
 					<div class="menu-top-menu-container">
 						<ul id="menu-top-menu" class="clearfix">
-							<li><a href="${ctx}/index.html">首页</a></li>
-							<li><a href="${ctx}/bbs_home.html">校园论坛</a></li>
-							<li><a href="${ctx}/bbs_post.html">发帖</a></li>
-							<li><a href="${ctx}/bbs_self.html">个人信息</a></li>
-							<li><a href="${ctx}/login.html">退出</a></li>
+							<li><a href="${ctx}/index">首页</a></li>
+							<li><a href="${ctx}/bbs_home">校园论坛</a></li>
+							<li><a href="${ctx}/bbs_post">发帖</a></li>
+							<c:if test="${userSession!=null }">
+							<li><a href="${ctx}/bbs_self"><span style="color:red">${userSession.username}</span></a></li>
+							<li><a href="${ctx}/loginout">退出</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</nav>

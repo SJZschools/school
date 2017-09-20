@@ -53,8 +53,10 @@
                                                         <ul id="menu-top-menu" class="clearfix">
                                                                 <li><a href="${ctx}/index.html">首页</a></li>
                                                                 <li><a href="${ctx}/lifeHome/1.html">校园动态</a></li>                                                                
-                                                                <li><a href="${ctx}/bbs_self.html">个人信息</a></li>
-                                                                <li><a href="${ctx}/login.html">退出</a></li>
+                                                                	<c:if test="${userSession!=null }">
+							<li><a href="${ctx}/bbs_self"><span style="color:red">${userSession.username}</span></a></li>
+							<li><a href="${ctx}/loginout">退出</a></li>
+							</c:if>
                                                         </ul>
                                                 </div>
                                         </nav>

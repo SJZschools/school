@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.tedu.pojo.User;
 import cn.tedu.service.ReplyService;
 
 @Controller
@@ -17,9 +18,8 @@ public class ReplyController {
 	@RequestMapping("/doReply")
 	public String reply(String bbsId , String comment , HttpSession session){
 		session.setAttribute("doReBbsID",bbsId );
-		//User user = (User) session.getAttribute("userSession");
-		//String userId = user.getId();
-		String userId ="1";
+		User user = (User) session.getAttribute("userSession");
+		String userId = user.getId();
 		replyService.saveReply(comment , bbsId , userId);
 		return "redirect:/bbs_singleback";
 	}

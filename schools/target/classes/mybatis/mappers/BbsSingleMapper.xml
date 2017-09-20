@@ -36,10 +36,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 根据评论Id查询回复信息 -->
 	<select id="findAllBoard" resultMap="boardRM">
-		select bu.nickname,bu.response_txt,bu.response_time,info.reply_id 
-		from (select * from reply r,board b where r.reply_id = b.response_id) info ,
-		(select * from board b,user_s u where b.user_id = u.id) bu 
-		where info.reply_id = bu.response_id
+	select * from user_s , board where user_id = user_s.id and response_id = #{replyId}
+		
 	</select>
 	
 	<resultMap type="cn.tedu.pojo.Board" id="boardRM" autoMapping="true">

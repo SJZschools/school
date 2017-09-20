@@ -33,9 +33,7 @@ public class GreatController {
 	@RequestMapping("/findGreat")
 	@ResponseBody
 	public String toGreat(String id , HttpSession session){
-		//User user = (User) session.getAttribute("userSession");
-		User user = new User();
-		user.setId("1");
+		User user = (User) session.getAttribute("userSession");
 		String userId = user.getId();
 		String flag = greatService.findGreat(id , userId);
 		return flag;
