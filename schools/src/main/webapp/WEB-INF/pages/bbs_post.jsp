@@ -57,7 +57,7 @@
 						<div class="menu-top-menu-container">
 							<ul id="menu-top-menu" class="clearfix">
 								<li><a href="${ctx}/index">首页</a></li>
-								<li><a href="${ctx}/bbs_home">校园论坛</a></li>
+								<li><a href="${ctx}/bbs_home/1">校园论坛</a></li>
 								<li><a href="${ctx}/bbs_post">发帖</a></li>
 								<li><a href="${ctx}/bbs_self">个人信息</a></li>
 								<li><a href="${ctx}/login.html">退出</a></li>
@@ -122,9 +122,6 @@
 										</div>
 										<div class="page-stats"></div>
 									</div>
-								
-									
-										
 						</div>
 
 						<br> <br>

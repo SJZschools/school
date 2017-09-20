@@ -28,11 +28,10 @@ public class BbsUserController {
 		
 		String bId=UUID.randomUUID().toString();
 		bbs.setBssId(bId);
-		bbs.setRecount(1);
+		bbs.setRecount(0);
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);
-		bbsService.uploadObject(mFile);
 		return "/bbs_home";
 	}
 }

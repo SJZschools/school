@@ -24,8 +24,8 @@ public interface BbsMapper {
 //	public List<Bbs> findAllByClass(String bssClass);
 	
 	//帖子发布
-	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context) "
-			+ "values(#{bssId},#{creatId},#{bssTitle},#{bssClass},#{bssContext})")
+	@Insert("insert into bbs(bss_id,creat_id,bss_title,bss_class,bss_context,recount) "
+			+ "values(#{bssId},#{creatId},#{bssTitle},#{bssClass},#{bssContext},#{recount})")
 	public void saveBBS(Bbs bbs);
 
 	//查询帖子数量
