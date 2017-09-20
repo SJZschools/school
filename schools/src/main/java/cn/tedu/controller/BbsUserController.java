@@ -32,7 +32,6 @@ public class BbsUserController {
 		User uu=(User) session.getAttribute("userSession");
 		bbs.setCreatId(uu.getId());
 		bbsService.saveBBS(bbs);
-		bbsService.uploadObject(mFile);
 		return "/bbs_home";
 	}
 }

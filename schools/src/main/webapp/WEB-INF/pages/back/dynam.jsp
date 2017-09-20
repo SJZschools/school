@@ -43,9 +43,10 @@ $(document).ready(function(){
 	 		window.location.href="${ctx}/back/deleteDynam?dynamicId="+id;
 	 	}
 	});
-  $(".tablelink1").click(function(){
-	  	var id = $(this).attr("id");
-	 	window.location.href="${ctx}/lifeSingle?dynamicId="+id;
+  $("#checkbox").click(function(){
+	  	if($(this).attr("checked") == true){
+	  		$(".checkone").html("checked = 'checked'")
+	  	};
 	});
   /* $(".tiptop a").click(function(){
   $(".tip").fadeOut(200);
@@ -58,7 +59,10 @@ $(document).ready(function(){
   $(".cancel").click(function(){
   $(".tip").fadeOut(100);
 }); */
-
+  $(".tablelink1").click(function(){
+	  	var id = $(this).attr("id");
+	 	window.location.href="${ctx}/lifeSingle?dynamicId="+id;
+	});
 });
 </script>
 
@@ -98,7 +102,7 @@ $(document).ready(function(){
     <table class="tablelist">
     	<thead>
     	<tr>
-        <th><input name="" type="checkbox" value=""/></th>
+        <th><input name="" type="checkbox" id="checkbox"/></th>
         <th>编号<i class="sort"><img src="${ctx}/images/backimg/px.gif" /></i></th>
         <th>标题</th>
         <th>发布者</th>

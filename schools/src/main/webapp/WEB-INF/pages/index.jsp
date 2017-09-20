@@ -79,15 +79,12 @@
                       <div class="content first-content">
                         <h4>一分钟了解达内校园网</h4>
                         <p>达内校园网旨在为达内学员提供技术交流平台</p>
-                        <div class="primary-button">
-                        <c:if test="${userSession==null }">
-                       	   <a href="${ctx}/login">开始探索</a>
-                          </c:if>
-                          <c:if test="${userSession!=null }">
-                          	欢迎您！<span style="color:red">${userSession.username}</span>
-                          </c:if>
+                         <div class="primary-button">
+                        <c:if test="${userSession!=null }">欢迎：${userSession.username } <a href="${ctx}/loginout">退出</a> </c:if>
+                         <c:if test="${userSession==null }"> <a href="${ctx}/login">开始探索</a></c:if>
+                         <c:if test="${userSession.username=='admin' }"><a href="${ctx}/back">后台管理</a></c:if>
                         </div>
-                        <div class="primary-button"><a href="${ctx}/map" target="_blank">学校周边</a></div>
+                        <div class="primary-button"><a href="${ctx}/map" target="_black">学校周边</a></div>
                       </div>
                     </div>
                   </div>                  

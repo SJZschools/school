@@ -43,13 +43,13 @@ public class BbsController {
 		List allList = bbsSingleService.findAllReplyAll(bssId);
 		model.addAttribute("allList", allList);
 		
-		return "bbs_single";
+		return "/bbs_single";
 	}
 	
 	@RequestMapping("/bbs_singleback")
 	public String toBBSSingle1(Model model , HttpSession session){
 		//根据帖子id查询详细信息
-		String bssId = (String) session.getAttribute("doReBbsID");
+		String bssId = (String) session.getAttribute("addbbsId");
 		Bbs bbs = bbsService.findAllByBbsId(bssId);
 		model.addAttribute("bbs", bbs);
 		
@@ -57,7 +57,7 @@ public class BbsController {
 		List allList = bbsSingleService.findAllReplyAll(bssId);
 		model.addAttribute("allList", allList);
 		
-		return "bbs_single";
+		return "/bbs_single";
 	}
 	
 	@RequestMapping("/bbs_home/{nowPage}")
